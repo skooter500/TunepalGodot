@@ -11,9 +11,23 @@ config_version=5
 [application]
 
 config/name="TunepalGodot"
+run/main_scene="res://Scenes/tune_pal.tscn"
 config/features=PackedStringArray("4.0", "Forward Plus")
 config/icon="res://icon.svg"
+
+[display]
+
+window/size/viewport_width=576
+window/size/viewport_height=1024
+window/stretch/mode="canvas_items"
+window/stretch/aspect="keep_width"
+window/handheld/orientation=1
 
 [dotnet]
 
 project/assembly_name="TunepalGodot"
+
+[rendering]
+
+2d/snap/snap_2d_transforms_to_pixel=true
+2d/snap/snap_2d_vertices_to_pixel=true
