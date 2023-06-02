@@ -12,12 +12,6 @@ offset_right = 40.0
 offset_bottom = 40.0
 color = Color(0, 0, 0, 1)
 
-[node name="ColorRect2" type="ColorRect" parent="Background"]
-custom_minimum_size = Vector2(576, 85)
-offset_top = 939.0
-offset_right = 576.0
-offset_bottom = 1024.0
-
 [node name="UI" type="Node2D" parent="."]
 
 [node name="Tunepal" type="Sprite2D" parent="UI"]
@@ -27,67 +21,73 @@ texture = ExtResource("1_v4wdq")
 
 [node name="MenuButtons" type="Node2D" parent="UI"]
 
-[node name="HBoxContainer" type="HBoxContainer" parent="UI/MenuButtons"]
+[node name="ColorRect2" type="ColorRect" parent="UI/MenuButtons"]
+custom_minimum_size = Vector2(576, 85)
 offset_top = 939.0
 offset_right = 576.0
 offset_bottom = 1024.0
 
-[node name="Record" type="Button" parent="UI/MenuButtons/HBoxContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="UI/MenuButtons/ColorRect2"]
+offset_right = 576.0
+offset_bottom = 85.0
+
+[node name="Record" type="Button" parent="UI/MenuButtons/ColorRect2/HBoxContainer"]
+custom_minimum_size = Vector2(112, 0)
 layout_mode = 2
 theme_override_colors/font_color = Color(0.537255, 0.537255, 0.537255, 1)
 theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
 theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
 theme_override_colors/font_focus_color = Color(0.537255, 0.537255, 0.537255, 1)
-theme_override_colors/font_hover_pressed_color = Color(0.537255, 0.537255, 0.537255, 1)
 theme_override_colors/font_disabled_color = Color(0.537255, 0.537255, 0.537255, 1)
 toggle_mode = true
 text = "Record"
 flat = true
 
-[node name="Keywords" type="Button" parent="UI/MenuButtons/HBoxContainer"]
+[node name="Keywords" type="Button" parent="UI/MenuButtons/ColorRect2/HBoxContainer"]
+custom_minimum_size = Vector2(112, 0)
 layout_mode = 2
 theme_override_colors/font_color = Color(0.537255, 0.537255, 0.537255, 1)
 theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
 theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
 theme_override_colors/font_focus_color = Color(0.537255, 0.537255, 0.537255, 1)
-theme_override_colors/font_hover_pressed_color = Color(0.537255, 0.537255, 0.537255, 1)
 theme_override_colors/font_disabled_color = Color(0.537255, 0.537255, 0.537255, 1)
 toggle_mode = true
-text = "Record"
+text = "Keywords"
 flat = true
 
-[node name="My Tunes" type="Button" parent="UI/MenuButtons/HBoxContainer"]
+[node name="My Tunes" type="Button" parent="UI/MenuButtons/ColorRect2/HBoxContainer"]
+custom_minimum_size = Vector2(112, 0)
 layout_mode = 2
 theme_override_colors/font_color = Color(0.537255, 0.537255, 0.537255, 1)
 theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
 theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
 theme_override_colors/font_focus_color = Color(0.537255, 0.537255, 0.537255, 1)
-theme_override_colors/font_hover_pressed_color = Color(0.537255, 0.537255, 0.537255, 1)
 theme_override_colors/font_disabled_color = Color(0.537255, 0.537255, 0.537255, 1)
 toggle_mode = true
-text = "Record"
+text = "My Tunes"
 flat = true
 
-[node name="Preferences" type="Button" parent="UI/MenuButtons/HBoxContainer"]
+[node name="Preferences" type="Button" parent="UI/MenuButtons/ColorRect2/HBoxContainer"]
+custom_minimum_size = Vector2(112, 0)
 layout_mode = 2
 theme_override_colors/font_color = Color(0.537255, 0.537255, 0.537255, 1)
 theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
 theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
 theme_override_colors/font_focus_color = Color(0.537255, 0.537255, 0.537255, 1)
-theme_override_colors/font_hover_pressed_color = Color(0.537255, 0.537255, 0.537255, 1)
 theme_override_colors/font_disabled_color = Color(0.537255, 0.537255, 0.537255, 1)
 toggle_mode = true
-text = "Record"
+text = "Preferences"
 flat = true
 
-[node name="More" type="Button" parent="UI/MenuButtons/HBoxContainer"]
+[node name="More" type="Button" parent="UI/MenuButtons/ColorRect2/HBoxContainer"]
+custom_minimum_size = Vector2(112, 0)
 layout_mode = 2
 theme_override_colors/font_color = Color(0.537255, 0.537255, 0.537255, 1)
 theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
 theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
 theme_override_colors/font_focus_color = Color(0.537255, 0.537255, 0.537255, 1)
-theme_override_colors/font_hover_pressed_color = Color(0.537255, 0.537255, 0.537255, 1)
 theme_override_colors/font_disabled_color = Color(0.537255, 0.537255, 0.537255, 1)
 toggle_mode = true
-text = "Record"
+text = "More
+"
 flat = true
