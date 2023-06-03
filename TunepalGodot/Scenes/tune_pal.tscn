@@ -1,37 +1,173 @@
-[gd_scene load_steps=2 format=3 uid="uid://dexlkh1cvmqhe"]
+[gd_scene load_steps=8 format=3 uid="uid://dexlkh1cvmqhe"]
 
-[ext_resource type="Texture2D" uid="uid://c1h80phoadlat" path="res://Scenes/tunepal.png" id="1_v4wdq"]
+[ext_resource type="Script" path="res://menu.gd" id="1_5t3ag"]
+[ext_resource type="Texture2D" uid="uid://c1h80phoadlat" path="res://tunepal.png" id="1_gqfjs"]
+[ext_resource type="ButtonGroup" uid="uid://b6m85x57xm6cw" path="res://Scenes/button_group.tres" id="2_ltoqc"]
+[ext_resource type="Script" path="res://Scripts/keywords.gd" id="3_j72cr"]
+[ext_resource type="Script" path="res://songs.gd" id="4_e8ap0"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_e21rs"]
+bg_color = Color(1, 1, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2fq0c"]
+bg_color = Color(1, 1, 1, 1)
 
 [node name="TunePal" type="Node2D"]
 
-[node name="Background" type="Node2D" parent="."]
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_5t3ag")
 
-[node name="ColorRect" type="ColorRect" parent="Background"]
+[node name="Menus" type="Control" parent="Control"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="RecordMenu" type="Node2D" parent="Control/Menus"]
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="Control/Menus/RecordMenu"]
 custom_minimum_size = Vector2(576, 1024)
 offset_right = 40.0
 offset_bottom = 40.0
 color = Color(0, 0, 0, 1)
 
-[node name="UI" type="Node2D" parent="."]
-
-[node name="Tunepal" type="Sprite2D" parent="UI"]
+[node name="Tunepal" type="Sprite2D" parent="Control/Menus/RecordMenu"]
 position = Vector2(288, 300)
 scale = Vector2(1.3, 1.3)
-texture = ExtResource("1_v4wdq")
+texture = ExtResource("1_gqfjs")
 
-[node name="MenuButtons" type="Node2D" parent="UI"]
+[node name="KeywordsMenu" type="Node2D" parent="Control/Menus"]
+visible = false
 
-[node name="ColorRect2" type="ColorRect" parent="UI/MenuButtons"]
+[node name="ColorRect" type="ColorRect" parent="Control/Menus/KeywordsMenu"]
+offset_right = 576.0
+offset_bottom = 85.0
+
+[node name="Label" type="Label" parent="Control/Menus/KeywordsMenu/ColorRect"]
+layout_mode = 0
+offset_right = 576.0
+offset_bottom = 85.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 27
+text = "Keywords"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Control" type="Control" parent="Control/Menus/KeywordsMenu"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("3_j72cr")
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Control/Menus/KeywordsMenu/Control"]
+layout_mode = 0
+offset_top = 135.0
+offset_right = 576.0
+offset_bottom = 939.0
+
+[node name="Songs" type="VBoxContainer" parent="Control/Menus/KeywordsMenu/Control/ScrollContainer"]
+custom_minimum_size = Vector2(2.08165e-12, 2.08165e-12)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 1
+script = ExtResource("4_e8ap0")
+
+[node name="Button" type="Button" parent="Control/Menus/KeywordsMenu/Control/ScrollContainer/Songs"]
+custom_minimum_size = Vector2(2.08165e-12, 83)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_e21rs")
+
+[node name="Button2" type="Button" parent="Control/Menus/KeywordsMenu/Control/ScrollContainer/Songs"]
+custom_minimum_size = Vector2(2.08165e-12, 83)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_e21rs")
+
+[node name="Button3" type="Button" parent="Control/Menus/KeywordsMenu/Control/ScrollContainer/Songs"]
+custom_minimum_size = Vector2(2.08165e-12, 83)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_e21rs")
+
+[node name="Button4" type="Button" parent="Control/Menus/KeywordsMenu/Control/ScrollContainer/Songs"]
+custom_minimum_size = Vector2(2.08165e-12, 83)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_e21rs")
+
+[node name="Button5" type="Button" parent="Control/Menus/KeywordsMenu/Control/ScrollContainer/Songs"]
+custom_minimum_size = Vector2(2.08165e-12, 83)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_e21rs")
+
+[node name="Button6" type="Button" parent="Control/Menus/KeywordsMenu/Control/ScrollContainer/Songs"]
+custom_minimum_size = Vector2(2.08165e-12, 83)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_e21rs")
+
+[node name="Button7" type="Button" parent="Control/Menus/KeywordsMenu/Control/ScrollContainer/Songs"]
+custom_minimum_size = Vector2(2.08165e-12, 83)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_e21rs")
+
+[node name="Button8" type="Button" parent="Control/Menus/KeywordsMenu/Control/ScrollContainer/Songs"]
+custom_minimum_size = Vector2(2.08165e-12, 83)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_e21rs")
+
+[node name="Button9" type="Button" parent="Control/Menus/KeywordsMenu/Control/ScrollContainer/Songs"]
+custom_minimum_size = Vector2(2.08165e-12, 83)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_e21rs")
+
+[node name="Button10" type="Button" parent="Control/Menus/KeywordsMenu/Control/ScrollContainer/Songs"]
+custom_minimum_size = Vector2(2.08165e-12, 83)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_e21rs")
+
+[node name="ColorRect" type="ColorRect" parent="Control/Menus/KeywordsMenu/Control"]
+offset_top = 85.0
+offset_right = 576.0
+offset_bottom = 135.0
+color = Color(0.560784, 0.560784, 0.560784, 1)
+
+[node name="SearchBar" type="LineEdit" parent="Control/Menus/KeywordsMenu/Control/ColorRect"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -275.0
+offset_top = -16.6665
+offset_right = 275.0
+offset_bottom = 16.6665
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_placeholder_color = Color(0, 0, 0, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_2fq0c")
+placeholder_text = "Search"
+alignment = 1
+
+[node name="UI" type="Control" parent="Control"]
+anchors_preset = 0
+
+[node name="MenuButtons" type="Node2D" parent="Control/UI"]
+
+[node name="ColorRect2" type="ColorRect" parent="Control/UI/MenuButtons"]
 custom_minimum_size = Vector2(576, 85)
 offset_top = 939.0
 offset_right = 576.0
 offset_bottom = 1024.0
 
-[node name="HBoxContainer" type="HBoxContainer" parent="UI/MenuButtons/ColorRect2"]
+[node name="HBoxContainer" type="HBoxContainer" parent="Control/UI/MenuButtons/ColorRect2"]
+layout_mode = 0
 offset_right = 576.0
 offset_bottom = 85.0
 
-[node name="Record" type="Button" parent="UI/MenuButtons/ColorRect2/HBoxContainer"]
+[node name="Record" type="Button" parent="Control/UI/MenuButtons/ColorRect2/HBoxContainer"]
 custom_minimum_size = Vector2(112, 0)
 layout_mode = 2
 theme_override_colors/font_color = Color(0.537255, 0.537255, 0.537255, 1)
@@ -40,10 +176,12 @@ theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
 theme_override_colors/font_focus_color = Color(0.537255, 0.537255, 0.537255, 1)
 theme_override_colors/font_disabled_color = Color(0.537255, 0.537255, 0.537255, 1)
 toggle_mode = true
+button_pressed = true
+button_group = ExtResource("2_ltoqc")
 text = "Record"
 flat = true
 
-[node name="Keywords" type="Button" parent="UI/MenuButtons/ColorRect2/HBoxContainer"]
+[node name="Keywords" type="Button" parent="Control/UI/MenuButtons/ColorRect2/HBoxContainer"]
 custom_minimum_size = Vector2(112, 0)
 layout_mode = 2
 theme_override_colors/font_color = Color(0.537255, 0.537255, 0.537255, 1)
@@ -52,10 +190,11 @@ theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
 theme_override_colors/font_focus_color = Color(0.537255, 0.537255, 0.537255, 1)
 theme_override_colors/font_disabled_color = Color(0.537255, 0.537255, 0.537255, 1)
 toggle_mode = true
+button_group = ExtResource("2_ltoqc")
 text = "Keywords"
 flat = true
 
-[node name="My Tunes" type="Button" parent="UI/MenuButtons/ColorRect2/HBoxContainer"]
+[node name="My Tunes" type="Button" parent="Control/UI/MenuButtons/ColorRect2/HBoxContainer"]
 custom_minimum_size = Vector2(112, 0)
 layout_mode = 2
 theme_override_colors/font_color = Color(0.537255, 0.537255, 0.537255, 1)
@@ -64,10 +203,11 @@ theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
 theme_override_colors/font_focus_color = Color(0.537255, 0.537255, 0.537255, 1)
 theme_override_colors/font_disabled_color = Color(0.537255, 0.537255, 0.537255, 1)
 toggle_mode = true
+button_group = ExtResource("2_ltoqc")
 text = "My Tunes"
 flat = true
 
-[node name="Preferences" type="Button" parent="UI/MenuButtons/ColorRect2/HBoxContainer"]
+[node name="Preferences" type="Button" parent="Control/UI/MenuButtons/ColorRect2/HBoxContainer"]
 custom_minimum_size = Vector2(112, 0)
 layout_mode = 2
 theme_override_colors/font_color = Color(0.537255, 0.537255, 0.537255, 1)
@@ -76,10 +216,11 @@ theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
 theme_override_colors/font_focus_color = Color(0.537255, 0.537255, 0.537255, 1)
 theme_override_colors/font_disabled_color = Color(0.537255, 0.537255, 0.537255, 1)
 toggle_mode = true
+button_group = ExtResource("2_ltoqc")
 text = "Preferences"
 flat = true
 
-[node name="More" type="Button" parent="UI/MenuButtons/ColorRect2/HBoxContainer"]
+[node name="More" type="Button" parent="Control/UI/MenuButtons/ColorRect2/HBoxContainer"]
 custom_minimum_size = Vector2(112, 0)
 layout_mode = 2
 theme_override_colors/font_color = Color(0.537255, 0.537255, 0.537255, 1)
@@ -88,6 +229,11 @@ theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
 theme_override_colors/font_focus_color = Color(0.537255, 0.537255, 0.537255, 1)
 theme_override_colors/font_disabled_color = Color(0.537255, 0.537255, 0.537255, 1)
 toggle_mode = true
+button_group = ExtResource("2_ltoqc")
 text = "More
 "
 flat = true
+
+[connection signal="text_submitted" from="Control/Menus/KeywordsMenu/Control/ColorRect/SearchBar" to="Control/Menus/KeywordsMenu/Control" method="_on_search_bar_text_submitted"]
+[connection signal="pressed" from="Control/UI/MenuButtons/ColorRect2/HBoxContainer/Record" to="Control" method="_on_record_pressed"]
+[connection signal="pressed" from="Control/UI/MenuButtons/ColorRect2/HBoxContainer/Keywords" to="Control" method="_on_keywords_pressed"]
