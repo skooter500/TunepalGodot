@@ -1,7 +1,7 @@
 extends Node
 
-#Placeholder array to debug code, eventually this should come from
-#database, I think
+#Placeholder array to debug code, eventually this should come
+#from database I think
 var songs = [
 	"John",
 	"Liam",
