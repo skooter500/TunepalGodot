@@ -27,6 +27,7 @@ offset_right = 40.0
 offset_bottom = 40.0
 
 [node name="RecordMenu" type="Node2D" parent="Control/Menus"]
+visible = false
 
 [node name="ColorRect" type="ColorRect" parent="Control/Menus/RecordMenu"]
 custom_minimum_size = Vector2(576, 1024)
@@ -262,7 +263,6 @@ placeholder_text = "Search"
 alignment = 1
 
 [node name="PreferencesMenu" type="Node2D" parent="Control/Menus"]
-visible = false
 
 [node name="ColorRect" type="ColorRect" parent="Control/Menus/PreferencesMenu"]
 offset_right = 576.0
@@ -296,35 +296,54 @@ layout_mode = 2
 size_flags_horizontal = 3
 theme_override_constants/separation = 1
 
+[node name="Label" type="Label" parent="Control/Menus/PreferencesMenu/Control/ScrollContainer/Songs"]
+layout_mode = 2
+text = "Find"
+
 [node name="Button" type="Button" parent="Control/Menus/PreferencesMenu/Control/ScrollContainer/Songs"]
 custom_minimum_size = Vector2(2.08165e-12, 83)
 layout_mode = 2
 theme_override_styles/normal = SubResource("StyleBoxFlat_e21rs")
+text = "Transcription Fundamental"
+alignment = 0
 
 [node name="Button2" type="Button" parent="Control/Menus/PreferencesMenu/Control/ScrollContainer/Songs"]
 custom_minimum_size = Vector2(2.08165e-12, 83)
 layout_mode = 2
 theme_override_styles/normal = SubResource("StyleBoxFlat_e21rs")
+text = "Tune Books"
+alignment = 0
 
 [node name="Button3" type="Button" parent="Control/Menus/PreferencesMenu/Control/ScrollContainer/Songs"]
 custom_minimum_size = Vector2(2.08165e-12, 83)
 layout_mode = 2
 theme_override_styles/normal = SubResource("StyleBoxFlat_e21rs")
+text = "Time Signatures"
+alignment = 0
 
 [node name="Button4" type="Button" parent="Control/Menus/PreferencesMenu/Control/ScrollContainer/Songs"]
 custom_minimum_size = Vector2(2.08165e-12, 83)
 layout_mode = 2
 theme_override_styles/normal = SubResource("StyleBoxFlat_e21rs")
+text = "Check For New Tune Books"
+alignment = 0
 
 [node name="Button5" type="Button" parent="Control/Menus/PreferencesMenu/Control/ScrollContainer/Songs"]
 custom_minimum_size = Vector2(2.08165e-12, 83)
 layout_mode = 2
 theme_override_styles/normal = SubResource("StyleBoxFlat_e21rs")
+text = "Countdown"
+alignment = 0
 
 [node name="Button6" type="Button" parent="Control/Menus/PreferencesMenu/Control/ScrollContainer/Songs"]
 custom_minimum_size = Vector2(2.08165e-12, 83)
 layout_mode = 2
 theme_override_styles/normal = SubResource("StyleBoxFlat_e21rs")
+toggle_mode = true
+action_mode = 0
+text = "Animate"
+alignment = 0
+expand_icon = true
 
 [node name="Button7" type="Button" parent="Control/Menus/PreferencesMenu/Control/ScrollContainer/Songs"]
 custom_minimum_size = Vector2(2.08165e-12, 83)
