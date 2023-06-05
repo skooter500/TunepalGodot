@@ -1,4 +1,4 @@
-extends Node
+extends VBoxContainer
 
 #Placeholder array to debug code, eventually this should come
 #from database I think

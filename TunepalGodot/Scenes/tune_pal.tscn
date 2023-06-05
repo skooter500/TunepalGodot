@@ -1,10 +1,12 @@
-[gd_scene load_steps=8 format=3 uid="uid://dexlkh1cvmqhe"]
+[gd_scene load_steps=10 format=3 uid="uid://dexlkh1cvmqhe"]
 
 [ext_resource type="Texture2D" uid="uid://c1h80phoadlat" path="res://tunepal.png" id="1_gqfjs"]
 [ext_resource type="Script" path="res://Scripts/menu.gd" id="1_qhsuj"]
 [ext_resource type="ButtonGroup" uid="uid://b6m85x57xm6cw" path="res://Scenes/button_group.tres" id="2_ltoqc"]
-[ext_resource type="Script" path="res://Scripts/keywords.gd" id="3_j72cr"]
-[ext_resource type="Script" path="res://Scripts/songs.gd" id="4_1clb5"]
+[ext_resource type="Script" path="res://Scripts/searchbar_mytunes.gd" id="3_btya1"]
+[ext_resource type="Script" path="res://Scenes/searchbar_keywords.gd" id="3_mbls2"]
+[ext_resource type="Script" path="res://Scripts/keywords_songs.gd" id="4_wpkyc"]
+[ext_resource type="Script" path="res://Scripts/mytunes_songs.gd" id="5_lkohk"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_e21rs"]
 bg_color = Color(1, 1, 1, 1)
@@ -41,7 +43,6 @@ scale = Vector2(1.3, 1.3)
 texture = ExtResource("1_gqfjs")
 
 [node name="KeywordsMenu" type="Node2D" parent="Control/Menus"]
-visible = false
 
 [node name="ColorRect" type="ColorRect" parent="Control/Menus/KeywordsMenu"]
 offset_right = 576.0
@@ -62,7 +63,7 @@ layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
-script = ExtResource("3_j72cr")
+script = ExtResource("3_mbls2")
 
 [node name="ScrollContainer" type="ScrollContainer" parent="Control/Menus/KeywordsMenu/Control"]
 layout_mode = 0
@@ -75,7 +76,7 @@ custom_minimum_size = Vector2(2.08165e-12, 2.08165e-12)
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_constants/separation = 1
-script = ExtResource("4_1clb5")
+script = ExtResource("4_wpkyc")
 
 [node name="Button" type="Button" parent="Control/Menus/KeywordsMenu/Control/ScrollContainer/Songs"]
 custom_minimum_size = Vector2(2.08165e-12, 83)
@@ -127,6 +128,206 @@ custom_minimum_size = Vector2(2.08165e-12, 83)
 layout_mode = 2
 theme_override_styles/normal = SubResource("StyleBoxFlat_e21rs")
 
+[node name="Button11" type="Button" parent="Control/Menus/KeywordsMenu/Control/ScrollContainer/Songs"]
+custom_minimum_size = Vector2(2.08165e-12, 83)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_e21rs")
+
+[node name="Button12" type="Button" parent="Control/Menus/KeywordsMenu/Control/ScrollContainer/Songs"]
+custom_minimum_size = Vector2(2.08165e-12, 83)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_e21rs")
+
+[node name="Button13" type="Button" parent="Control/Menus/KeywordsMenu/Control/ScrollContainer/Songs"]
+custom_minimum_size = Vector2(2.08165e-12, 83)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_e21rs")
+
+[node name="Button14" type="Button" parent="Control/Menus/KeywordsMenu/Control/ScrollContainer/Songs"]
+custom_minimum_size = Vector2(2.08165e-12, 83)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_e21rs")
+
+[node name="Button15" type="Button" parent="Control/Menus/KeywordsMenu/Control/ScrollContainer/Songs"]
+custom_minimum_size = Vector2(2.08165e-12, 83)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_e21rs")
+
+[node name="Button16" type="Button" parent="Control/Menus/KeywordsMenu/Control/ScrollContainer/Songs"]
+custom_minimum_size = Vector2(2.08165e-12, 83)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_e21rs")
+
+[node name="Button17" type="Button" parent="Control/Menus/KeywordsMenu/Control/ScrollContainer/Songs"]
+custom_minimum_size = Vector2(2.08165e-12, 83)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_e21rs")
+
+[node name="Button18" type="Button" parent="Control/Menus/KeywordsMenu/Control/ScrollContainer/Songs"]
+custom_minimum_size = Vector2(2.08165e-12, 83)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_e21rs")
+
+[node name="Button19" type="Button" parent="Control/Menus/KeywordsMenu/Control/ScrollContainer/Songs"]
+custom_minimum_size = Vector2(2.08165e-12, 83)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_e21rs")
+
+[node name="Button20" type="Button" parent="Control/Menus/KeywordsMenu/Control/ScrollContainer/Songs"]
+custom_minimum_size = Vector2(2.08165e-12, 83)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_e21rs")
+
+[node name="Button21" type="Button" parent="Control/Menus/KeywordsMenu/Control/ScrollContainer/Songs"]
+custom_minimum_size = Vector2(2.08165e-12, 83)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_e21rs")
+
+[node name="Button22" type="Button" parent="Control/Menus/KeywordsMenu/Control/ScrollContainer/Songs"]
+custom_minimum_size = Vector2(2.08165e-12, 83)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_e21rs")
+
+[node name="Button23" type="Button" parent="Control/Menus/KeywordsMenu/Control/ScrollContainer/Songs"]
+custom_minimum_size = Vector2(2.08165e-12, 83)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_e21rs")
+
+[node name="Button24" type="Button" parent="Control/Menus/KeywordsMenu/Control/ScrollContainer/Songs"]
+custom_minimum_size = Vector2(2.08165e-12, 83)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_e21rs")
+
+[node name="Button25" type="Button" parent="Control/Menus/KeywordsMenu/Control/ScrollContainer/Songs"]
+custom_minimum_size = Vector2(2.08165e-12, 83)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_e21rs")
+
+[node name="Button26" type="Button" parent="Control/Menus/KeywordsMenu/Control/ScrollContainer/Songs"]
+custom_minimum_size = Vector2(2.08165e-12, 83)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_e21rs")
+
+[node name="Button27" type="Button" parent="Control/Menus/KeywordsMenu/Control/ScrollContainer/Songs"]
+custom_minimum_size = Vector2(2.08165e-12, 83)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_e21rs")
+
+[node name="Button28" type="Button" parent="Control/Menus/KeywordsMenu/Control/ScrollContainer/Songs"]
+custom_minimum_size = Vector2(2.08165e-12, 83)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_e21rs")
+
+[node name="Button29" type="Button" parent="Control/Menus/KeywordsMenu/Control/ScrollContainer/Songs"]
+custom_minimum_size = Vector2(2.08165e-12, 83)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_e21rs")
+
+[node name="Button30" type="Button" parent="Control/Menus/KeywordsMenu/Control/ScrollContainer/Songs"]
+custom_minimum_size = Vector2(2.08165e-12, 83)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_e21rs")
+
+[node name="Button31" type="Button" parent="Control/Menus/KeywordsMenu/Control/ScrollContainer/Songs"]
+custom_minimum_size = Vector2(2.08165e-12, 83)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_e21rs")
+
+[node name="Button32" type="Button" parent="Control/Menus/KeywordsMenu/Control/ScrollContainer/Songs"]
+custom_minimum_size = Vector2(2.08165e-12, 83)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_e21rs")
+
+[node name="Button33" type="Button" parent="Control/Menus/KeywordsMenu/Control/ScrollContainer/Songs"]
+custom_minimum_size = Vector2(2.08165e-12, 83)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_e21rs")
+
+[node name="Button34" type="Button" parent="Control/Menus/KeywordsMenu/Control/ScrollContainer/Songs"]
+custom_minimum_size = Vector2(2.08165e-12, 83)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_e21rs")
+
+[node name="Button35" type="Button" parent="Control/Menus/KeywordsMenu/Control/ScrollContainer/Songs"]
+custom_minimum_size = Vector2(2.08165e-12, 83)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_e21rs")
+
+[node name="Button36" type="Button" parent="Control/Menus/KeywordsMenu/Control/ScrollContainer/Songs"]
+custom_minimum_size = Vector2(2.08165e-12, 83)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_e21rs")
+
+[node name="Button37" type="Button" parent="Control/Menus/KeywordsMenu/Control/ScrollContainer/Songs"]
+custom_minimum_size = Vector2(2.08165e-12, 83)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_e21rs")
+
+[node name="Button38" type="Button" parent="Control/Menus/KeywordsMenu/Control/ScrollContainer/Songs"]
+custom_minimum_size = Vector2(2.08165e-12, 83)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_e21rs")
+
+[node name="Button39" type="Button" parent="Control/Menus/KeywordsMenu/Control/ScrollContainer/Songs"]
+custom_minimum_size = Vector2(2.08165e-12, 83)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_e21rs")
+
+[node name="Button40" type="Button" parent="Control/Menus/KeywordsMenu/Control/ScrollContainer/Songs"]
+custom_minimum_size = Vector2(2.08165e-12, 83)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_e21rs")
+
+[node name="Button41" type="Button" parent="Control/Menus/KeywordsMenu/Control/ScrollContainer/Songs"]
+custom_minimum_size = Vector2(2.08165e-12, 83)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_e21rs")
+
+[node name="Button42" type="Button" parent="Control/Menus/KeywordsMenu/Control/ScrollContainer/Songs"]
+custom_minimum_size = Vector2(2.08165e-12, 83)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_e21rs")
+
+[node name="Button43" type="Button" parent="Control/Menus/KeywordsMenu/Control/ScrollContainer/Songs"]
+custom_minimum_size = Vector2(2.08165e-12, 83)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_e21rs")
+
+[node name="Button44" type="Button" parent="Control/Menus/KeywordsMenu/Control/ScrollContainer/Songs"]
+custom_minimum_size = Vector2(2.08165e-12, 83)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_e21rs")
+
+[node name="Button45" type="Button" parent="Control/Menus/KeywordsMenu/Control/ScrollContainer/Songs"]
+custom_minimum_size = Vector2(2.08165e-12, 83)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_e21rs")
+
+[node name="Button46" type="Button" parent="Control/Menus/KeywordsMenu/Control/ScrollContainer/Songs"]
+custom_minimum_size = Vector2(2.08165e-12, 83)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_e21rs")
+
+[node name="Button47" type="Button" parent="Control/Menus/KeywordsMenu/Control/ScrollContainer/Songs"]
+custom_minimum_size = Vector2(2.08165e-12, 83)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_e21rs")
+
+[node name="Button48" type="Button" parent="Control/Menus/KeywordsMenu/Control/ScrollContainer/Songs"]
+custom_minimum_size = Vector2(2.08165e-12, 83)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_e21rs")
+
+[node name="Button49" type="Button" parent="Control/Menus/KeywordsMenu/Control/ScrollContainer/Songs"]
+custom_minimum_size = Vector2(2.08165e-12, 83)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_e21rs")
+
+[node name="Button50" type="Button" parent="Control/Menus/KeywordsMenu/Control/ScrollContainer/Songs"]
+custom_minimum_size = Vector2(2.08165e-12, 83)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_e21rs")
+
 [node name="ColorRect" type="ColorRect" parent="Control/Menus/KeywordsMenu/Control"]
 layout_mode = 0
 offset_top = 85.0
@@ -174,6 +375,7 @@ layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
+script = ExtResource("3_btya1")
 
 [node name="ScrollContainer" type="ScrollContainer" parent="Control/Menus/MyTunesMenu/Control"]
 layout_mode = 0
@@ -186,6 +388,7 @@ custom_minimum_size = Vector2(2.08165e-12, 2.08165e-12)
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_constants/separation = 1
+script = ExtResource("5_lkohk")
 
 [node name="Button" type="Button" parent="Control/Menus/MyTunesMenu/Control/ScrollContainer/Songs"]
 custom_minimum_size = Vector2(2.08165e-12, 83)
@@ -233,6 +436,206 @@ layout_mode = 2
 theme_override_styles/normal = SubResource("StyleBoxFlat_e21rs")
 
 [node name="Button10" type="Button" parent="Control/Menus/MyTunesMenu/Control/ScrollContainer/Songs"]
+custom_minimum_size = Vector2(2.08165e-12, 83)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_e21rs")
+
+[node name="Button11" type="Button" parent="Control/Menus/MyTunesMenu/Control/ScrollContainer/Songs"]
+custom_minimum_size = Vector2(2.08165e-12, 83)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_e21rs")
+
+[node name="Button12" type="Button" parent="Control/Menus/MyTunesMenu/Control/ScrollContainer/Songs"]
+custom_minimum_size = Vector2(2.08165e-12, 83)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_e21rs")
+
+[node name="Button13" type="Button" parent="Control/Menus/MyTunesMenu/Control/ScrollContainer/Songs"]
+custom_minimum_size = Vector2(2.08165e-12, 83)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_e21rs")
+
+[node name="Button14" type="Button" parent="Control/Menus/MyTunesMenu/Control/ScrollContainer/Songs"]
+custom_minimum_size = Vector2(2.08165e-12, 83)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_e21rs")
+
+[node name="Button15" type="Button" parent="Control/Menus/MyTunesMenu/Control/ScrollContainer/Songs"]
+custom_minimum_size = Vector2(2.08165e-12, 83)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_e21rs")
+
+[node name="Button16" type="Button" parent="Control/Menus/MyTunesMenu/Control/ScrollContainer/Songs"]
+custom_minimum_size = Vector2(2.08165e-12, 83)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_e21rs")
+
+[node name="Button17" type="Button" parent="Control/Menus/MyTunesMenu/Control/ScrollContainer/Songs"]
+custom_minimum_size = Vector2(2.08165e-12, 83)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_e21rs")
+
+[node name="Button18" type="Button" parent="Control/Menus/MyTunesMenu/Control/ScrollContainer/Songs"]
+custom_minimum_size = Vector2(2.08165e-12, 83)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_e21rs")
+
+[node name="Button19" type="Button" parent="Control/Menus/MyTunesMenu/Control/ScrollContainer/Songs"]
+custom_minimum_size = Vector2(2.08165e-12, 83)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_e21rs")
+
+[node name="Button20" type="Button" parent="Control/Menus/MyTunesMenu/Control/ScrollContainer/Songs"]
+custom_minimum_size = Vector2(2.08165e-12, 83)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_e21rs")
+
+[node name="Button21" type="Button" parent="Control/Menus/MyTunesMenu/Control/ScrollContainer/Songs"]
+custom_minimum_size = Vector2(2.08165e-12, 83)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_e21rs")
+
+[node name="Button22" type="Button" parent="Control/Menus/MyTunesMenu/Control/ScrollContainer/Songs"]
+custom_minimum_size = Vector2(2.08165e-12, 83)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_e21rs")
+
+[node name="Button23" type="Button" parent="Control/Menus/MyTunesMenu/Control/ScrollContainer/Songs"]
+custom_minimum_size = Vector2(2.08165e-12, 83)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_e21rs")
+
+[node name="Button24" type="Button" parent="Control/Menus/MyTunesMenu/Control/ScrollContainer/Songs"]
+custom_minimum_size = Vector2(2.08165e-12, 83)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_e21rs")
+
+[node name="Button25" type="Button" parent="Control/Menus/MyTunesMenu/Control/ScrollContainer/Songs"]
+custom_minimum_size = Vector2(2.08165e-12, 83)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_e21rs")
+
+[node name="Button26" type="Button" parent="Control/Menus/MyTunesMenu/Control/ScrollContainer/Songs"]
+custom_minimum_size = Vector2(2.08165e-12, 83)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_e21rs")
+
+[node name="Button27" type="Button" parent="Control/Menus/MyTunesMenu/Control/ScrollContainer/Songs"]
+custom_minimum_size = Vector2(2.08165e-12, 83)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_e21rs")
+
+[node name="Button28" type="Button" parent="Control/Menus/MyTunesMenu/Control/ScrollContainer/Songs"]
+custom_minimum_size = Vector2(2.08165e-12, 83)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_e21rs")
+
+[node name="Button29" type="Button" parent="Control/Menus/MyTunesMenu/Control/ScrollContainer/Songs"]
+custom_minimum_size = Vector2(2.08165e-12, 83)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_e21rs")
+
+[node name="Button30" type="Button" parent="Control/Menus/MyTunesMenu/Control/ScrollContainer/Songs"]
+custom_minimum_size = Vector2(2.08165e-12, 83)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_e21rs")
+
+[node name="Button31" type="Button" parent="Control/Menus/MyTunesMenu/Control/ScrollContainer/Songs"]
+custom_minimum_size = Vector2(2.08165e-12, 83)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_e21rs")
+
+[node name="Button32" type="Button" parent="Control/Menus/MyTunesMenu/Control/ScrollContainer/Songs"]
+custom_minimum_size = Vector2(2.08165e-12, 83)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_e21rs")
+
+[node name="Button33" type="Button" parent="Control/Menus/MyTunesMenu/Control/ScrollContainer/Songs"]
+custom_minimum_size = Vector2(2.08165e-12, 83)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_e21rs")
+
+[node name="Button34" type="Button" parent="Control/Menus/MyTunesMenu/Control/ScrollContainer/Songs"]
+custom_minimum_size = Vector2(2.08165e-12, 83)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_e21rs")
+
+[node name="Button35" type="Button" parent="Control/Menus/MyTunesMenu/Control/ScrollContainer/Songs"]
+custom_minimum_size = Vector2(2.08165e-12, 83)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_e21rs")
+
+[node name="Button36" type="Button" parent="Control/Menus/MyTunesMenu/Control/ScrollContainer/Songs"]
+custom_minimum_size = Vector2(2.08165e-12, 83)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_e21rs")
+
+[node name="Button37" type="Button" parent="Control/Menus/MyTunesMenu/Control/ScrollContainer/Songs"]
+custom_minimum_size = Vector2(2.08165e-12, 83)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_e21rs")
+
+[node name="Button38" type="Button" parent="Control/Menus/MyTunesMenu/Control/ScrollContainer/Songs"]
+custom_minimum_size = Vector2(2.08165e-12, 83)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_e21rs")
+
+[node name="Button39" type="Button" parent="Control/Menus/MyTunesMenu/Control/ScrollContainer/Songs"]
+custom_minimum_size = Vector2(2.08165e-12, 83)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_e21rs")
+
+[node name="Button40" type="Button" parent="Control/Menus/MyTunesMenu/Control/ScrollContainer/Songs"]
+custom_minimum_size = Vector2(2.08165e-12, 83)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_e21rs")
+
+[node name="Button41" type="Button" parent="Control/Menus/MyTunesMenu/Control/ScrollContainer/Songs"]
+custom_minimum_size = Vector2(2.08165e-12, 83)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_e21rs")
+
+[node name="Button42" type="Button" parent="Control/Menus/MyTunesMenu/Control/ScrollContainer/Songs"]
+custom_minimum_size = Vector2(2.08165e-12, 83)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_e21rs")
+
+[node name="Button43" type="Button" parent="Control/Menus/MyTunesMenu/Control/ScrollContainer/Songs"]
+custom_minimum_size = Vector2(2.08165e-12, 83)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_e21rs")
+
+[node name="Button44" type="Button" parent="Control/Menus/MyTunesMenu/Control/ScrollContainer/Songs"]
+custom_minimum_size = Vector2(2.08165e-12, 83)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_e21rs")
+
+[node name="Button45" type="Button" parent="Control/Menus/MyTunesMenu/Control/ScrollContainer/Songs"]
+custom_minimum_size = Vector2(2.08165e-12, 83)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_e21rs")
+
+[node name="Button46" type="Button" parent="Control/Menus/MyTunesMenu/Control/ScrollContainer/Songs"]
+custom_minimum_size = Vector2(2.08165e-12, 83)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_e21rs")
+
+[node name="Button47" type="Button" parent="Control/Menus/MyTunesMenu/Control/ScrollContainer/Songs"]
+custom_minimum_size = Vector2(2.08165e-12, 83)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_e21rs")
+
+[node name="Button48" type="Button" parent="Control/Menus/MyTunesMenu/Control/ScrollContainer/Songs"]
+custom_minimum_size = Vector2(2.08165e-12, 83)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_e21rs")
+
+[node name="Button49" type="Button" parent="Control/Menus/MyTunesMenu/Control/ScrollContainer/Songs"]
+custom_minimum_size = Vector2(2.08165e-12, 83)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_e21rs")
+
+[node name="Button50" type="Button" parent="Control/Menus/MyTunesMenu/Control/ScrollContainer/Songs"]
 custom_minimum_size = Vector2(2.08165e-12, 83)
 layout_mode = 2
 theme_override_styles/normal = SubResource("StyleBoxFlat_e21rs")
@@ -534,6 +937,7 @@ text = "More
 flat = true
 
 [connection signal="text_submitted" from="Control/Menus/KeywordsMenu/Control/ColorRect/SearchBar" to="Control/Menus/KeywordsMenu/Control" method="_on_search_bar_text_submitted"]
+[connection signal="text_submitted" from="Control/Menus/MyTunesMenu/Control/ColorRect/SearchBar" to="Control/Menus/MyTunesMenu/Control" method="_on_search_bar_text_submitted"]
 [connection signal="pressed" from="Control/UI/MenuButtons/ColorRect2/HBoxContainer/Record" to="Control" method="_on_record_pressed"]
 [connection signal="pressed" from="Control/UI/MenuButtons/ColorRect2/HBoxContainer/Keywords" to="Control" method="_on_keywords_pressed"]
 [connection signal="pressed" from="Control/UI/MenuButtons/ColorRect2/HBoxContainer/MyTunes" to="Control" method="_on_my_tunes_pressed"]

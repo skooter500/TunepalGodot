@@ -8,7 +8,6 @@ var preferencesMenu
 var moreMenu
 
 func _ready():
-	OS.low_processor_usage_mode = OS.get_name() != "Android"
 	menus = $Menus.get_children()
 	recordMenu = $Menus/RecordMenu
 	keywordsMenu = $Menus/KeywordsMenu
