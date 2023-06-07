@@ -1,12 +1,19 @@
+<<<<<<< HEAD
 [gd_scene load_steps=11 format=3 uid="uid://dexlkh1cvmqhe"]
+=======
+[gd_scene load_steps=12 format=3 uid="uid://dexlkh1cvmqhe"]
+>>>>>>> 2baebfe95c1673279bfd3e8d4b79a6348c56f52b
 
 [ext_resource type="Texture2D" uid="uid://c1h80phoadlat" path="res://tunepal.png" id="1_gqfjs"]
 [ext_resource type="Script" path="res://Scripts/menu.gd" id="1_qhsuj"]
 [ext_resource type="ButtonGroup" uid="uid://b6m85x57xm6cw" path="res://Scenes/button_group.tres" id="2_ltoqc"]
+[ext_resource type="Script" path="res://Scripts/record.gd" id="2_o0meu"]
 [ext_resource type="Script" path="res://Scripts/searchbar_mytunes.gd" id="3_btya1"]
-[ext_resource type="Script" path="res://Scenes/searchbar_keywords.gd" id="3_mbls2"]
+[ext_resource type="Script" path="res://Scripts/searchbar_keywords.gd" id="4_d1io7"]
 [ext_resource type="Script" path="res://Scripts/keywords_songs.gd" id="4_wpkyc"]
 [ext_resource type="Script" path="res://Scripts/mytunes_songs.gd" id="5_lkohk"]
+
+[sub_resource type="AudioStreamMicrophone" id="AudioStreamMicrophone_e84lj"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_e21rs"]
 bg_color = Color(1, 1, 1, 1)
@@ -31,18 +38,39 @@ offset_right = 40.0
 offset_bottom = 40.0
 
 [node name="RecordMenu" type="Node2D" parent="Control/Menus"]
-visible = false
 
-[node name="ColorRect" type="ColorRect" parent="Control/Menus/RecordMenu"]
-custom_minimum_size = Vector2(576, 1024)
+[node name="Control" type="Control" parent="Control/Menus/RecordMenu"]
+layout_mode = 3
+anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
+script = ExtResource("2_o0meu")
+
+[node name="ColorRect" type="ColorRect" parent="Control/Menus/RecordMenu/Control"]
+custom_minimum_size = Vector2(576, 1024)
+layout_mode = 0
+offset_right = 576.0
+offset_bottom = 1024.0
 color = Color(0, 0, 0, 1)
 
-[node name="Tunepal" type="Sprite2D" parent="Control/Menus/RecordMenu"]
+[node name="Tunepal" type="Sprite2D" parent="Control/Menus/RecordMenu/Control"]
 position = Vector2(288, 300)
 scale = Vector2(1.3, 1.3)
 texture = ExtResource("1_gqfjs")
+
+[node name="Record" type="Button" parent="Control/Menus/RecordMenu/Control"]
+layout_mode = 0
+offset_left = 188.0
+offset_top = 700.0
+offset_right = 388.0
+offset_bottom = 900.0
+text = "Record
+"
+
+[node name="AudioStreamRecord" type="AudioStreamPlayer" parent="Control/Menus/RecordMenu/Control"]
+stream = SubResource("AudioStreamMicrophone_e84lj")
+autoplay = true
+bus = &"Record"
 
 [node name="KeywordsMenu" type="Node2D" parent="Control/Menus"]
 visible = false
@@ -66,7 +94,7 @@ layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
-script = ExtResource("3_mbls2")
+script = ExtResource("4_d1io7")
 
 [node name="ScrollContainer" type="ScrollContainer" parent="Control/Menus/KeywordsMenu/Control"]
 layout_mode = 0
@@ -669,6 +697,7 @@ placeholder_text = "Search"
 alignment = 1
 
 [node name="PreferencesMenu" type="Node2D" parent="Control/Menus"]
+visible = false
 
 [node name="ColorRect" type="ColorRect" parent="Control/Menus/PreferencesMenu"]
 offset_right = 576.0
@@ -1116,6 +1145,7 @@ text = "More
 "
 flat = true
 
+[connection signal="pressed" from="Control/Menus/RecordMenu/Control/Record" to="Control/Menus/RecordMenu/Control" method="_on_record_pressed"]
 [connection signal="text_submitted" from="Control/Menus/KeywordsMenu/Control/ColorRect/SearchBar" to="Control/Menus/KeywordsMenu/Control" method="_on_search_bar_text_submitted"]
 [connection signal="text_submitted" from="Control/Menus/MyTunesMenu/Control/ColorRect/SearchBar" to="Control/Menus/MyTunesMenu/Control" method="_on_search_bar_text_submitted"]
 [connection signal="pressed" from="Control/UI/MenuButtons/ColorRect2/HBoxContainer/Record" to="Control" method="_on_record_pressed"]
