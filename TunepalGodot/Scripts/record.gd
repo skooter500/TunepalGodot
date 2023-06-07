@@ -15,8 +15,12 @@ func start_recording():
 func stop_recording():
 	record_effect.set_recording_active(false)
 	recording = record_effect.get_recording()
-	for i in recording.data:
-		print(i)
+
+	var array = recording.data.to_float32_array()
+	print(array)
+	var result = FFT.fft(array)
+	#print("RESULTS SIZE: ", result.size())
+	#print(result)
 
 func _on_record_pressed():
 	if record_effect.is_recording_active():

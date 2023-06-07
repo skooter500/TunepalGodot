@@ -20,6 +20,10 @@ config/icon="res://icon.svg"
 driver/enable_input=true
 driver/mix_rate=40100
 
+[autoload]
+
+FFT="*res://addons/godot fft/Fft.gd"
+
 [display]
 
 window/size/viewport_width=576
@@ -31,6 +35,14 @@ window/handheld/orientation=1
 [dotnet]
 
 project/assembly_name="TunepalGodot"
+
+[editor]
+
+version_control/autoload_on_startup=true
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/Godot FFT/plugin.cfg", "res://addons/godot fft/plugin.cfg")
 
 [rendering]
 
