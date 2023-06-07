@@ -1,8 +1,4 @@
-[<<<<<<< HEAD
-[gd_scene load_steps=11 format=3 uid="uid://dexlkh1cvmqhe"]
-=======
-[gd_scene load_steps=12 format=3 uid="uid://dexlkh1cvmqhe"]
->>>>>>> 2baebfe95c1673279bfd3e8d4b79a6348c56f52b
+[gd_scene load_steps=13 format=3 uid="uid://dexlkh1cvmqhe"]
 
 [ext_resource type="Texture2D" uid="uid://c1h80phoadlat" path="res://tunepal.png" id="1_gqfjs"]
 [ext_resource type="Script" path="res://Scripts/menu.gd" id="1_qhsuj"]
