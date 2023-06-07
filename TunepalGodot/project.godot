@@ -15,6 +15,11 @@ run/main_scene="res://Scenes/tune_pal.tscn"
 config/features=PackedStringArray("4.0", "Forward Plus")
 config/icon="res://icon.svg"
 
+[audio]
+
+driver/enable_input=true
+driver/mix_rate=40100
+
 [display]
 
 window/size/viewport_width=576
