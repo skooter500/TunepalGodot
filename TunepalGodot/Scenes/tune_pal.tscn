@@ -34,6 +34,7 @@ offset_right = 40.0
 offset_bottom = 40.0
 
 [node name="RecordMenu" type="Node2D" parent="Control/Menus"]
+visible = false
 
 [node name="Control" type="Control" parent="Control/Menus/RecordMenu"]
 layout_mode = 3
@@ -693,7 +694,6 @@ placeholder_text = "Search"
 alignment = 1
 
 [node name="PreferencesMenu" type="Node2D" parent="Control/Menus"]
-visible = false
 
 [node name="ColorRect" type="ColorRect" parent="Control/Menus/PreferencesMenu"]
 offset_right = 576.0
@@ -732,7 +732,8 @@ theme_override_constants/separation = 1
 
 [node name="Find" type="Label" parent="Control/Menus/PreferencesMenu/Control/HBoxContainer/ScrollContainer/Songs"]
 layout_mode = 2
-text = "Find"
+text = "  Find"
+uppercase = true
 
 [node name="Transcription Findamental" type="Button" parent="Control/Menus/PreferencesMenu/Control/HBoxContainer/ScrollContainer/Songs"]
 custom_minimum_size = Vector2(0, 40)
@@ -844,6 +845,7 @@ icon = SubResource("ViewportTexture_qfxdp")
 layout_mode = 2
 text = "  My Tunes
 "
+uppercase = true
 
 [node name="Email All Tunes" type="Button" parent="Control/Menus/PreferencesMenu/Control/HBoxContainer/ScrollContainer/Songs"]
 custom_minimum_size = Vector2(0, 40)
@@ -890,8 +892,9 @@ alignment = 0
 
 [node name="PLAYBACK" type="Label" parent="Control/Menus/PreferencesMenu/Control/HBoxContainer/ScrollContainer/Songs"]
 layout_mode = 2
-text = "  PLAYBACK
+text = "  Playback
 "
+uppercase = true
 
 [node name="Melody" type="Button" parent="Control/Menus/PreferencesMenu/Control/HBoxContainer/ScrollContainer/Songs"]
 custom_minimum_size = Vector2(0, 40)
