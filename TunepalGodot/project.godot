@@ -37,7 +37,7 @@ version_control/autoload_on_startup=true
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/Godot FFT/plugin.cfg", "res://addons/godot fft/plugin.cfg")
+enabled=PackedStringArray()
 
 [rendering]
 

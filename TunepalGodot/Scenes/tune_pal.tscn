@@ -34,7 +34,6 @@ offset_right = 40.0
 offset_bottom = 40.0
 
 [node name="RecordMenu" type="Node2D" parent="Control/Menus"]
-visible = false
 
 [node name="Control" type="Control" parent="Control/Menus/RecordMenu"]
 layout_mode = 3
@@ -68,6 +67,9 @@ text = "Record
 stream = SubResource("AudioStreamMicrophone_e84lj")
 autoplay = true
 bus = &"Record"
+
+[node name="Timer" type="Timer" parent="Control/Menus/RecordMenu/Control"]
+one_shot = true
 
 [node name="KeywordsMenu" type="Node2D" parent="Control/Menus"]
 visible = false
@@ -694,6 +696,7 @@ placeholder_text = "Search"
 alignment = 1
 
 [node name="PreferencesMenu" type="Node2D" parent="Control/Menus"]
+visible = false
 
 [node name="ColorRect" type="ColorRect" parent="Control/Menus/PreferencesMenu"]
 offset_right = 576.0
@@ -1145,6 +1148,7 @@ text = "More
 flat = true
 
 [connection signal="pressed" from="Control/Menus/RecordMenu/Control/Record" to="Control/Menus/RecordMenu/Control" method="_on_record_pressed"]
+[connection signal="timeout" from="Control/Menus/RecordMenu/Control/Timer" to="Control/Menus/RecordMenu/Control" method="_on_timer_timeout"]
 [connection signal="text_submitted" from="Control/Menus/KeywordsMenu/Control/ColorRect/SearchBar" to="Control/Menus/KeywordsMenu/Control" method="_on_search_bar_text_submitted"]
 [connection signal="text_submitted" from="Control/Menus/MyTunesMenu/Control/ColorRect/SearchBar" to="Control/Menus/MyTunesMenu/Control" method="_on_search_bar_text_submitted"]
 [connection signal="pressed" from="Control/UI/MenuButtons/ColorRect2/HBoxContainer/Record" to="Control" method="_on_record_pressed"]
