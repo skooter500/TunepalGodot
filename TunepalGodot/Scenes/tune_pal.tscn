@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://dexlkh1cvmqhe"]
+[gd_scene load_steps=14 format=3 uid="uid://dexlkh1cvmqhe"]
 
 [ext_resource type="Texture2D" uid="uid://c1h80phoadlat" path="res://tunepal.png" id="1_gqfjs"]
 [ext_resource type="Script" path="res://Scripts/menu.gd" id="1_qhsuj"]
@@ -8,6 +8,7 @@
 [ext_resource type="Script" path="res://Scripts/searchbar_keywords.gd" id="4_d1io7"]
 [ext_resource type="Script" path="res://Scripts/keywords_songs.gd" id="4_wpkyc"]
 [ext_resource type="Script" path="res://Scripts/mytunes_songs.gd" id="5_lkohk"]
+[ext_resource type="Script" path="res://Scripts/PreferencesMenu.gd" id="8_8t5se"]
 
 [sub_resource type="AudioStreamMicrophone" id="AudioStreamMicrophone_e84lj"]
 
@@ -20,6 +21,7 @@ bg_color = Color(1, 1, 1, 1)
 [sub_resource type="ViewportTexture" id="ViewportTexture_qfxdp"]
 
 [node name="Tunepal" type="Node2D"]
+metadata/_edit_horizontal_guides_ = [-155.0]
 
 [node name="Control" type="Control" parent="."]
 layout_mode = 3
@@ -694,6 +696,7 @@ placeholder_text = "Search"
 alignment = 1
 
 [node name="PreferencesMenu" type="Node2D" parent="Control/Menus"]
+script = ExtResource("8_8t5se")
 
 [node name="ColorRect" type="ColorRect" parent="Control/Menus/PreferencesMenu"]
 offset_right = 576.0
@@ -728,11 +731,14 @@ layout_mode = 2
 [node name="Songs" type="VBoxContainer" parent="Control/Menus/PreferencesMenu/Control/HBoxContainer/ScrollContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
+size_flags_vertical = 3
 theme_override_constants/separation = 1
 
 [node name="Find" type="Label" parent="Control/Menus/PreferencesMenu/Control/HBoxContainer/ScrollContainer/Songs"]
+custom_minimum_size = Vector2(0, 40)
 layout_mode = 2
 text = "  Find"
+vertical_alignment = 1
 uppercase = true
 
 [node name="Transcription Findamental" type="Button" parent="Control/Menus/PreferencesMenu/Control/HBoxContainer/ScrollContainer/Songs"]
@@ -836,15 +842,22 @@ text = "  Countdown"
 alignment = 0
 
 [node name="Animate" type="CheckButton" parent="Control/Menus/PreferencesMenu/Control/HBoxContainer/ScrollContainer/Songs"]
+custom_minimum_size = Vector2(0, 40)
 layout_mode = 2
 button_pressed = true
 text = "Animate"
 icon = SubResource("ViewportTexture_qfxdp")
 
+[node name="HBoxContainer2" type="HBoxContainer" parent="Control/Menus/PreferencesMenu/Control/HBoxContainer/ScrollContainer/Songs"]
+layout_mode = 2
+size_flags_vertical = 3
+
 [node name="My Tunes" type="Label" parent="Control/Menus/PreferencesMenu/Control/HBoxContainer/ScrollContainer/Songs"]
+custom_minimum_size = Vector2(0, 40)
 layout_mode = 2
 text = "  My Tunes
 "
+vertical_alignment = 1
 uppercase = true
 
 [node name="Email All Tunes" type="Button" parent="Control/Menus/PreferencesMenu/Control/HBoxContainer/ScrollContainer/Songs"]
@@ -890,10 +903,16 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_e21rs")
 text = "  Delete All Tunes  "
 alignment = 0
 
+[node name="HBoxContainer3" type="HBoxContainer" parent="Control/Menus/PreferencesMenu/Control/HBoxContainer/ScrollContainer/Songs"]
+layout_mode = 2
+size_flags_vertical = 3
+
 [node name="PLAYBACK" type="Label" parent="Control/Menus/PreferencesMenu/Control/HBoxContainer/ScrollContainer/Songs"]
+custom_minimum_size = Vector2(0, 40)
 layout_mode = 2
 text = "  Playback
 "
+vertical_alignment = 1
 uppercase = true
 
 [node name="Melody" type="Button" parent="Control/Menus/PreferencesMenu/Control/HBoxContainer/ScrollContainer/Songs"]
@@ -940,41 +959,103 @@ alignment = 0
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Control/Menus/PreferencesMenu/Control/HBoxContainer/ScrollContainer/Songs"]
 layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 3
+theme_override_constants/separation = 5
 
 [node name="Speed2" type="Label" parent="Control/Menus/PreferencesMenu/Control/HBoxContainer/ScrollContainer/Songs/HBoxContainer"]
-custom_minimum_size = Vector2(200, 30)
+custom_minimum_size = Vector2(240, 30)
 layout_mode = 2
 size_flags_horizontal = 4
-text = "Speed:"
-horizontal_alignment = 1
+text = "  Speed:"
 vertical_alignment = 1
 
 [node name="Speed" type="HSlider" parent="Control/Menus/PreferencesMenu/Control/HBoxContainer/ScrollContainer/Songs/HBoxContainer"]
 custom_minimum_size = Vector2(300, 40)
 layout_mode = 2
+size_flags_vertical = 1
 
-[node name="Button10" type="Button" parent="Control/Menus/PreferencesMenu/Control/HBoxContainer/ScrollContainer/Songs"]
-custom_minimum_size = Vector2(2.08165e-12, 83)
+[node name="Transpose by" type="Button" parent="Control/Menus/PreferencesMenu/Control/HBoxContainer/ScrollContainer/Songs"]
+custom_minimum_size = Vector2(0, 40)
 layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0.207843, 0.768627, 0.215686, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_normal_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_disabled_color = Color(0, 0, 0, 1)
 theme_override_styles/normal = SubResource("StyleBoxFlat_e21rs")
+text = "  Transpose by
+"
+alignment = 0
 
-[node name="Label3" type="Label" parent="Control/Menus/PreferencesMenu/Control/HBoxContainer/ScrollContainer/Songs"]
+[node name="HBoxContainer4" type="HBoxContainer" parent="Control/Menus/PreferencesMenu/Control/HBoxContainer/ScrollContainer/Songs"]
 layout_mode = 2
+size_flags_vertical = 3
 
-[node name="Button11" type="Button" parent="Control/Menus/PreferencesMenu/Control/HBoxContainer/ScrollContainer/Songs"]
-custom_minimum_size = Vector2(2.08165e-12, 83)
+[node name="User Interface" type="Label" parent="Control/Menus/PreferencesMenu/Control/HBoxContainer/ScrollContainer/Songs"]
+custom_minimum_size = Vector2(0, 40)
 layout_mode = 2
+size_flags_vertical = 1
+text = "  User Interface"
+vertical_alignment = 1
+uppercase = true
+
+[node name="Language" type="Button" parent="Control/Menus/PreferencesMenu/Control/HBoxContainer/ScrollContainer/Songs"]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0.207843, 0.768627, 0.215686, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_normal_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_disabled_color = Color(0, 0, 0, 1)
 theme_override_styles/normal = SubResource("StyleBoxFlat_e21rs")
+text = "  Language"
+alignment = 0
 
-[node name="Label4" type="Label" parent="Control/Menus/PreferencesMenu/Control/HBoxContainer/ScrollContainer/Songs"]
+[node name="HBoxContainer5" type="HBoxContainer" parent="Control/Menus/PreferencesMenu/Control/HBoxContainer/ScrollContainer/Songs"]
 layout_mode = 2
+size_flags_vertical = 3
 
-[node name="Button12" type="Button" parent="Control/Menus/PreferencesMenu/Control/HBoxContainer/ScrollContainer/Songs"]
-custom_minimum_size = Vector2(2.08165e-12, 83)
+[node name="Development" type="Label" parent="Control/Menus/PreferencesMenu/Control/HBoxContainer/ScrollContainer/Songs"]
+custom_minimum_size = Vector2(0, 40)
 layout_mode = 2
+text = "  Development"
+vertical_alignment = 1
+uppercase = true
+
+[node name="Server" type="Button" parent="Control/Menus/PreferencesMenu/Control/HBoxContainer/ScrollContainer/Songs"]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0.207843, 0.768627, 0.215686, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_normal_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_disabled_color = Color(0, 0, 0, 1)
 theme_override_styles/normal = SubResource("StyleBoxFlat_e21rs")
+text = "  Server"
+alignment = 0
 
 [node name="MoreMenu" type="Node2D" parent="Control/Menus"]
 visible = false

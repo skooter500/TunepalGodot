@@ -43,3 +43,4 @@ func _on_more_pressed():
 	for i in menus:
 		i.visible = false
 	moreMenu.visible = true
+	

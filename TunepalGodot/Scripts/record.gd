@@ -17,7 +17,7 @@ func stop_recording():
 	recording = record_effect.get_recording()
 
 	var array = recording.data.to_float32_array()
-	print(array)
+	print(recording.data)
 	var result = FFT.fft(array)
 	#print("RESULTS SIZE: ", result.size())
 	#print(result)
