@@ -18,13 +18,6 @@ config/icon="res://icon.svg"
 [audio]
 
 driver/enable_input=true
-<<<<<<< HEAD
-
-[autoload]
-
-FFT="*res://addons/godot fft/Fft.gd"
-=======
->>>>>>> bb83067b5d3da8155858ac8b35e5ee960102f7fb
 
 [display]
 
