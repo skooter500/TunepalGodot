@@ -698,11 +698,6 @@ placeholder_text = "Search"
 alignment = 1
 
 [node name="PreferencesMenu" type="Node2D" parent="Control/Menus"]
-<<<<<<< HEAD
-script = ExtResource("8_8t5se")
-=======
-visible = false
->>>>>>> bb83067b5d3da8155858ac8b35e5ee960102f7fb
 
 [node name="ColorRect" type="ColorRect" parent="Control/Menus/PreferencesMenu"]
 offset_right = 576.0
