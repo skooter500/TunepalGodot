@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://dexlkh1cvmqhe"]
+[gd_scene load_steps=13 format=3 uid="uid://dexlkh1cvmqhe"]
 
 [ext_resource type="Texture2D" uid="uid://c1h80phoadlat" path="res://tunepal.png" id="1_gqfjs"]
 [ext_resource type="Script" path="res://Scripts/menu.gd" id="1_qhsuj"]
@@ -8,7 +8,6 @@
 [ext_resource type="Script" path="res://Scripts/searchbar_keywords.gd" id="4_d1io7"]
 [ext_resource type="Script" path="res://Scripts/keywords_songs.gd" id="4_wpkyc"]
 [ext_resource type="Script" path="res://Scripts/mytunes_songs.gd" id="5_lkohk"]
-[ext_resource type="Script" path="res://Scripts/PreferencesMenu.gd" id="8_8t5se"]
 
 [sub_resource type="AudioStreamMicrophone" id="AudioStreamMicrophone_e84lj"]
 
@@ -36,6 +35,7 @@ offset_right = 40.0
 offset_bottom = 40.0
 
 [node name="RecordMenu" type="Node2D" parent="Control/Menus"]
+visible = false
 
 [node name="Control" type="Control" parent="Control/Menus/RecordMenu"]
 layout_mode = 3
