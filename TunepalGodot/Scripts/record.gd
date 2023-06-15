@@ -51,21 +51,9 @@ func start_recording():
 	
 	
 func stop_recording():
-<<<<<<< HEAD
-	record_effect.set_recording_active(false)
-	recording = record_effect.get_recording()
-
-	var array = recording.data.to_float32_array()
-	print(recording.data)
-	var result = FFT.fft(array)
-	#print("RESULTS SIZE: ", result.size())
-	#print(result)
-=======
 	active = false
 	print(frequency_array)
 	record_button.text = "Record"
-	
->>>>>>> bb83067b5d3da8155858ac8b35e5ee960102f7fb
 
 func _on_record_pressed():
 	if !active:
