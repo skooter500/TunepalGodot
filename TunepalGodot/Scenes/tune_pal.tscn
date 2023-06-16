@@ -35,7 +35,6 @@ offset_right = 40.0
 offset_bottom = 40.0
 
 [node name="RecordMenu" type="Node2D" parent="Control/Menus"]
-visible = false
 
 [node name="Control" type="Control" parent="Control/Menus/RecordMenu"]
 layout_mode = 3
@@ -698,6 +697,7 @@ placeholder_text = "Search"
 alignment = 1
 
 [node name="PreferencesMenu" type="Node2D" parent="Control/Menus"]
+visible = false
 
 [node name="MainMenu" type="Node2D" parent="Control/Menus/PreferencesMenu"]
 
