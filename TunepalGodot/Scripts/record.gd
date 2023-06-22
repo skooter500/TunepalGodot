@@ -9,9 +9,19 @@ extends Control
 @onready var note_array = []
 const fund_frequencies = [293.66, 329.63, 369.99, 392.00, 440.00, 493.88, 554.37, 587.33
 			, 659.25, 739.99, 783.99, 880.00, 987.77, 1108.73, 1174.66, 1318.51, 1479.98, 1567.98, 1760.00, 1975.53, 2217.46, 2349.32]
-const spellings = ["D,", "E,", "F,", "G,", "A,", "B,", "C", "D", "E", "F", "G", "A", "B","c", "d", "e", "f", "g", "a", "b", "c'", "d'", "e'", "f'", "g'", "a'", "b'", "c''", "d''"]
+const spellings = ["D", "E", "F", "G", "A", "B", "C", "D", "E", "F", "G", "A", "B", "C", "D", "E", "F", "G", "A", "B", "C", "D", "E", "F", "G", "A", "B", "C", "D"]
 
-func _process(delta):
+@onready var db = SQLite.new()
+@onready var db_name = "res://Database/tunepal.db"
+
+func _ready():
+	db.path = db_name
+	db.open_db()
+	db.read_only = true
+	#db.query("select tuneindex.id as id, tune_type, notation, source.id as sourceid, url, source.source as sourcename, title, alt_title, tunepalid, x, midi_file_name, key_sig from tuneindex, tunekeys, source where tuneindex.source = source.id and tunekeys.tuneid= tuneindex.id order by downloaded desc;")
+	db.query("select tuneindex.id as id, tune_type, notation, source.id as sourceid, url, source.source as sourcename, title, alt_title, search_key from tuneindex, tunekeys, source where tunekeys.tuneid = tuneindex.id and tuneindex.source = source.id;")
+
+func _process(_delta):
 	if timer.get_time_left() > 0:
 		var frequency = 0
 		var big = 0
@@ -54,7 +64,7 @@ func start_recording():
 		stop = false
 		return
 	record_button.text = "Recording..."
-	timer.start(10)
+	timer.start(1)
 	note_array = []
 	
 	
@@ -62,7 +72,49 @@ func stop_recording():
 	active = false
 	print(note_array)
 	record_button.text = "Record"
-
+	var distances = []
+	for song in range(0,db.query_result.size()/1000):
+		var n = note_array.size()
+		var temp = db.query_result[song]["search_key"]
+		var search_key = []
+		for i in temp:
+			search_key.append(i)
+		var m = search_key.size()
+		
+		var p : Array
+		var d : Array
+		for i in range(0,n+1):
+			p.append(0)
+			d.append(0)
+		var _d : Array
+		
+		var t_j
+		
+		var cost
+		
+		for i in range(0,n):
+			p[i] = i
+		for j in range(1,m):
+			t_j = search_key[j-1]
+			d[0] = j
+			for i in range(1,n):
+				if note_array[i-1] == t_j:
+					cost = 0
+				else:
+					cost = 1
+				d[i] = min(min(d[i-1] + 1, p[i] + 1), p[i-1] + cost)
+			_d = p
+			p = d
+			d = _d
+		distances.append({"distance" : p[n-1], "id" : db.query_result[song]["id"]})
+	distances.sort_custom(d_sort)
+	for i in range(0,distances.size()):
+		print(db.query_result[distances[i]["id"]]["title"], " ",distances[i]["distance"])
+	
+static func d_sort(a, b):
+	if a["distance"] < b["distance"]:
+		return true
+	return false
 func _on_record_pressed():
 	if !active:
 		start_recording()
