@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c1h80phoadlat"
-path="res://.godot/imported/tunepal.png-5343cbfd7a32dbcf9f0f884ada31aa3d.ctex"
+uid="uid://ciuejn78iqdma"
+path="res://.godot/imported/Circle Arrows.png-7491ab85f4b13ed6d585fa372ae11f98.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://tunepal.png"
-dest_files=["res://.godot/imported/tunepal.png-5343cbfd7a32dbcf9f0f884ada31aa3d.ctex"]
+source_file="res://Icon Pictures/Circle Arrows.png"
+dest_files=["res://.godot/imported/Circle Arrows.png-7491ab85f4b13ed6d585fa372ae11f98.ctex"]
 
 [params]
 

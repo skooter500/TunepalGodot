@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://beb861lctha2f"
-path="res://.godot/imported/tunepal_appstore.png-3d3b275bdb47604e0d6bdf0948a0825e.ctex"
+path="res://.godot/imported/tunepal_appstore.png-bfd35c77b392f6d6cba3e088c254ae0f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://tunepal_appstore.png"
-dest_files=["res://.godot/imported/tunepal_appstore.png-3d3b275bdb47604e0d6bdf0948a0825e.ctex"]
+source_file="res://Icon Pictures/tunepal_appstore.png"
+dest_files=["res://.godot/imported/tunepal_appstore.png-bfd35c77b392f6d6cba3e088c254ae0f.ctex"]
 
 [params]
 

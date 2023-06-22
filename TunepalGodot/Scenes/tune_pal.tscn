@@ -1,6 +1,6 @@
-[gd_scene load_steps=13 format=3 uid="uid://dexlkh1cvmqhe"]
+[gd_scene load_steps=18 format=3 uid="uid://dexlkh1cvmqhe"]
 
-[ext_resource type="Texture2D" uid="uid://c1h80phoadlat" path="res://tunepal.png" id="1_gqfjs"]
+[ext_resource type="Texture2D" uid="uid://c1h80phoadlat" path="res://Icon Pictures/tunepal.png" id="1_gqfjs"]
 [ext_resource type="Script" path="res://Scripts/menu.gd" id="1_qhsuj"]
 [ext_resource type="ButtonGroup" uid="uid://b6m85x57xm6cw" path="res://Scenes/button_group.tres" id="2_ltoqc"]
 [ext_resource type="Script" path="res://Scripts/record.gd" id="2_o0meu"]
@@ -8,6 +8,11 @@
 [ext_resource type="Script" path="res://Scripts/searchbar_keywords.gd" id="4_d1io7"]
 [ext_resource type="Script" path="res://Scripts/keywords_songs.gd" id="4_wpkyc"]
 [ext_resource type="Script" path="res://Scripts/mytunes_songs.gd" id="5_lkohk"]
+[ext_resource type="Texture2D" uid="uid://ciuejn78iqdma" path="res://Icon Pictures/Circle Arrows.png" id="8_3dypw"]
+[ext_resource type="ButtonGroup" uid="uid://crb2dhi12mxkp" path="res://FundamentalButtonGroup.tres" id="8_7lcto"]
+[ext_resource type="Texture2D" uid="uid://wo3yrh1mjav5" path="res://Icon Pictures/Map Symbol.png" id="9_yffl5"]
+[ext_resource type="Texture2D" uid="uid://hhxi5sl5meko" path="res://Icon Pictures/Help symbol.png" id="10_sp6gv"]
+[ext_resource type="Texture2D" uid="uid://bwhoarolysagy" path="res://Icon Pictures/Facebook symbol.png" id="11_172h4"]
 
 [sub_resource type="AudioStreamMicrophone" id="AudioStreamMicrophone_e84lj"]
 
@@ -850,7 +855,6 @@ icon = SubResource("ViewportTexture_qfxdp")
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="Control/Menus/PreferencesMenu/MainMenu/Control/ScrollContainer/Songs"]
 layout_mode = 2
-size_flags_vertical = 3
 
 [node name="My Tunes" type="Label" parent="Control/Menus/PreferencesMenu/MainMenu/Control/ScrollContainer/Songs"]
 custom_minimum_size = Vector2(0, 40)
@@ -1060,22 +1064,224 @@ alignment = 0
 [node name="FundamentalMenu" type="Node2D" parent="Control/Menus/PreferencesMenu"]
 visible = false
 
-[node name="Control" type="Control" parent="Control/Menus/PreferencesMenu/FundamentalMenu"]
+[node name="ColorRect2" type="ColorRect" parent="Control/Menus/PreferencesMenu/FundamentalMenu"]
+offset_right = 576.0
+offset_bottom = 85.0
+
+[node name="Label" type="Label" parent="Control/Menus/PreferencesMenu/FundamentalMenu/ColorRect2"]
+layout_mode = 0
+offset_right = 576.0
+offset_bottom = 85.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 27
+text = "Fundamental Menu"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Back to Preferences" type="Button" parent="Control/Menus/PreferencesMenu/FundamentalMenu/ColorRect2"]
+use_parent_material = true
+layout_mode = 0
+offset_right = 105.0
+offset_bottom = 60.0
+theme_override_colors/font_color = Color(0, 0, 1, 1)
+text = "< Prefrences"
+flat = true
+
+[node name="ColorRect" type="ColorRect" parent="Control/Menus/PreferencesMenu/FundamentalMenu/ColorRect2"]
+layout_mode = 0
+offset_top = 85.0
+offset_right = 576.0
+offset_bottom = 1024.0
+
+[node name="Fundamental" type="Control" parent="Control/Menus/PreferencesMenu/FundamentalMenu"]
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="ColorRect" type="ColorRect" parent="Control/Menus/PreferencesMenu/FundamentalMenu/Control"]
+[node name="ScrollContainer" type="ScrollContainer" parent="Control/Menus/PreferencesMenu/FundamentalMenu/Fundamental"]
+custom_minimum_size = Vector2(576, 0)
 layout_mode = 0
+offset_top = 85.0
 offset_right = 576.0
-offset_bottom = 1024.0
+offset_bottom = 939.0
 
-[node name="Back to Preferences" type="Button" parent="Control/Menus/PreferencesMenu/FundamentalMenu/Control"]
-layout_mode = 0
-offset_right = 105.0
-offset_bottom = 47.0
-text = "< Prefrences"
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/Menus/PreferencesMenu/FundamentalMenu/Fundamental/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Bb" type="Button" parent="Control/Menus/PreferencesMenu/FundamentalMenu/Fundamental/ScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0.207843, 0.768627, 0.215686, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_normal_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_disabled_color = Color(0, 0, 0, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_e21rs")
+toggle_mode = true
+button_group = ExtResource("8_7lcto")
+text = "  Bb"
+alignment = 0
+icon_alignment = 2
+expand_icon = true
+
+[node name="B" type="Button" parent="Control/Menus/PreferencesMenu/FundamentalMenu/Fundamental/ScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0.207843, 0.768627, 0.215686, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_normal_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_disabled_color = Color(0, 0, 0, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_e21rs")
+toggle_mode = true
+button_group = ExtResource("8_7lcto")
+text = "  B"
+alignment = 0
+icon_alignment = 2
+expand_icon = true
+
+[node name="C" type="Button" parent="Control/Menus/PreferencesMenu/FundamentalMenu/Fundamental/ScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0.207843, 0.768627, 0.215686, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_normal_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_disabled_color = Color(0, 0, 0, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_e21rs")
+toggle_mode = true
+button_group = ExtResource("8_7lcto")
+text = "  C"
+alignment = 0
+icon_alignment = 2
+expand_icon = true
+
+[node name="D" type="Button" parent="Control/Menus/PreferencesMenu/FundamentalMenu/Fundamental/ScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0.207843, 0.768627, 0.215686, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_normal_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_disabled_color = Color(0, 0, 0, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_e21rs")
+toggle_mode = true
+button_pressed = true
+action_mode = 0
+button_group = ExtResource("8_7lcto")
+text = "  D"
+alignment = 0
+icon_alignment = 2
+expand_icon = true
+
+[node name="Eb" type="Button" parent="Control/Menus/PreferencesMenu/FundamentalMenu/Fundamental/ScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0.207843, 0.768627, 0.215686, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_normal_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_disabled_color = Color(0, 0, 0, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_e21rs")
+toggle_mode = true
+action_mode = 0
+button_group = ExtResource("8_7lcto")
+text = "  Eb
+"
+alignment = 0
+icon_alignment = 2
+expand_icon = true
+
+[node name="F" type="Button" parent="Control/Menus/PreferencesMenu/FundamentalMenu/Fundamental/ScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0.207843, 0.768627, 0.215686, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_normal_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_disabled_color = Color(0, 0, 0, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_e21rs")
+toggle_mode = true
+button_group = ExtResource("8_7lcto")
+text = "  F"
+alignment = 0
+icon_alignment = 2
+expand_icon = true
+
+[node name="G" type="Button" parent="Control/Menus/PreferencesMenu/FundamentalMenu/Fundamental/ScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0.207843, 0.768627, 0.215686, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_normal_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_disabled_color = Color(0, 0, 0, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_e21rs")
+toggle_mode = true
+button_group = ExtResource("8_7lcto")
+text = "  G"
+alignment = 0
+icon_alignment = 2
+expand_icon = true
 
 [node name="MoreMenu" type="Node2D" parent="Control/Menus"]
 visible = false
@@ -1112,30 +1318,74 @@ layout_mode = 2
 size_flags_horizontal = 3
 theme_override_constants/separation = 1
 
-[node name="Button" type="Button" parent="Control/Menus/MoreMenu/Control/ScrollContainer/Songs"]
-custom_minimum_size = Vector2(2.08165e-12, 83)
+[node name="Unsubmitted Tags" type="Button" parent="Control/Menus/MoreMenu/Control/ScrollContainer/Songs"]
+custom_minimum_size = Vector2(0, 83)
 layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0.207843, 0.768627, 0.215686, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 20
 theme_override_styles/normal = SubResource("StyleBoxFlat_e21rs")
+text = "Unsubmitted Tags"
+icon = ExtResource("8_3dypw")
+alignment = 0
+expand_icon = true
 
-[node name="Button2" type="Button" parent="Control/Menus/MoreMenu/Control/ScrollContainer/Songs"]
+[node name="Map" type="Button" parent="Control/Menus/MoreMenu/Control/ScrollContainer/Songs"]
 custom_minimum_size = Vector2(2.08165e-12, 83)
 layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0.207843, 0.768627, 0.215686, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 20
 theme_override_styles/normal = SubResource("StyleBoxFlat_e21rs")
+text = "Map"
+icon = ExtResource("9_yffl5")
+alignment = 0
+expand_icon = true
 
-[node name="Button3" type="Button" parent="Control/Menus/MoreMenu/Control/ScrollContainer/Songs"]
-custom_minimum_size = Vector2(2.08165e-12, 83)
+[node name="Help" type="Button" parent="Control/Menus/MoreMenu/Control/ScrollContainer/Songs"]
+custom_minimum_size = Vector2(0, 83)
 layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0.207843, 0.768627, 0.215686, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 20
 theme_override_styles/normal = SubResource("StyleBoxFlat_e21rs")
+text = "Help"
+icon = ExtResource("10_sp6gv")
+alignment = 0
+expand_icon = true
 
-[node name="Button4" type="Button" parent="Control/Menus/MoreMenu/Control/ScrollContainer/Songs"]
+[node name="Facebook" type="Button" parent="Control/Menus/MoreMenu/Control/ScrollContainer/Songs"]
 custom_minimum_size = Vector2(2.08165e-12, 83)
 layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0.207843, 0.768627, 0.215686, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 20
 theme_override_styles/normal = SubResource("StyleBoxFlat_e21rs")
-
-[node name="Button5" type="Button" parent="Control/Menus/MoreMenu/Control/ScrollContainer/Songs"]
-custom_minimum_size = Vector2(2.08165e-12, 83)
-layout_mode = 2
-theme_override_styles/normal = SubResource("StyleBoxFlat_e21rs")
+text = "Facebook
+"
+icon = ExtResource("11_172h4")
+alignment = 0
+expand_icon = true
 
 [node name="Button6" type="Button" parent="Control/Menus/MoreMenu/Control/ScrollContainer/Songs"]
 custom_minimum_size = Vector2(2.08165e-12, 83)
@@ -1250,7 +1500,7 @@ flat = true
 [connection signal="text_submitted" from="Control/Menus/KeywordsMenu/Control/ColorRect/SearchBar" to="Control/Menus/KeywordsMenu/Control" method="_on_search_bar_text_submitted"]
 [connection signal="text_submitted" from="Control/Menus/MyTunesMenu/Control/ColorRect/SearchBar" to="Control/Menus/MyTunesMenu/Control" method="_on_search_bar_text_submitted"]
 [connection signal="pressed" from="Control/Menus/PreferencesMenu/MainMenu/Control/ScrollContainer/Songs/Transcription Fundamental" to="Control" method="_on_transcription_fundamental_pressed"]
-[connection signal="pressed" from="Control/Menus/PreferencesMenu/FundamentalMenu/Control/Back to Preferences" to="Control" method="_on_back_to_preferences_pressed"]
+[connection signal="pressed" from="Control/Menus/PreferencesMenu/FundamentalMenu/ColorRect2/Back to Preferences" to="Control" method="_on_back_to_preferences_pressed"]
 [connection signal="pressed" from="Control/UI/MenuButtons/ColorRect2/HBoxContainer/Record" to="Control" method="_on_record_pressed"]
 [connection signal="pressed" from="Control/UI/MenuButtons/ColorRect2/HBoxContainer/Keywords" to="Control" method="_on_keywords_pressed"]
 [connection signal="pressed" from="Control/UI/MenuButtons/ColorRect2/HBoxContainer/MyTunes" to="Control" method="_on_my_tunes_pressed"]

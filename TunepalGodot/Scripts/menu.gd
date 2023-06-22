@@ -71,3 +71,5 @@ func _on_back_to_preferences_pressed():
 	preferencesCurrentMenu = preferencesMainMenu
 	preferencesCurrentMenu.visible = true
 	preferencesMenu.visible = true
+	
+	
