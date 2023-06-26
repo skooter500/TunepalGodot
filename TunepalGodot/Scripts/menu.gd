@@ -10,6 +10,7 @@ var preferencesMainMenu
 var preferencesFundamentalMenu
 var preferencesMenus
 var preferencesCurrentMenu
+var resultMenu
 
 func _ready():
 	menus = $Menus.get_children()
@@ -22,6 +23,7 @@ func _ready():
 	moreMenu = $Menus/MoreMenu
 	preferencesFundamentalMenu = $Menus/PreferencesMenu/FundamentalMenu
 	preferencesCurrentMenu = preferencesMainMenu
+	resultMenu = $Menus/ResultMenu
 	for i in menus:
 		i.visible = false
 	recordMenu.visible = true
@@ -71,5 +73,10 @@ func _on_back_to_preferences_pressed():
 	preferencesCurrentMenu = preferencesMainMenu
 	preferencesCurrentMenu.visible = true
 	preferencesMenu.visible = true
+
+func _on_back_to_record_pressed():
+	for i in menus:
+		i.visible = false
+	recordMenu.visible = true
 	
 	

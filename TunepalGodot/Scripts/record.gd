@@ -4,6 +4,8 @@ extends Control
 @onready var spectrum = AudioServer.get_bus_effect_instance(record_bus_index, 0)
 @onready var timer = $Timer
 @onready var record_button = $Record
+@onready var label_box = $LabelBox
+@onready var label = $LabelBox/Label
 @onready var active = false
 @onready var stop = false
 @onready var note_array = []
@@ -13,13 +15,17 @@ const spellings = ["D", "E", "F", "G", "A", "B", "C", "D", "E", "F", "G", "A", "
 
 @onready var db = SQLite.new()
 @onready var db_name = "res://Database/tunepal.db"
+@onready var query_result
 
 func _ready():
+	label_box.visible = false
 	db.path = db_name
 	db.open_db()
 	db.read_only = true
-	#db.query("select tuneindex.id as id, tune_type, notation, source.id as sourceid, url, source.source as sourcename, title, alt_title, tunepalid, x, midi_file_name, key_sig from tuneindex, tunekeys, source where tuneindex.source = source.id and tunekeys.tuneid= tuneindex.id order by downloaded desc;")
-	db.query("select tuneindex.id as id, tune_type, notation, source.id as sourceid, url, source.source as sourcename, title, alt_title, search_key from tuneindex, tunekeys, source where tunekeys.tuneid = tuneindex.id and tuneindex.source = source.id;")
+	db.query("select tuneindex.id as id, tune_type, notation, source.id as sourceid, url, source.source as sourcename, title, alt_title, tunepalid, x, midi_file_name, key_sig, search_key from tuneindex, tunekeys, source where tunekeys.tuneid = tuneindex.id and tuneindex.source = source.id;")
+	await get_tree().create_timer(.5).timeout
+	query_result = db.query_result
+	db.close_db()
 
 func _process(_delta):
 	if timer.get_time_left() > 0:
@@ -64,62 +70,61 @@ func start_recording():
 		stop = false
 		return
 	record_button.text = "Recording..."
-	timer.start(1)
+	timer.start(10)
 	note_array = []
 	
 	
 func stop_recording():
 	active = false
 	print(note_array)
-	record_button.text = "Record"
 	var distances = []
-	for song in range(0,db.query_result.size()/1000):
-		var n = note_array.size()
-		var temp = db.query_result[song]["search_key"]
+	for id in range(0,50):
+		var temp = query_result[id]["search_key"]
 		var search_key = []
 		for i in temp:
 			search_key.append(i)
-		var m = search_key.size()
-		
-		var p : Array
-		var d : Array
-		for i in range(0,n+1):
-			p.append(0)
-			d.append(0)
-		var _d : Array
-		
-		var t_j
-		
-		var cost
-		
-		for i in range(0,n):
-			p[i] = i
-		for j in range(1,m):
-			t_j = search_key[j-1]
-			d[0] = j
-			for i in range(1,n):
-				if note_array[i-1] == t_j:
+		var l1 = note_array.size()
+		var l2 = search_key.size()
+		var matrix : Array[Array]
+		for i in range(0,l1+1):
+			matrix.append([i])
+		for i in range(1,l2+1):
+			matrix[0].append(i)
+		var cost = 0
+		for i in range(1, l1+1):
+			var c1 = note_array[i-1]
+			for j in range(1, l2+1):
+				var c2 = search_key[j-1]
+				if c1 == c2:
 					cost = 0
 				else:
 					cost = 1
-				d[i] = min(min(d[i-1] + 1, p[i] + 1), p[i-1] + cost)
-			_d = p
-			p = d
-			d = _d
-		distances.append({"distance" : p[n-1], "id" : db.query_result[song]["id"]})
+				matrix[i].append(min(matrix[i-1][j]+1, matrix[i][j-1]+1, matrix[i-1][j-1]+cost))
+		distances.append({"distance" : matrix[l1][l2], "id" : db.query_result[id]["id"], "title" : db.query_result[id]["title"]})
 	distances.sort_custom(d_sort)
 	for i in range(0,distances.size()):
-		print(db.query_result[distances[i]["id"]]["title"], " ",distances[i]["distance"])
+		print(i+1, " ", distances[i]["title"], " ",distances[i]["distance"])
+	get_node("../../ResultMenu").visible = true
+	get_node("../").visible = false
+	get_node("../../ResultMenu/Control/ScrollContainer/Songs").populate(distances)
+	record_button.text = "Record"
+	#label.text = distances[0]["title"]
+	#label_box.visible = true
 	
 static func d_sort(a, b):
 	if a["distance"] < b["distance"]:
 		return true
 	return false
+
 func _on_record_pressed():
 	if !active:
 		start_recording()
+		label_box.visible = false
 	else:
 		stop = true
 
 func _on_timer_timeout():
+	record_button.text = "Processing..."
+	await get_tree().create_timer(.5).timeout
 	stop_recording()
+	
