@@ -8,7 +8,7 @@ extends Control
 @onready var label = $LabelBox/Label
 @onready var active = false
 @onready var stop = false
-@onready var note_array = []
+@onready var note_string : String
 const fund_frequencies = [293.66, 329.63, 369.99, 392.00, 440.00, 493.88, 554.37, 587.33
 			, 659.25, 739.99, 783.99, 880.00, 987.77, 1108.73, 1174.66, 1318.51, 1479.98, 1567.98, 1760.00, 1975.53, 2217.46, 2349.32]
 const spellings = ["D", "E", "F", "G", "A", "B", "C", "D", "E", "F", "G", "A", "B", "C", "D", "E", "F", "G", "A", "B", "C", "D", "E", "F", "G", "A", "B", "C", "D"]
@@ -37,10 +37,8 @@ func _ready():
 	await get_tree().create_timer(.5).timeout
 	query_result = db.query_result
 	db.close_db()
-	var distance = edit_distance("DGGGDGBDEFGAB","BDEE")
-	print (distance)
-	
-	
+	#var distance = edit_distance("DGGGDGBDEFGAB","BDEE")
+	#print (distance)
 
 func _process(_delta):
 	if timer.get_time_left() > 0:
@@ -57,8 +55,11 @@ func _process(_delta):
 			if (diff < minDiff):
 				minDiff = diff
 				minIndex = i
-		if spellings[minIndex] != note_array.back():
-			note_array.append(spellings[minIndex])
+		if note_string.length() != 0:
+			if spellings[minIndex] != note_string[note_string.length()-1]:
+				note_string = note_string + spellings[minIndex]
+		else:
+			note_string = spellings[minIndex]
 		print(frequency, " Hz ", big)
 		
 	if active and stop:
@@ -85,23 +86,17 @@ func start_recording():
 		stop = false
 		return
 	record_button.text = "Recording..."
-	timer.start(1)
-	note_array = []
+	timer.start(10)
+	note_string = ""
 	
 	
 func stop_recording():
 	active = false
-	
-	
-	
-	print(note_array)
+	note_string = "DDEBBABBEBBBABDBAGFDADBDADFDADDAFDEBBABBAFECDBAFDEFDEEDDE"
 	var distances = []
-	for id in range(0,1):
-		var temp = query_result[id]["search_key"]
-		var search_key = []
-		for i in temp:
-			search_key.append(i)
-		var distance = edit_distance(search_key, note_array)
+	for id in range(0,query_result.size()):
+		var search_key = query_result[id]["search_key"]
+		var distance = edit_distance(search_key, note_string)
 		distances.append({"distance" : distance, "id" : query_result[id]["id"], "title" : query_result[id]["title"]})
 	distances.sort_custom(d_sort)
 	for i in range(0,distances.size()):
@@ -131,7 +126,7 @@ func edit_distance(s1, s2):
 			else:
 				cost = 1
 			matrix[i].append(min(matrix[i-1][j]+1, matrix[i][j-1]+1, matrix[i-1][j-1]+cost))
-	print(matrix)
+	#print(matrix)
 	var smallest = 1000000
 	for i in range(0, l1+1):
 		if matrix[i][l2] < smallest:
