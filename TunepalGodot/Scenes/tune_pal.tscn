@@ -561,6 +561,7 @@ theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
 theme_override_styles/normal = SubResource("StyleBoxFlat_e21rs")
 
 [node name="ColorRect2" type="ColorRect" parent="Control/Menus/ResultMenu/Control"]
+layout_mode = 0
 offset_right = 576.0
 offset_bottom = 85.0
 
@@ -936,6 +937,7 @@ placeholder_text = "Search"
 alignment = 1
 
 [node name="ColorRect2" type="ColorRect" parent="Control/Menus/KeywordsMenu/Control"]
+layout_mode = 0
 offset_right = 576.0
 offset_bottom = 85.0
 
@@ -1248,6 +1250,7 @@ placeholder_text = "Search"
 alignment = 1
 
 [node name="ColorRect2" type="ColorRect" parent="Control/Menus/MyTunesMenu/Control"]
+layout_mode = 0
 offset_right = 576.0
 offset_bottom = 85.0
 
@@ -1609,6 +1612,7 @@ text = "  Server"
 alignment = 0
 
 [node name="ColorRect" type="ColorRect" parent="Control/Menus/PreferencesMenu/MainMenu/Control"]
+layout_mode = 0
 offset_right = 576.0
 offset_bottom = 85.0
 

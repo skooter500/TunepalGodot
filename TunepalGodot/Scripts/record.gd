@@ -17,7 +17,18 @@ const spellings = ["D", "E", "F", "G", "A", "B", "C", "D", "E", "F", "G", "A", "
 @onready var db_name = "res://Database/tunepal.db"
 @onready var query_result
 
+var my_csharp_script
+var ednode
+
 func _ready():
+	
+	
+	my_csharp_script = load("res://edit_distance.cs")
+	ednode = my_csharp_script.new()
+	
+	# var edn = ednode.edSubstring("BDEE", "DGGGDGBDEFGAB")
+	# print(edn)
+	
 	label_box.visible = false
 	db.path = db_name
 	db.open_db()
@@ -28,6 +39,8 @@ func _ready():
 	db.close_db()
 	var distance = edit_distance("DGGGDGBDEFGAB","BDEE")
 	print (distance)
+	
+	
 
 func _process(_delta):
 	if timer.get_time_left() > 0:
@@ -72,12 +85,15 @@ func start_recording():
 		stop = false
 		return
 	record_button.text = "Recording..."
-	timer.start(10)
+	timer.start(1)
 	note_array = []
 	
 	
 func stop_recording():
 	active = false
+	
+	
+	
 	print(note_array)
 	var distances = []
 	for id in range(0,1):
