@@ -7,7 +7,7 @@ func _ready():
 		button.visible = false
 		
 func populate(distances):
-	for i in range(0, buttons.size()):
+	for i in range(0, 1):
 		var button = buttons[i]
 		var check = true
 		button.set_text(str(distances[i]["title"]) + " " + str(distances[i]["distance"]))

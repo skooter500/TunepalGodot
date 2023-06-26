@@ -26,6 +26,8 @@ func _ready():
 	await get_tree().create_timer(.5).timeout
 	query_result = db.query_result
 	db.close_db()
+	var distance = edit_distance("DGGGDGBDEFGAB","BDEE")
+	print (distance)
 
 func _process(_delta):
 	if timer.get_time_left() > 0:
@@ -78,29 +80,13 @@ func stop_recording():
 	active = false
 	print(note_array)
 	var distances = []
-	for id in range(0,50):
+	for id in range(0,1):
 		var temp = query_result[id]["search_key"]
 		var search_key = []
 		for i in temp:
 			search_key.append(i)
-		var l1 = note_array.size()
-		var l2 = search_key.size()
-		var matrix : Array[Array]
-		for i in range(0,l1+1):
-			matrix.append([i])
-		for i in range(1,l2+1):
-			matrix[0].append(i)
-		var cost = 0
-		for i in range(1, l1+1):
-			var c1 = note_array[i-1]
-			for j in range(1, l2+1):
-				var c2 = search_key[j-1]
-				if c1 == c2:
-					cost = 0
-				else:
-					cost = 1
-				matrix[i].append(min(matrix[i-1][j]+1, matrix[i][j-1]+1, matrix[i-1][j-1]+cost))
-		distances.append({"distance" : matrix[l1][l2], "id" : db.query_result[id]["id"], "title" : db.query_result[id]["title"]})
+		var distance = edit_distance(search_key, note_array)
+		distances.append({"distance" : distance, "id" : query_result[id]["id"], "title" : query_result[id]["title"]})
 	distances.sort_custom(d_sort)
 	for i in range(0,distances.size()):
 		print(i+1, " ", distances[i]["title"], " ",distances[i]["distance"])
@@ -110,6 +96,31 @@ func stop_recording():
 	record_button.text = "Record"
 	#label.text = distances[0]["title"]
 	#label_box.visible = true
+
+func edit_distance(s1, s2):
+	var l1 = s1.length()
+	var l2 = s2.length()
+	var matrix : Array[Array]
+	for i in range(0,l1+1):
+		matrix.append([0])
+	for i in range(1,l2+1):
+		matrix[0].append(i)
+	var cost = 0
+	for i in range(1, l1+1):
+		var c1 = s1[i-1]
+		for j in range(1, l2+1):
+			var c2 = s2[j-1]
+			if c1 == c2:
+				cost = 0
+			else:
+				cost = 1
+			matrix[i].append(min(matrix[i-1][j]+1, matrix[i][j-1]+1, matrix[i-1][j-1]+cost))
+	print(matrix)
+	var smallest = 1000000
+	for i in range(0, l1+1):
+		if matrix[i][l2] < smallest:
+			smallest = matrix[i][l2]
+	return smallest
 	
 static func d_sort(a, b):
 	if a["distance"] < b["distance"]:
