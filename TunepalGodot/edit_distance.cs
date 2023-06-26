@@ -3,7 +3,6 @@ using System;
 
 public partial class edit_distance : Node
 {
-	int[,] d = new int[500,500];
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
@@ -14,23 +13,15 @@ public partial class edit_distance : Node
 	{
 	}
 	
-	public int edSubstring(string pattern, string text)
+	public float edSubstring(string pattern, string text)
 	{
 		int pLength = pattern.Length;
 		int tLength = text.Length;
 		int difference = 0;
 
 		char sc;
-
-		if (pLength == 0)
-		{
-			return 0;
-		}
-		if (tLength == 0)
-		{
-			return 0;
-		}
-
+		
+		int[,] d = new int[pLength+1,tLength+1];
 		
 		// Initialise the first row
 		for (int i = 0; i < tLength + 1; i++)
@@ -42,7 +33,6 @@ public partial class edit_distance : Node
 		{
 			d[i,0] = i;
 		}
-
 
 		for (int i = 1; i <= pLength; i++)
 		{
@@ -94,9 +84,9 @@ public partial class edit_distance : Node
 				line += d[i,j] + ", ";
 			}
 			// GD.Print(line);
-		}	
-		
-		return ed;
+		}
+		//GD.Print((1.0 - (ed / pLength)));
+		return ((float)100 * ((float)1.0 - ((float)ed / (float)pLength)));
 		
 		
 	}

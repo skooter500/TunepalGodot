@@ -10,5 +10,7 @@ func populate(distances):
 	for i in range(0, distances.size()):
 		var button = buttons[i]
 		var check = true
-		button.set_text(str(distances[i]["title"]) + " " + str(distances[i]["distance"]))
+		button.set_text(str(distances[i]["title"]) + " (" + String.num(distances[i]["distance"],2)+ "%)")
 		button.visible = true
+		if i == 49:
+			break

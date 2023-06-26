@@ -21,14 +21,8 @@ var my_csharp_script
 var ednode
 
 func _ready():
-	
-	
 	my_csharp_script = load("res://edit_distance.cs")
 	ednode = my_csharp_script.new()
-	
-	# var edn = ednode.edSubstring("BDEE", "DGGGDGBDEFGAB")
-	# print(edn)
-	
 	label_box.visible = false
 	db.path = db_name
 	db.open_db()
@@ -86,55 +80,30 @@ func start_recording():
 		stop = false
 		return
 	record_button.text = "Recording..."
-	timer.start(10)
+	timer.start(1)
 	note_string = ""
 	
 	
 func stop_recording():
 	active = false
-	note_string = "DDEBBABBEBBBABDBAGFDADBDADFDADDAFDEBBABBAFECDBAFDEFDEEDDE"
 	var distances = []
+	note_string = "AFADGGGAGFDDEFDCAFADGGGAGGGBCDBGAGFFDGGGAGFDEFDCAFFDGGGAGGGDGGGAGFEDDD"
+	print(note_string.length())
 	for id in range(0,query_result.size()):
 		var search_key = query_result[id]["search_key"]
-		var distance = edit_distance(search_key, note_string)
-		distances.append({"distance" : distance, "id" : query_result[id]["id"], "title" : query_result[id]["title"]})
+		if !search_key.length() < 50:
+			var distance = ednode.edSubstring(search_key, note_string)
+			distances.append({"distance" : distance, "id" : query_result[id]["id"], "title" : query_result[id]["title"]})
 	distances.sort_custom(d_sort)
-	for i in range(0,distances.size()):
-		print(i+1, " ", distances[i]["title"], " ",distances[i]["distance"])
 	get_node("../../ResultMenu").visible = true
 	get_node("../").visible = false
 	get_node("../../ResultMenu/Control/ScrollContainer/Songs").populate(distances)
 	record_button.text = "Record"
 	#label.text = distances[0]["title"]
 	#label_box.visible = true
-
-func edit_distance(s1, s2):
-	var l1 = s1.length()
-	var l2 = s2.length()
-	var matrix : Array[Array]
-	for i in range(0,l1+1):
-		matrix.append([0])
-	for i in range(1,l2+1):
-		matrix[0].append(i)
-	var cost = 0
-	for i in range(1, l1+1):
-		var c1 = s1[i-1]
-		for j in range(1, l2+1):
-			var c2 = s2[j-1]
-			if c1 == c2:
-				cost = 0
-			else:
-				cost = 1
-			matrix[i].append(min(matrix[i-1][j]+1, matrix[i][j-1]+1, matrix[i-1][j-1]+cost))
-	#print(matrix)
-	var smallest = 1000000
-	for i in range(0, l1+1):
-		if matrix[i][l2] < smallest:
-			smallest = matrix[i][l2]
-	return smallest
 	
 static func d_sort(a, b):
-	if a["distance"] < b["distance"]:
+	if a["distance"] > b["distance"]:
 		return true
 	return false
 
