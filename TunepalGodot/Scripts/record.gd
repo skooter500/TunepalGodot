@@ -23,7 +23,6 @@ var ednode
 func _ready():
 	my_csharp_script = load("res://edit_distance.cs")
 	ednode = my_csharp_script.new()
-	label_box.visible = false
 	db.path = db_name
 	db.open_db()
 	db.read_only = true
@@ -85,32 +84,31 @@ func start_recording():
 	
 	
 func stop_recording():
+	var time = Time.get_ticks_msec()
 	active = false
-	var distances = []
-	#print(note_string.length())
+	var confidences = []
 	#note_string = "AFADGGGAGFDDEFDCAFADGGGAGGGBCDBGAGFFDGGGAGFDEFDCAFFDGGGAGGGDGGGAGFEDDD"
+	print(note_string.length())
 	for id in range(0,query_result.size()):
 		var search_key = query_result[id]["search_key"]
 		if !search_key.length() < 50:
-			var distance = ednode.edSubstring(note_string, search_key)
-			distances.append({"distance" : distance, "id" : query_result[id]["id"], "title" : query_result[id]["title"]})
-	distances.sort_custom(d_sort)
+			var confidence = ednode.edSubstring(note_string, search_key)
+			confidences.append({"confidence" : confidence, "id" : query_result[id]["id"], "title" : query_result[id]["title"]})
+	confidences.sort_custom(d_sort)
 	get_node("../../ResultMenu").visible = true
 	get_node("../").visible = false
-	get_node("../../ResultMenu/Control/ScrollContainer/Songs").populate(distances)
+	get_node("../../ResultMenu/Control/ScrollContainer/Songs").populate(confidences)
 	record_button.text = "Record"
-	#label.text = distances[0]["title"]
-	#label_box.visible = true
+	print("Time = " + String.num(((float(Time.get_ticks_msec()) - float(time))/1000), 3) + " sec")
 	
 static func d_sort(a, b):
-	if a["distance"] > b["distance"]:
+	if a["confidence"] > b["confidence"]:
 		return true
 	return false
 
 func _on_record_pressed():
 	if !active:
 		start_recording()
-		label_box.visible = false
 	else:
 		stop = true
 

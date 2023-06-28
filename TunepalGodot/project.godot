@@ -11,9 +11,9 @@ config_version=5
 [application]
 
 config/name="TunepalGodot"
-run/main_scene="res://Scenes/tune_pal.tscn"
+run/main_scene="res://Scenes/tunepal.tscn"
 config/features=PackedStringArray("4.0", "C#", "Forward Plus")
-config/icon="res://icon.svg"
+config/icon="res://Icon Pictures/tunepal.png"
 
 [audio]
 

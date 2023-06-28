@@ -1,18 +1,18 @@
 [gd_scene load_steps=18 format=3 uid="uid://dexlkh1cvmqhe"]
 
-[ext_resource type="Texture2D" uid="uid://c1h80phoadlat" path="res://Icon Pictures/tunepal.png" id="1_gqfjs"]
-[ext_resource type="Script" path="res://Scripts/menu.gd" id="1_qhsuj"]
-[ext_resource type="ButtonGroup" uid="uid://b6m85x57xm6cw" path="res://Scenes/button_group.tres" id="2_ltoqc"]
-[ext_resource type="Script" path="res://Scripts/record.gd" id="2_o0meu"]
-[ext_resource type="Script" path="res://Scripts/searchbar_mytunes.gd" id="3_btya1"]
-[ext_resource type="Script" path="res://Scripts/results_songs.gd" id="3_dffbq"]
-[ext_resource type="Script" path="res://Scripts/searchbar_keywords.gd" id="4_d1io7"]
-[ext_resource type="Script" path="res://Scripts/keywords_songs.gd" id="4_wpkyc"]
-[ext_resource type="Texture2D" uid="uid://ciuejn78iqdma" path="res://Icon Pictures/Circle Arrows.png" id="8_3dypw"]
-[ext_resource type="ButtonGroup" uid="uid://crb2dhi12mxkp" path="res://FundamentalButtonGroup.tres" id="8_7lcto"]
-[ext_resource type="Texture2D" uid="uid://wo3yrh1mjav5" path="res://Icon Pictures/Map Symbol.png" id="9_yffl5"]
-[ext_resource type="Texture2D" uid="uid://hhxi5sl5meko" path="res://Icon Pictures/Help symbol.png" id="10_sp6gv"]
-[ext_resource type="Texture2D" uid="uid://bwhoarolysagy" path="res://Icon Pictures/Facebook symbol.png" id="11_172h4"]
+[ext_resource type="Script" path="res://Scripts/menu.gd" id="1_wce83"]
+[ext_resource type="Script" path="res://Scripts/results_songs.gd" id="2_ye5fa"]
+[ext_resource type="Script" path="res://Scripts/record.gd" id="3_tmdbb"]
+[ext_resource type="Texture2D" uid="uid://c1h80phoadlat" path="res://Icon Pictures/tunepal.png" id="4_12owa"]
+[ext_resource type="Script" path="res://Scripts/searchbar_keywords.gd" id="5_7pkwy"]
+[ext_resource type="Script" path="res://Scripts/keywords_songs.gd" id="6_v2gy6"]
+[ext_resource type="Script" path="res://Scripts/searchbar_mytunes.gd" id="7_044ag"]
+[ext_resource type="ButtonGroup" uid="uid://crb2dhi12mxkp" path="res://FundamentalButtonGroup.tres" id="8_71dej"]
+[ext_resource type="Texture2D" uid="uid://ciuejn78iqdma" path="res://Icon Pictures/Circle Arrows.png" id="9_uqbit"]
+[ext_resource type="Texture2D" uid="uid://wo3yrh1mjav5" path="res://Icon Pictures/Map Symbol.png" id="10_ddg03"]
+[ext_resource type="Texture2D" uid="uid://hhxi5sl5meko" path="res://Icon Pictures/Help symbol.png" id="11_moik7"]
+[ext_resource type="Texture2D" uid="uid://bwhoarolysagy" path="res://Icon Pictures/Facebook symbol.png" id="12_hsncw"]
+[ext_resource type="ButtonGroup" uid="uid://b6m85x57xm6cw" path="res://Scenes/button_group.tres" id="13_28b28"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_e21rs"]
 bg_color = Color(1, 1, 1, 1)
@@ -32,7 +32,7 @@ layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
-script = ExtResource("1_qhsuj")
+script = ExtResource("1_wce83")
 
 [node name="Menus" type="Control" parent="Control"]
 anchors_preset = 0
@@ -58,7 +58,7 @@ custom_minimum_size = Vector2(2.08165e-12, 2.08165e-12)
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_constants/separation = 1
-script = ExtResource("3_dffbq")
+script = ExtResource("2_ye5fa")
 
 [node name="Button" type="Button" parent="Control/Menus/ResultMenu/Control/ScrollContainer/Songs"]
 custom_minimum_size = Vector2(2.08165e-12, 83)
@@ -591,7 +591,7 @@ layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
-script = ExtResource("2_o0meu")
+script = ExtResource("3_tmdbb")
 
 [node name="ColorRect" type="ColorRect" parent="Control/Menus/RecordMenu/Control"]
 custom_minimum_size = Vector2(576, 1024)
@@ -603,7 +603,7 @@ color = Color(0, 0, 0, 1)
 [node name="Tunepal" type="Sprite2D" parent="Control/Menus/RecordMenu/Control"]
 position = Vector2(288, 300)
 scale = Vector2(1.3, 1.3)
-texture = ExtResource("1_gqfjs")
+texture = ExtResource("4_12owa")
 
 [node name="Record" type="Button" parent="Control/Menus/RecordMenu/Control"]
 layout_mode = 0
@@ -622,22 +622,6 @@ bus = &"Record"
 [node name="Timer" type="Timer" parent="Control/Menus/RecordMenu/Control"]
 one_shot = true
 
-[node name="LabelBox" type="ColorRect" parent="Control/Menus/RecordMenu/Control"]
-visible = false
-layout_mode = 0
-offset_left = 138.0
-offset_top = 550.0
-offset_right = 438.0
-offset_bottom = 650.0
-
-[node name="Label" type="Label" parent="Control/Menus/RecordMenu/Control/LabelBox"]
-layout_mode = 0
-offset_right = 300.0
-offset_bottom = 100.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-horizontal_alignment = 1
-vertical_alignment = 1
-
 [node name="KeywordsMenu" type="Node2D" parent="Control/Menus"]
 visible = false
 
@@ -646,7 +630,7 @@ layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
-script = ExtResource("4_d1io7")
+script = ExtResource("5_7pkwy")
 
 [node name="ScrollContainer" type="ScrollContainer" parent="Control/Menus/KeywordsMenu/Control"]
 layout_mode = 0
@@ -659,7 +643,7 @@ custom_minimum_size = Vector2(2.08165e-12, 2.08165e-12)
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_constants/separation = 1
-script = ExtResource("4_wpkyc")
+script = ExtResource("6_v2gy6")
 
 [node name="Button" type="Button" parent="Control/Menus/KeywordsMenu/Control/ScrollContainer/Songs"]
 custom_minimum_size = Vector2(2.08165e-12, 83)
@@ -959,7 +943,7 @@ layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
-script = ExtResource("3_btya1")
+script = ExtResource("7_044ag")
 
 [node name="ScrollContainer" type="ScrollContainer" parent="Control/Menus/MyTunesMenu/Control"]
 layout_mode = 0
@@ -972,7 +956,7 @@ custom_minimum_size = Vector2(2.08165e-12, 2.08165e-12)
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_constants/separation = 1
-script = ExtResource("3_dffbq")
+script = ExtResource("2_ye5fa")
 
 [node name="Button" type="Button" parent="Control/Menus/MyTunesMenu/Control/ScrollContainer/Songs"]
 custom_minimum_size = Vector2(2.08165e-12, 83)
@@ -1693,7 +1677,7 @@ theme_override_colors/icon_focus_color = Color(0, 0, 0, 1)
 theme_override_colors/icon_disabled_color = Color(0, 0, 0, 1)
 theme_override_styles/normal = SubResource("StyleBoxFlat_e21rs")
 toggle_mode = true
-button_group = ExtResource("8_7lcto")
+button_group = ExtResource("8_71dej")
 text = "  Bb"
 alignment = 0
 icon_alignment = 2
@@ -1717,7 +1701,7 @@ theme_override_colors/icon_focus_color = Color(0, 0, 0, 1)
 theme_override_colors/icon_disabled_color = Color(0, 0, 0, 1)
 theme_override_styles/normal = SubResource("StyleBoxFlat_e21rs")
 toggle_mode = true
-button_group = ExtResource("8_7lcto")
+button_group = ExtResource("8_71dej")
 text = "  B"
 alignment = 0
 icon_alignment = 2
@@ -1741,7 +1725,7 @@ theme_override_colors/icon_focus_color = Color(0, 0, 0, 1)
 theme_override_colors/icon_disabled_color = Color(0, 0, 0, 1)
 theme_override_styles/normal = SubResource("StyleBoxFlat_e21rs")
 toggle_mode = true
-button_group = ExtResource("8_7lcto")
+button_group = ExtResource("8_71dej")
 text = "  C"
 alignment = 0
 icon_alignment = 2
@@ -1767,7 +1751,7 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_e21rs")
 toggle_mode = true
 button_pressed = true
 action_mode = 0
-button_group = ExtResource("8_7lcto")
+button_group = ExtResource("8_71dej")
 text = "  D"
 alignment = 0
 icon_alignment = 2
@@ -1792,7 +1776,7 @@ theme_override_colors/icon_disabled_color = Color(0, 0, 0, 1)
 theme_override_styles/normal = SubResource("StyleBoxFlat_e21rs")
 toggle_mode = true
 action_mode = 0
-button_group = ExtResource("8_7lcto")
+button_group = ExtResource("8_71dej")
 text = "  Eb
 "
 alignment = 0
@@ -1817,7 +1801,7 @@ theme_override_colors/icon_focus_color = Color(0, 0, 0, 1)
 theme_override_colors/icon_disabled_color = Color(0, 0, 0, 1)
 theme_override_styles/normal = SubResource("StyleBoxFlat_e21rs")
 toggle_mode = true
-button_group = ExtResource("8_7lcto")
+button_group = ExtResource("8_71dej")
 text = "  F"
 alignment = 0
 icon_alignment = 2
@@ -1841,7 +1825,7 @@ theme_override_colors/icon_focus_color = Color(0, 0, 0, 1)
 theme_override_colors/icon_disabled_color = Color(0, 0, 0, 1)
 theme_override_styles/normal = SubResource("StyleBoxFlat_e21rs")
 toggle_mode = true
-button_group = ExtResource("8_7lcto")
+button_group = ExtResource("8_71dej")
 text = "  G"
 alignment = 0
 icon_alignment = 2
@@ -1895,7 +1879,7 @@ theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 20
 theme_override_styles/normal = SubResource("StyleBoxFlat_e21rs")
 text = "Unsubmitted Tags"
-icon = ExtResource("8_3dypw")
+icon = ExtResource("9_uqbit")
 alignment = 0
 expand_icon = true
 
@@ -1912,7 +1896,7 @@ theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 20
 theme_override_styles/normal = SubResource("StyleBoxFlat_e21rs")
 text = "Map"
-icon = ExtResource("9_yffl5")
+icon = ExtResource("10_ddg03")
 alignment = 0
 expand_icon = true
 
@@ -1929,7 +1913,7 @@ theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 20
 theme_override_styles/normal = SubResource("StyleBoxFlat_e21rs")
 text = "Help"
-icon = ExtResource("10_sp6gv")
+icon = ExtResource("11_moik7")
 alignment = 0
 expand_icon = true
 
@@ -1947,7 +1931,7 @@ theme_override_font_sizes/font_size = 20
 theme_override_styles/normal = SubResource("StyleBoxFlat_e21rs")
 text = "Facebook
 "
-icon = ExtResource("11_172h4")
+icon = ExtResource("12_hsncw")
 alignment = 0
 expand_icon = true
 
@@ -2002,7 +1986,7 @@ theme_override_colors/font_focus_color = Color(0.537255, 0.537255, 0.537255, 1)
 theme_override_colors/font_disabled_color = Color(0.537255, 0.537255, 0.537255, 1)
 toggle_mode = true
 button_pressed = true
-button_group = ExtResource("2_ltoqc")
+button_group = ExtResource("13_28b28")
 text = "Record"
 flat = true
 
@@ -2015,7 +1999,7 @@ theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
 theme_override_colors/font_focus_color = Color(0.537255, 0.537255, 0.537255, 1)
 theme_override_colors/font_disabled_color = Color(0.537255, 0.537255, 0.537255, 1)
 toggle_mode = true
-button_group = ExtResource("2_ltoqc")
+button_group = ExtResource("13_28b28")
 text = "Keywords"
 flat = true
 
@@ -2028,7 +2012,7 @@ theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
 theme_override_colors/font_focus_color = Color(0.537255, 0.537255, 0.537255, 1)
 theme_override_colors/font_disabled_color = Color(0.537255, 0.537255, 0.537255, 1)
 toggle_mode = true
-button_group = ExtResource("2_ltoqc")
+button_group = ExtResource("13_28b28")
 text = "My Tunes"
 flat = true
 
@@ -2041,7 +2025,7 @@ theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
 theme_override_colors/font_focus_color = Color(0.537255, 0.537255, 0.537255, 1)
 theme_override_colors/font_disabled_color = Color(0.537255, 0.537255, 0.537255, 1)
 toggle_mode = true
-button_group = ExtResource("2_ltoqc")
+button_group = ExtResource("13_28b28")
 text = "Preferences"
 flat = true
 
@@ -2054,7 +2038,7 @@ theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
 theme_override_colors/font_focus_color = Color(0.537255, 0.537255, 0.537255, 1)
 theme_override_colors/font_disabled_color = Color(0.537255, 0.537255, 0.537255, 1)
 toggle_mode = true
-button_group = ExtResource("2_ltoqc")
+button_group = ExtResource("13_28b28")
 text = "More
 "
 flat = true

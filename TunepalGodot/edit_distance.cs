@@ -46,14 +46,11 @@ public partial class edit_distance : Node
 			for (int j = 1; j <= tLength; j++)
 			{
 				int v = d[i - 1,j - 1];
-				//if ((text.charAt(j - 1) != sc) && (text.charAt(j - 1) != 'Z') && sc != 'Z')                
-				if ((text[j - 1] != sc)  && sc != 'Z')
+				//if ((text.charAt(j - 1) != sc) && (text.charAt(j - 1) != 'Z') && sc != 'Z')  
+				difference = 0;              
+				if ((text[j - 1] != sc))
 				{
 					difference = 1;
-				}
-				else
-				{
-					difference = 0;
 				}
 				d[i,j] = Mathf.Min(Mathf.Min(d[i - 1,j] + 1, d[i,j - 1] + 1), v + difference);
 			}
@@ -93,7 +90,6 @@ public partial class edit_distance : Node
 		}*/
 		//GD.Print((1.0 - (ed / pLength)));
 		return ((float)100 * ((float)1.0 - ((float)ed / (float)pLength)));
-		
 		
 	}
 	
