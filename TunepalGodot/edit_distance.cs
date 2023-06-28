@@ -3,13 +3,15 @@ using System;
 
 public partial class edit_distance : Node
 {
+	int[,] d = new int[301,1001];
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
+		
 	}
 
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
-	public override void _Process(double delta)
+	public override void _Process(double _delta)
 	{
 	}
 	
@@ -21,8 +23,12 @@ public partial class edit_distance : Node
 
 		char sc;
 		
-		int[,] d = new int[pLength+1,tLength+1];
-		
+		if (pLength > 300) {
+			pLength = 300;
+		}
+		if (tLength > 1000) {
+			tLength = 1000;
+		}
 		// Initialise the first row
 		for (int i = 0; i < tLength + 1; i++)
 		{
@@ -76,7 +82,7 @@ public partial class edit_distance : Node
 		int ed = min;
 		
 		
-		for (int i = 0; i <= pLength; i++)
+		/*for (int i = 0; i <= pLength; i++) 
 		{
 			string line = "";
 			for (int j = 0; j <= tLength; j++)
@@ -84,7 +90,7 @@ public partial class edit_distance : Node
 				line += d[i,j] + ", ";
 			}
 			// GD.Print(line);
-		}
+		}*/
 		//GD.Print((1.0 - (ed / pLength)));
 		return ((float)100 * ((float)1.0 - ((float)ed / (float)pLength)));
 		

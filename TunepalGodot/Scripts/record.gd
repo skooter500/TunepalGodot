@@ -54,7 +54,7 @@ func _process(_delta):
 				note_string = note_string + spellings[minIndex]
 		else:
 			note_string = spellings[minIndex]
-		print(frequency, " Hz ", big)
+		#print(frequency, " Hz ", big)
 		
 	if active and stop:
 		active = false
@@ -80,19 +80,19 @@ func start_recording():
 		stop = false
 		return
 	record_button.text = "Recording..."
-	timer.start(1)
+	timer.start(10)
 	note_string = ""
 	
 	
 func stop_recording():
 	active = false
 	var distances = []
-	note_string = "AFADGGGAGFDDEFDCAFADGGGAGGGBCDBGAGFFDGGGAGFDEFDCAFFDGGGAGGGDGGGAGFEDDD"
-	print(note_string.length())
+	#print(note_string.length())
+	#note_string = "AFADGGGAGFDDEFDCAFADGGGAGGGBCDBGAGFFDGGGAGFDEFDCAFFDGGGAGGGDGGGAGFEDDD"
 	for id in range(0,query_result.size()):
 		var search_key = query_result[id]["search_key"]
 		if !search_key.length() < 50:
-			var distance = ednode.edSubstring(search_key, note_string)
+			var distance = ednode.edSubstring(note_string, search_key)
 			distances.append({"distance" : distance, "id" : query_result[id]["id"], "title" : query_result[id]["title"]})
 	distances.sort_custom(d_sort)
 	get_node("../../ResultMenu").visible = true
