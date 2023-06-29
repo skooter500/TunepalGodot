@@ -17,6 +17,10 @@ const spellings = ["D", "E", "F", "G", "A", "B", "C", "D", "E", "F", "G", "A", "
 @onready var db_name = "res://Database/tunepal.db"
 @onready var query_result
 
+@onready var thread_count = OS.get_processor_count()
+
+@onready var confidences
+
 var my_csharp_script
 var ednode
 
@@ -30,8 +34,6 @@ func _ready():
 	await get_tree().create_timer(.5).timeout
 	query_result = db.query_result
 	db.close_db()
-	#var distance = edit_distance("DGGGDGBDEFGAB","BDEE")
-	#print (distance)
 
 func _process(_delta):
 	if timer.get_time_left() > 0:
@@ -86,14 +88,30 @@ func start_recording():
 func stop_recording():
 	var time = Time.get_ticks_msec()
 	active = false
-	var confidences = []
+	confidences = []
 	#note_string = "AFADGGGAGFDDEFDCAFADGGGAGGGBCDBGAGFFDGGGAGFDEFDCAFFDGGGAGGGDGGGAGFEDDD"
 	print(note_string.length())
-	for id in range(0,query_result.size()):
-		var search_key = query_result[id]["search_key"]
-		if !search_key.length() < 50:
-			var confidence = ednode.edSubstring(note_string, search_key)
-			confidences.append({"confidence" : confidence, "id" : query_result[id]["id"], "title" : query_result[id]["title"]})
+	var length = float(query_result.size()) / float(thread_count)
+	var threads = []
+	
+	for i in thread_count:
+		var thread = Thread.new()
+		threads.append(thread)
+	
+	for i in threads.size():
+		var callable
+		callable = Callable(self,"search").bind(int(i*length),int((i+1)*length))
+		threads[i].start(callable)
+
+	var return_array = []
+	for i in threads.size():
+		var return_value = threads[i].wait_to_finish()
+		return_array.append(return_value)
+	
+	for array in return_array:
+		for i in array:
+			confidences.append(i)
+	
 	confidences.sort_custom(d_sort)
 	get_node("../../ResultMenu").visible = true
 	get_node("../").visible = false
@@ -101,6 +119,16 @@ func stop_recording():
 	record_button.text = "Record"
 	print("Time = " + String.num(((float(Time.get_ticks_msec()) - float(time))/1000), 3) + " sec")
 	
+func search(start, end):
+	print(start, " ", end)
+	var info = []
+	for id in range(start, end):
+		var search_key = query_result[id]["search_key"]
+		if !search_key.length() < 50:
+			var confidence = ednode.edSubstring(note_string, search_key)
+			info.append({"confidence" : confidence, "id" : query_result[id]["id"], "title" : query_result[id]["title"]})
+	return info
+			
 static func d_sort(a, b):
 	if a["confidence"] > b["confidence"]:
 		return true
