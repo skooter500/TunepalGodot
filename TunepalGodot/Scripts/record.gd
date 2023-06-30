@@ -100,7 +100,7 @@ func stop_recording():
 	
 	for i in threads.size():
 		var callable
-		callable = Callable(self,"search").bind(int(i*length),int((i+1)*length))
+		callable = Callable(self,"search").bind(int(i*length),int((i+1)*length),int(i))
 		threads[i].start(callable)
 
 	var return_array = []
@@ -119,13 +119,13 @@ func stop_recording():
 	record_button.text = "Record"
 	print("Time = " + String.num(((float(Time.get_ticks_msec()) - float(time))/1000), 3) + " sec")
 	
-func search(start, end):
+func search(start, end, thread):
 	print(start, " ", end)
 	var info = []
 	for id in range(start, end):
 		var search_key = query_result[id]["search_key"]
 		if !search_key.length() < 50:
-			var confidence = ednode.edSubstring(note_string, search_key)
+			var confidence = ednode.edSubstring(note_string, search_key, thread)
 			info.append({"confidence" : confidence, "id" : query_result[id]["id"], "title" : query_result[id]["title"]})
 	return info
 			
