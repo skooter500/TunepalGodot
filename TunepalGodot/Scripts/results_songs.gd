@@ -9,8 +9,7 @@ func _ready():
 func populate(confidences):
 	for i in range(0, confidences.size()):
 		var button = buttons[i]
-		var check = true
 		button.set_text(str(confidences[i]["title"]) + " (" + String.num(confidences[i]["confidence"],2)+ "%)")
 		button.visible = true
-		if i == 49:
+		if i == 99:
 			break

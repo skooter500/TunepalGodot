@@ -17,6 +17,7 @@ config/icon="res://Icon Pictures/tunepal.png"
 
 [audio]
 
+buses/default_bus_layout="res://Scenes/default_bus_layout.tres"
 driver/enable_input=true
 
 [display]

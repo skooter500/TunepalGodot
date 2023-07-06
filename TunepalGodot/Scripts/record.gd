@@ -4,14 +4,12 @@ extends Control
 @onready var spectrum = AudioServer.get_bus_effect_instance(record_bus_index, 0)
 @onready var timer = $Timer
 @onready var record_button = $Record
-@onready var label_box = $LabelBox
-@onready var label = $LabelBox/Label
 @onready var active = false
 @onready var stop = false
 @onready var note_string : String
-const fund_frequencies = [293.66, 329.63, 369.99, 392.00, 440.00, 493.88, 554.37, 587.33
-			, 659.25, 739.99, 783.99, 880.00, 987.77, 1108.73, 1174.66, 1318.51, 1479.98, 1567.98, 1760.00, 1975.53, 2217.46, 2349.32]
-const spellings = ["D", "E", "F", "G", "A", "B", "C", "D", "E", "F", "G", "A", "B", "C", "D", "E", "F", "G", "A", "B", "C", "D", "E", "F", "G", "A", "B", "C", "D"]
+const fund_frequencies = [293.66, 329.63, 349.23, 392.00, 440.00, 493.88, 523.25, 587.33
+			, 659.25, 698.46, 783.99, 880.00, 987.77, 1046.50, 1174.66, 1318.51, 1396.91, 1567.98, 1760.00, 1975.53, 2093.00, 2349.32]
+const spellings = ["D", "E", "F", "G", "A", "B", "C", "D", "E", "F", "G", "A", "B", "C", "D", "E", "F", "G", "A", "B", "C", "D"]
 
 @onready var db = SQLite.new()
 @onready var db_name = "res://Database/tunepal.db"
@@ -20,12 +18,16 @@ const spellings = ["D", "E", "F", "G", "A", "B", "C", "D", "E", "F", "G", "A", "
 @onready var thread_count = OS.get_processor_count()
 
 @onready var confidences
+@onready var current_notes
 
 var my_csharp_script
 var ednode
 
+var current_time
+var temp_notes
+
 func _ready():
-	my_csharp_script = load("res://edit_distance.cs")
+	my_csharp_script = load("res://Scripts/edit_distance.cs")
 	ednode = my_csharp_script.new()
 	db.path = db_name
 	db.open_db()
@@ -37,26 +39,56 @@ func _ready():
 
 func _process(_delta):
 	if timer.get_time_left() > 0:
+		if current_time == null:
+			current_time = timer.get_time_left()
+		
 		var frequency = 0
 		var big = 0
-		for i in range(20,20000):
+		
+		for i in range(290,2350):
 			if (spectrum.get_magnitude_for_frequency_range(i,i+1)[0] > big):
 				big = spectrum.get_magnitude_for_frequency_range(i,i+1)[0]
 				frequency = i
+		
 		var minIndex = -1
 		var minDiff = 1.79769e308
+		
 		for i in range(0,fund_frequencies.size()):
 			var diff = abs(frequency - fund_frequencies[i])
 			if (diff < minDiff):
 				minDiff = diff
 				minIndex = i
-		if note_string.length() != 0:
-			if spellings[minIndex] != note_string[note_string.length()-1]:
-				note_string = note_string + spellings[minIndex]
-		else:
-			note_string = spellings[minIndex]
-		#print(frequency, " Hz ", big)
 		
+		if big > 0.05:
+			print(spellings[minIndex], " ", frequency, " Hz ", big)
+			if temp_notes.size() != 0:
+				var check = false
+				for note in temp_notes:
+					if note.note == spellings[minIndex]:
+						check = true
+						note.count += 1
+						if note.count == 3:
+							temp_notes = []
+							if current_notes.size() == 0:
+								current_time = current_time - timer.get_time_left()
+								current_notes.append({"note" : spellings[minIndex], "time" : current_time})
+								print("ENTERED")
+								current_time = timer.get_time_left()
+							elif current_notes[current_notes.size()-1]["note"] != spellings[minIndex]:
+								current_time = current_time - timer.get_time_left()
+								current_notes.append({"note" : spellings[minIndex], "time" : current_time})
+								print("ENTERED")
+								current_time = timer.get_time_left()
+							else:
+								current_time = current_time - timer.get_time_left()
+								current_notes[current_notes.size()-1]["time"] += current_time
+								print("EXTENDED")
+								current_time = timer.get_time_left()
+				if check == false:
+					temp_notes.append({"note" : spellings[minIndex], "count" : 1})
+			else:
+				temp_notes.append({"note" : spellings[minIndex], "count" : 1})
+				
 	if active and stop:
 		active = false
 		timer.stop()
@@ -80,17 +112,44 @@ func start_recording():
 	if stop:
 		stop = false
 		return
+	current_notes = []
+	temp_notes = []
 	record_button.text = "Recording..."
-	timer.start(10)
+	timer.start(12)
 	note_string = ""
 	
 	
 func stop_recording():
-	var time = Time.get_ticks_msec()
 	active = false
 	confidences = []
+	for note in current_notes:
+		if note.time < .05:
+			current_notes.erase(note)
+	var sorted_notes = []
+	for note in current_notes:
+		sorted_notes.append(note)
+	var bins = group_notes(sorted_notes)
+	var average_time
+	var largest = 0
+	for bin in bins:
+		print("BIN")
+		var count = 0
+		var average = 0
+		for note in bin:
+			print(note.note, " ", note.time)
+			average += note.time
+			count += 1
+		if count > largest:
+			largest = count
+			print(average, " ", bin.size())
+			average_time = (average / bin.size()) * 2
+	print("AVERAGE TIME: ", average_time)
+	note_string = create_string(current_notes, average_time)
+	print(note_string)
+	var time = Time.get_ticks_msec()
 	#note_string = "AFADGGGAGFDDEFDCAFADGGGAGGGBCDBGAGFFDGGGAGFDEFDCAFFDGGGAGGGDGGGAGFEDDD"
-	print(note_string.length())
+	#note_string = "DDEBBABBEBBBABDBAGFDADBDADFDADDAF"
+	#print(note_string.length())
 	var length = float(query_result.size()) / float(thread_count)
 	var threads = []
 	
@@ -118,6 +177,46 @@ func stop_recording():
 	get_node("../../ResultMenu/Control/ScrollContainer/Songs").populate(confidences)
 	record_button.text = "Record"
 	print("Time = " + String.num(((float(Time.get_ticks_msec()) - float(time))/1000), 3) + " sec")
+	#for i in range(confidences.size()):
+		#if confidences[i]["title"] == "Pigtown Fling, The":
+			#print(i, " ", confidences[i]["title"], " ", confidences[i]["confidence"])
+
+func group_notes(notes):
+	var grouped_notes = []
+	# Sort the notes based on their time values
+	notes.sort_custom(t_sort)
+	
+	var current_bin = []
+	var previous_time = null
+	
+	for note in notes:
+		var current_time = note["time"]
+		
+		if previous_time == null or current_time - previous_time <= 0.1:
+			# Add the note to the current bin
+			current_bin.append(note)
+		else:
+			# Start a new bin for notes played at a different time
+			grouped_notes.append(current_bin)
+			current_bin = [note]
+		
+		previous_time = current_time
+	
+	# Add the last bin to the grouped notes
+	grouped_notes.append(current_bin)
+	
+	return grouped_notes
+
+func create_string(notes, time):
+	var string : String
+	for note in notes:
+		var amount = note.time / time
+		print(note.note, " ", amount)
+		for i in range(amount):
+			if amount > 4:
+				break
+			string = string + note.note
+	return string
 	
 func search(start, end, thread):
 	print(start, " ", end)
@@ -131,6 +230,11 @@ func search(start, end, thread):
 			
 static func d_sort(a, b):
 	if a["confidence"] > b["confidence"]:
+		return true
+	return false
+	
+static func t_sort(a, b):
+	if a["time"] < b["time"]:
 		return true
 	return false
 
