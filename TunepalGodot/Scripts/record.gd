@@ -1,15 +1,15 @@
 extends Control
 
-@onready var record_bus_index = AudioServer.get_bus_index("Record")
-@onready var spectrum = AudioServer.get_bus_effect_instance(record_bus_index, 0)
+@onready var record_bus_index
+@onready var spectrum
 @onready var timer = $Timer
 @onready var record_button = $Record
 @onready var active = false
 @onready var stop = false
 @onready var note_string : String
-const fund_frequencies = [293.66, 329.63, 349.23, 392.00, 440.00, 493.88, 523.25, 587.33
-			, 659.25, 698.46, 783.99, 880.00, 987.77, 1046.50, 1174.66, 1318.51, 1396.91, 1567.98, 1760.00, 1975.53, 2093.00, 2349.32]
-const spellings = ["D", "E", "F", "G", "A", "B", "C", "D", "E", "F", "G", "A", "B", "C", "D", "E", "F", "G", "A", "B", "C", "D"]
+const fund_frequencies = [123.471, 130.813, 146.832, 164.814, 174.614, 195.998, 220, 246.942, 261.626, 293.665, 329.63, 349.23, 392.00, 440.00, 493.88, 523.25, 587.33
+			, 659.25, 698.46, 783.99, 880.00, 987.77, 1046.50, 1174.66, 1318.51, 1396.91, 1567.98, 1760.00, 1975.53, 2093.00, 2349.32, 2637.02, 2793.83, 3135.96, 3520, 3951.07, 4186.01, 4698.63, 5274.04, 5587.65, 6271.93, 7040, 7902.13]
+const spellings = ["B", "C", "D", "E", "F", "G", "A", "B", "C", "D", "E", "F", "G", "A", "B", "C", "D", "E", "F", "G", "A", "B", "C", "D", "E", "F", "G", "A", "B", "C", "D", "E", "F", "G", "A", "B", "C", "D", "E", "F", "G", "A", "B"]
 
 @onready var db = SQLite.new()
 @onready var db_name = "res://Database/tunepal.db"
@@ -27,6 +27,10 @@ var current_time
 var temp_notes
 
 func _ready():
+	record_bus_index = AudioServer.get_bus_index("Record")
+	AudioServer.get_bus_effect(record_bus_index, 0).set_buffer_length(.1)
+	spectrum = AudioServer.get_bus_effect_instance(record_bus_index, 0)
+	print(spellings.size(), " ", fund_frequencies.size())
 	my_csharp_script = load("res://Scripts/edit_distance.cs")
 	ednode = my_csharp_script.new()
 	db.path = db_name
@@ -37,15 +41,16 @@ func _ready():
 	query_result = db.query_result
 	db.close_db()
 
-func _process(_delta):
+func _physics_process(_delta):
 	if timer.get_time_left() > 0:
+		#await get_tree().create_timer(.1).timeout
 		if current_time == null:
 			current_time = timer.get_time_left()
 		
 		var frequency = 0
 		var big = 0
 		
-		for i in range(290,2350):
+		for i in range(100,8000):
 			if (spectrum.get_magnitude_for_frequency_range(i,i+1)[0] > big):
 				big = spectrum.get_magnitude_for_frequency_range(i,i+1)[0]
 				frequency = i
@@ -59,7 +64,7 @@ func _process(_delta):
 				minDiff = diff
 				minIndex = i
 		
-		if big > 0.05:
+		if big > 0.01:
 			print(spellings[minIndex], " ", frequency, " Hz ", big)
 			if temp_notes.size() != 0:
 				var check = false
@@ -67,7 +72,7 @@ func _process(_delta):
 					if note.note == spellings[minIndex]:
 						check = true
 						note.count += 1
-						if note.count == 3:
+						if note.count == 10:
 							temp_notes = []
 							if current_notes.size() == 0:
 								current_time = current_time - timer.get_time_left()
@@ -122,12 +127,13 @@ func start_recording():
 func stop_recording():
 	active = false
 	confidences = []
-	for note in current_notes:
-		if note.time < .05:
-			current_notes.erase(note)
 	var sorted_notes = []
 	for note in current_notes:
-		sorted_notes.append(note)
+		if note.time > 0.05:
+			sorted_notes.append(note)
+	current_notes = []
+	for note in sorted_notes:
+		current_notes.append(note)
 	var bins = group_notes(sorted_notes)
 	var average_time
 	var largest = 0
@@ -142,7 +148,7 @@ func stop_recording():
 		if count > largest:
 			largest = count
 			print(average, " ", bin.size())
-			average_time = (average / bin.size()) * 2
+			average_time = (average / bin.size())
 	print("AVERAGE TIME: ", average_time)
 	note_string = create_string(current_notes, average_time)
 	print(note_string)
@@ -182,39 +188,43 @@ func stop_recording():
 			#print(i, " ", confidences[i]["title"], " ", confidences[i]["confidence"])
 
 func group_notes(notes):
-	var grouped_notes = []
+	var grouped_notes
 	# Sort the notes based on their time values
 	notes.sort_custom(t_sort)
+	var time_interval = .05
 	
-	var current_bin = []
-	var previous_time = null
-	
-	for note in notes:
-		var current_time = note["time"]
+	var enough_bins = false
+	while enough_bins == false:
+		grouped_notes = []
+		var current_bin = []
+		var previous_time = null
+		for note in notes:
+			var current_time = note["time"]
+			if previous_time == null or current_time - previous_time <= time_interval:
+				# Add the note to the current bin
+				current_bin.append(note)
+			else:
+				# Start a new bin for notes played at a different time
+				grouped_notes.append(current_bin)
+				current_bin = [note]
 		
-		if previous_time == null or current_time - previous_time <= 0.1:
-			# Add the note to the current bin
-			current_bin.append(note)
-		else:
-			# Start a new bin for notes played at a different time
-			grouped_notes.append(current_bin)
-			current_bin = [note]
-		
-		previous_time = current_time
+			previous_time = current_time
 	
-	# Add the last bin to the grouped notes
-	grouped_notes.append(current_bin)
-	
+		# Add the last bin to the grouped notes
+		grouped_notes.append(current_bin)
+		time_interval += .05
+		if grouped_notes.size() <= 3:
+			enough_bins = true
 	return grouped_notes
 
 func create_string(notes, time):
 	var string : String
 	for note in notes:
 		var amount = note.time / time
+		if amount < 1:
+			amount = 1
 		print(note.note, " ", amount)
 		for i in range(amount):
-			if amount > 4:
-				break
 			string = string + note.note
 	return string
 	
