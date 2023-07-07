@@ -1,34 +1,42 @@
 extends Control
 
+#MENU STUFF
 @onready var record_bus_index
 @onready var spectrum
 @onready var timer = $Timer
 @onready var record_button = $Record
 @onready var active = false
 @onready var stop = false
-@onready var note_string : String
+
+#FREQUENCY CONSTANTS
 const fund_frequencies = [123.471, 130.813, 146.832, 164.814, 174.614, 195.998, 220, 246.942, 261.626, 293.665, 329.63, 349.23, 392.00, 440.00, 493.88, 523.25, 587.33
 			, 659.25, 698.46, 783.99, 880.00, 987.77, 1046.50, 1174.66, 1318.51, 1396.91, 1567.98, 1760.00, 1975.53, 2093.00, 2349.32, 2637.02, 2793.83, 3135.96, 3520, 3951.07, 4186.01, 4698.63, 5274.04, 5587.65, 6271.93, 7040, 7902.13]
 const spellings = ["B", "C", "D", "E", "F", "G", "A", "B", "C", "D", "E", "F", "G", "A", "B", "C", "D", "E", "F", "G", "A", "B", "C", "D", "E", "F", "G", "A", "B", "C", "D", "E", "F", "G", "A", "B", "C", "D", "E", "F", "G", "A", "B"]
 
+#DB STUFF
 @onready var db = SQLite.new()
 @onready var db_name = "res://Database/tunepal.db"
 @onready var query_result
 
+#THREAD STUFF
 @onready var thread_count = OS.get_processor_count()
 
+#NOTE STUFF
 @onready var confidences
 @onready var current_notes
-
-var my_csharp_script
-var ednode
-
+@onready var note_string : String
 var current_time
 var temp_notes
 
+#CSHARP STUFF
+var my_csharp_script
+var ednode
+
+
 func _ready():
 	record_bus_index = AudioServer.get_bus_index("Record")
-	AudioServer.get_bus_effect(record_bus_index, 0).set_buffer_length(.1)
+	AudioServer.get_bus_effect(record_bus_index, 0).set_buffer_length(.5)
+	#AudioServer.get_bus_effect(record_bus_index, 0).tap_back_pos = .05
 	spectrum = AudioServer.get_bus_effect_instance(record_bus_index, 0)
 	print(spellings.size(), " ", fund_frequencies.size())
 	my_csharp_script = load("res://Scripts/edit_distance.cs")
@@ -64,7 +72,7 @@ func _physics_process(_delta):
 				minDiff = diff
 				minIndex = i
 		
-		if big > 0.01:
+		if big > 0.001:
 			print(spellings[minIndex], " ", frequency, " Hz ", big)
 			if temp_notes.size() != 0:
 				var check = false
@@ -199,6 +207,7 @@ func group_notes(notes):
 		var current_bin = []
 		var previous_time = null
 		for note in notes:
+			@warning_ignore("shadowed_variable")
 			var current_time = note["time"]
 			if previous_time == null or current_time - previous_time <= time_interval:
 				# Add the note to the current bin
