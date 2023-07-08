@@ -35,7 +35,7 @@ var ednode
 
 func _ready():
 	record_bus_index = AudioServer.get_bus_index("Record")
-	AudioServer.get_bus_effect(record_bus_index, 0).set_buffer_length(.5)
+	AudioServer.get_bus_effect(record_bus_index, 0).set_buffer_length(2)
 	#AudioServer.get_bus_effect(record_bus_index, 0).tap_back_pos = .05
 	spectrum = AudioServer.get_bus_effect_instance(record_bus_index, 0)
 	print(spellings.size(), " ", fund_frequencies.size())
@@ -137,7 +137,7 @@ func stop_recording():
 	confidences = []
 	var sorted_notes = []
 	for note in current_notes:
-		if note.time > 0.05:
+		if note.time >= 0.1:
 			sorted_notes.append(note)
 	current_notes = []
 	for note in sorted_notes:
