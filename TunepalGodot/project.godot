@@ -11,12 +11,13 @@ config_version=5
 [application]
 
 config/name="TunepalGodot"
-run/main_scene="res://Scenes/tune_pal.tscn"
-config/features=PackedStringArray("4.0", "Forward Plus")
-config/icon="res://icon.svg"
+run/main_scene="res://Scenes/tunepal.tscn"
+config/features=PackedStringArray("4.0", "C#", "Forward Plus")
+config/icon="res://Icon Pictures/tunepal.png"
 
 [audio]
 
+buses/default_bus_layout="res://Scenes/default_bus_layout.tres"
 driver/enable_input=true
 
 [display]
@@ -37,6 +38,10 @@ version_control/autoload_on_startup=true
 [editor_plugins]
 
 enabled=PackedStringArray("res://addons/godot-sqlite/plugin.cfg")
+
+[physics]
+
+common/physics_ticks_per_second=120
 
 [rendering]
 
