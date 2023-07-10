@@ -14,12 +14,13 @@ const spellings = ["D", "E", "F", "G", "A", "B", "C", "D", "E", "F", "G", "A", "
 @onready var db = SQLite.new()
 @onready var db_name = "res://Database/tunepal.db"
 
+
 func _ready():
 	db.path = db_name
 	db.open_db()
 	db.read_only = true
 	#db.query("select tuneindex.id as id, tune_type, notation, source.id as sourceid, url, source.source as sourcename, title, alt_title, tunepalid, x, midi_file_name, key_sig from tuneindex, tunekeys, source where tuneindex.source = source.id and tunekeys.tuneid= tuneindex.id order by downloaded desc;")
-	db.query("select tuneindex.id as id, tune_type, notation, source.id as sourceid, url, source.source as sourcename, title, alt_title, search_key from tuneindex, tunekeys, source where tunekeys.tuneid = tuneindex.id and tuneindex.source = source.id;")
+	db.query("select tuneindex.id as id, tune_type, notation, source.id as sourceid, shortName, source.source as sourcename, title, alt_title, search_key, key_sig from tuneindex, tunekeys, source where tunekeys.tuneid = tuneindex.id and tuneindex.source = source.id;")
 
 func _process(_delta):
 	if timer.get_time_left() > 0:
@@ -115,6 +116,7 @@ static func d_sort(a, b):
 	if a["distance"] < b["distance"]:
 		return true
 	return false
+
 func _on_record_pressed():
 	if !active:
 		start_recording()

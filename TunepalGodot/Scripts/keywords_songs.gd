@@ -2,10 +2,54 @@ extends VBoxContainer
 
 #Placeholder array to debug code, eventually this should come
 #from database I think
-var songs = ["Brieanna Hurtado", "Landen Larsen", "Travon Couture", "Malorie Dupree", "Colby Sigler", "Shakayla Libby", "Kenya Kovach", "Adan Couture", "Juliet Rafferty", "Jacob Thompson", "Lexus Gant", "Kadin Salgado", "Reid Montez", "Kirstyn Leslie", "Yessenia Delong", "Gaige Atkinson", "Leo Joyce", "Yasmin McMahan", "Frances Bartlett", "Arielle Irwin", "Louise Batista", "Easton Baugh", "Jailyn Vidal", "Kyla Neal", "Leonardo Epstein", "Siobhan Sapp", "Kalli Murry", "Abdullah Burton", "Kendyl Samples", "China Biggs", "Brenden Amador", "Darrin Bobo", "Reanna Greenlee", "Kennedy Welch", "Allysa Lorenz", "Kobi Mattox", "Makiya Marcus", "Codey Gallo", "Alyson Paris", "Taj Crowell", "Nash Elias", "Dylan Langford", "Kade Teague", "Jalin Neumann", "Griffin Barnes", "Terrance Powers", "Sherman Seals", "Jazmyn Waugh", "Scott Newsome", "Ciarra Adamson", "Kaycee Langdon", "Amber Farrington", "Kaytlin Devore", "Meagan Butcher", "Valentina Maxwell", "Misty Paulson", "Easton Lund", "Draven Uribe", "Alivia Ramsey", "Thomas Larue", "Hasan Traylor", "Kristi Carrera", "Vera Mayberry", "Antonio Christian", "Javion Rainey", "Annelise Lowe", "Quentin Valentine", "Ezra Conte", "Joaquin Palermo", "Clarissa Kimbrough", "Mercedez Falk", "Nancy Reinhart", "Miah Shah", "Frankie Helton", "Jenna Maguire", "Linnea Heath", "Galen Gilliam", "Kalvin Betancourt", "Scarlett Mullis", "Earl Kroll", "Kendrick Clancy", "Aubrie Orr", "Allison Sowell", "Markus Amato", "Aliza Mercado", "Viridiana Francois", "Tanisha Yoo", "Giovanna Jaimes", "Casey Maxey", "Dana Carvalho", "Claudia Doran", "Lourdes Cope", "Perla Ponder", "Jesus Gonzalez"]
+@onready var stuff = get_node("../../../../RecordMenu/Control").get("db").query_result
 
-func _ready():
-	var buttons = get_children()
+@onready var buttons = get_children()
+@onready var labels = []
+
+func _on_search_bar_text_submitted(new_text):
 	for button in buttons:
+		labels.append(button.get_children())
 		button.visible = false
+	for label in labels:
+		label[0].visible = false
+	var regex = RegEx.new()
+	regex.compile("\\b\\w+\\b")
+	var strings = regex.search_all(new_text)
+	var matches = []
+	for i in strings:
+		matches.append(i.get_string().to_lower())
+	var j = 0
+	for i in range(0, stuff.size()):
+		var button = buttons[j]
+		var label = labels[j]
+		var check = true
+		for string in matches:
+			if !stuff[i]["title"].to_lower().contains(string):
+				check = false
+		
+		if check:
+			button.set_text("  " + stuff[i]["title"])
+			var string = ""
+			if stuff[i]["shortName"] != null:
+				string = string + stuff[i]["shortName"]
+			if stuff[i]["tune_type"] != null:
+				string = string + " | " + stuff[i]["tune_type"]
+			if stuff[i]["key_sig"] != null:
+				string = string + " | " + stuff[i]["key_sig"]
+			
+			label[0].set_text(string)
+			print(label[0].text)
+			button.visible = true
+			label[0].visible = true
+			j += 1
+		if j == 50:
+			break
+
 	
+	
+	
+
+
+func _on_reels_hornpipes_toggled(button_pressed):
+	pass # Replace with function body.

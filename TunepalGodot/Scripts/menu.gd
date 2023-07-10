@@ -10,6 +10,10 @@ var preferencesMainMenu
 var preferencesFundamentalMenu
 var preferencesMenus
 var preferencesCurrentMenu
+var preferencesTuneBooksMenu
+var preferencesTimeSignaturesMenu
+var preferencesCountdownMenu
+var preferencesLanguageMenu
 
 func _ready():
 	menus = $Menus.get_children()
@@ -19,12 +23,17 @@ func _ready():
 	preferencesMenu = $Menus/PreferencesMenu
 	preferencesMenus = preferencesMenu.get_children()
 	preferencesMainMenu = $Menus/PreferencesMenu/MainMenu
-	moreMenu = $Menus/MoreMenu
 	preferencesFundamentalMenu = $Menus/PreferencesMenu/FundamentalMenu
+	preferencesTuneBooksMenu = $Menus/PreferencesMenu/TuneBooksMenu
+	preferencesTimeSignaturesMenu = $Menus/PreferencesMenu/TimeSignaturesMenu
+	preferencesCountdownMenu = $Menus/PreferencesMenu/CountdownMenu
+	preferencesLanguageMenu = $Menus/PreferencesMenu/LanguageMenu
+	moreMenu = $Menus/MoreMenu
 	preferencesCurrentMenu = preferencesMainMenu
 	for i in menus:
 		i.visible = false
 	recordMenu.visible = true
+	print("DOne")
 	
 func _on_record_pressed():
 	for i in menus:
@@ -71,5 +80,40 @@ func _on_back_to_preferences_pressed():
 	preferencesCurrentMenu = preferencesMainMenu
 	preferencesCurrentMenu.visible = true
 	preferencesMenu.visible = true
-	
-	
+
+func _on_tune_books_pressed():
+	for i in menus:
+		i.visible = false
+	for i in preferencesMenus:
+		i.visible = false
+	preferencesMenu.visible = true
+	preferencesCurrentMenu = preferencesTuneBooksMenu
+	preferencesCurrentMenu.visible = true
+
+func _on_time_signatures_pressed():
+	for i in menus:
+		i.visible = false
+	for i in preferencesMenus:
+		i.visible = false
+	preferencesMenu.visible = true
+	preferencesCurrentMenu = preferencesTimeSignaturesMenu
+	preferencesCurrentMenu.visible = true
+
+
+func _on_countdown_pressed():
+	for i in menus:
+		i.visible = false
+	for i in preferencesMenus:
+		i.visible = false
+	preferencesMenu.visible = true
+	preferencesCurrentMenu = preferencesCountdownMenu
+	preferencesCurrentMenu.visible = true
+
+func _on_language_pressed():
+	for i in menus:
+		i.visible = false
+	for i in preferencesMenus:
+		i.visible = false
+	preferencesMenu.visible = true
+	preferencesCurrentMenu = preferencesLanguageMenu
+	preferencesCurrentMenu.visible = true
