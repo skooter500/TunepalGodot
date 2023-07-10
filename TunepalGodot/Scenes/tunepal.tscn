@@ -1,18 +1,21 @@
 [gd_scene load_steps=19 format=3 uid="uid://dexlkh1cvmqhe"]
 
-[ext_resource type="Script" path="res://Scripts/menu.gd" id="1_wce83"]
-[ext_resource type="Script" path="res://Scripts/results_songs.gd" id="2_ye5fa"]
-[ext_resource type="Script" path="res://Scripts/record.gd" id="3_tmdbb"]
-[ext_resource type="Texture2D" uid="uid://c1h80phoadlat" path="res://Icon Pictures/tunepal.png" id="4_12owa"]
-[ext_resource type="Script" path="res://Scripts/searchbar_keywords.gd" id="5_7pkwy"]
-[ext_resource type="Script" path="res://Scripts/keywords_songs.gd" id="6_v2gy6"]
-[ext_resource type="Script" path="res://Scripts/searchbar_mytunes.gd" id="7_044ag"]
-[ext_resource type="ButtonGroup" uid="uid://crb2dhi12mxkp" path="res://Scenes/FundamentalButtonGroup.tres" id="8_wyeup"]
-[ext_resource type="Texture2D" uid="uid://ciuejn78iqdma" path="res://Icon Pictures/Circle Arrows.png" id="9_uqbit"]
-[ext_resource type="Texture2D" uid="uid://wo3yrh1mjav5" path="res://Icon Pictures/Map Symbol.png" id="10_ddg03"]
-[ext_resource type="Texture2D" uid="uid://hhxi5sl5meko" path="res://Icon Pictures/Help symbol.png" id="11_moik7"]
-[ext_resource type="Texture2D" uid="uid://bwhoarolysagy" path="res://Icon Pictures/Facebook symbol.png" id="12_hsncw"]
-[ext_resource type="ButtonGroup" uid="uid://b6m85x57xm6cw" path="res://Scenes/button_group.tres" id="13_28b28"]
+[ext_resource type="Texture2D" uid="uid://c1h80phoadlat" path="res://Icon Pictures/tunepal.png" id="1_gqfjs"]
+[ext_resource type="Script" path="res://Scripts/menu.gd" id="1_qhsuj"]
+[ext_resource type="ButtonGroup" uid="uid://b6m85x57xm6cw" path="res://Scenes/button_group.tres" id="2_ltoqc"]
+[ext_resource type="Script" path="res://Scripts/record.gd" id="2_o0meu"]
+[ext_resource type="Script" path="res://Scripts/searchbar_mytunes.gd" id="3_btya1"]
+[ext_resource type="Script" path="res://Scripts/searchbar_keywords.gd" id="4_d1io7"]
+[ext_resource type="Script" path="res://Scripts/keywords_songs.gd" id="4_wpkyc"]
+[ext_resource type="Script" path="res://Scripts/mytunes_songs.gd" id="5_lkohk"]
+[ext_resource type="Texture2D" uid="uid://ciuejn78iqdma" path="res://Icon Pictures/Circle Arrows.png" id="8_3dypw"]
+[ext_resource type="ButtonGroup" uid="uid://crb2dhi12mxkp" path="res://FundamentalButtonGroup.tres" id="8_7lcto"]
+[ext_resource type="ButtonGroup" uid="uid://k2oc73sqvq2j" path="res://TuneBooks_ButtonGroup.tres" id="9_ayqpd"]
+[ext_resource type="Texture2D" uid="uid://wo3yrh1mjav5" path="res://Icon Pictures/Map Symbol.png" id="9_yffl5"]
+[ext_resource type="Texture2D" uid="uid://hhxi5sl5meko" path="res://Icon Pictures/Help symbol.png" id="10_sp6gv"]
+[ext_resource type="Texture2D" uid="uid://bwhoarolysagy" path="res://Icon Pictures/Facebook symbol.png" id="11_172h4"]
+
+[sub_resource type="AudioStreamMicrophone" id="AudioStreamMicrophone_e84lj"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_e21rs"]
 bg_color = Color(1, 1, 1, 1)
@@ -2594,8 +2597,12 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_2fq0c")
 placeholder_text = "Search"
 alignment = 1
 
-[node name="ColorRect2" type="ColorRect" parent="Control/Menus/MyTunesMenu/Control"]
-layout_mode = 0
+
+[node name="PreferencesMenu" type="Node2D" parent="Control/Menus"]
+
+[node name="MainMenu" type="Node2D" parent="Control/Menus/PreferencesMenu"]
+
+[node name="ColorRect" type="ColorRect" parent="Control/Menus/PreferencesMenu/MainMenu"]
 
 offset_right = 576.0
 offset_bottom = 85.0
