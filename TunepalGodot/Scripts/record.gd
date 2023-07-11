@@ -35,10 +35,10 @@ var ednode
 
 func _ready():
 	record_bus_index = AudioServer.get_bus_index("Record")
-	AudioServer.get_bus_effect(record_bus_index, 0).set_buffer_length(2)
+	AudioServer.get_bus_effect(record_bus_index, 0).set_buffer_length(.25)
 	#AudioServer.get_bus_effect(record_bus_index, 0).tap_back_pos = .05
 	spectrum = AudioServer.get_bus_effect_instance(record_bus_index, 0)
-	print(spellings.size(), " ", fund_frequencies.size())
+	#print(spellings.size(), " ", fund_frequencies.size())
 	my_csharp_script = load("res://Scripts/edit_distance.cs")
 	ednode = my_csharp_script.new()
 	db.path = db_name
@@ -51,7 +51,6 @@ func _ready():
 
 func _physics_process(_delta):
 	if timer.get_time_left() > 0:
-		#await get_tree().create_timer(.1).timeout
 		if current_time == null:
 			current_time = timer.get_time_left()
 		
@@ -80,7 +79,7 @@ func _physics_process(_delta):
 					if note.note == spellings[minIndex]:
 						check = true
 						note.count += 1
-						if note.count == 10:
+						if note.count == 2:
 							temp_notes = []
 							if current_notes.size() == 0:
 								current_time = current_time - timer.get_time_left()
@@ -199,31 +198,38 @@ func group_notes(notes):
 	var grouped_notes
 	# Sort the notes based on their time values
 	notes.sort_custom(t_sort)
-	var time_interval = .05
+	#var time_interval = .3
 	
-	var enough_bins = false
-	while enough_bins == false:
-		grouped_notes = []
-		var current_bin = []
-		var previous_time = null
-		for note in notes:
-			@warning_ignore("shadowed_variable")
-			var current_time = note["time"]
-			if previous_time == null or current_time - previous_time <= time_interval:
-				# Add the note to the current bin
-				current_bin.append(note)
-			else:
-				# Start a new bin for notes played at a different time
-				grouped_notes.append(current_bin)
-				current_bin = [note]
-		
-			previous_time = current_time
+	#var enough_bins = false
+	#while enough_bins == false:
+	grouped_notes = []
+	var current_bin = []
+	var current_average = 0
+	for note in notes:
+		@warning_ignore("shadowed_variable")
+		var current_time = note["time"]
+		if current_average == 0:
+			current_average = current_time
+		print("(", current_average, " - ", current_time, ") / ", current_average, " = ", (abs(current_average - current_time) / current_average))
+		if abs((current_average - current_time) / current_average) <= .33:
+			# Add the note to the current bin
+			current_bin.append(note)
+			current_average = 0
+			for stuff in current_bin:
+				current_average += stuff.time
+			current_average = current_average / current_bin.size()
+			print("CURRENT AVERAGE = ", current_average)
+		else:
+			# Start a new bin for notes played at a different time
+			current_average = 0
+			grouped_notes.append(current_bin)
+			current_bin = [note]
 	
-		# Add the last bin to the grouped notes
-		grouped_notes.append(current_bin)
-		time_interval += .05
-		if grouped_notes.size() <= 3:
-			enough_bins = true
+	# Add the last bin to the grouped notes
+	grouped_notes.append(current_bin)
+	#time_interval += .05
+	#if grouped_notes.size() <= 3:
+		#enough_bins = true
 	return grouped_notes
 
 func create_string(notes, time):
