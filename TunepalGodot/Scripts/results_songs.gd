@@ -10,8 +10,10 @@ func _ready():
 func _process(_delta):
 	for button in buttons:
 		if button.button_pressed:
+			
 			get_node("../../../../ResultMenu").visible = false
 			get_node("../../../../ABCMenu/Control/ColorRect/ABC").text = information[button.index]["notation"]
+			get_node("../../../../ABCMenu/Control/ColorRect/Title").text = information[button.index]["title"]
 			get_node("../../../../ABCMenu").visible = true
 
 func delete():

@@ -28,9 +28,9 @@ const spellings = ["B", "C", "C", "D", "D", "E", "F", "F", "G", "G", "A", "A", "
 var current_time
 var temp_notes
 
-#CSHARP STUFF
-var my_csharp_script
-var ednode
+#EDIT DISTANCE STUFF
+var edit_distance = EditDistance.new()
+
 
 func _ready():
 	record_bus_index = AudioServer.get_bus_index("Record")
@@ -38,12 +38,10 @@ func _ready():
 	AudioServer.get_bus_effect(record_bus_index, 0).tap_back_pos = .02
 	spectrum = AudioServer.get_bus_effect_instance(record_bus_index, 0)
 	#print(spellings.size(), " ", fund_frequencies.size())
-	my_csharp_script = load("res://Scripts/edit_distance.cs")
-	ednode = my_csharp_script.new()
 	db.path = db_name
 	db.open_db()
 	db.read_only = true
-	db.query("select tuneindex.id as id, tune_type, notation, source.id as sourceid, url, source.source as sourcename, title, alt_title, tunepalid, x, midi_file_name, key_sig, search_key from tuneindex, tunekeys, source where tunekeys.tuneid = tuneindex.id and tuneindex.source = source.id;")
+	db.query("select tuneindex.id as id, midi_sequence, tune_type, notation, source.id as sourceid, url, source.source as sourcename, title, alt_title, tunepalid, x, midi_file_name, key_sig, search_key from tuneindex, tunekeys, source where tunekeys.tuneid = tuneindex.id and tuneindex.source = source.id;")
 	await get_tree().create_timer(.5).timeout
 	query_result = db.query_result
 	db.close_db()
@@ -287,8 +285,8 @@ func search(start, end, thread):
 	for id in range(start, end):
 		var search_key = query_result[id]["search_key"]
 		if !search_key.length() < 50:
-			var confidence = ednode.edSubstring(note_string, search_key, thread)
-			info.append({"confidence" : confidence, "id" : query_result[id]["id"], "title" : query_result[id]["title"], "notation" : query_result[id]["notation"]})
+			var confidence = edit_distance.edSubstring(note_string, search_key, thread)
+			info.append({"confidence" : confidence, "id" : query_result[id]["id"], "title" : query_result[id]["title"], "notation" : query_result[id]["notation"], "midi_sequence" : query_result[id]["midi_sequence"]})
 	return info
 			
 static func d_sort(a, b):

@@ -1,0 +1,16 @@
+[configuration]
+
+entry_symbol = "gdextension_init"
+
+[libraries]
+
+macos.debug = "bin/libedit_distance.macos.debug.framework"
+macos.release = "bin/libedit_distance.macos.release.framework"
+windows.debug.x86_64 = "bin/libedit_distance.windows.debug.x86_64.dll"
+windows.release.x86_64 = "bin/libedit_distance.windows.release.x86_64.dll"
+linux.debug.x86_64 = "bin/libedit_distance.linux.debug.x86_64.so"
+linux.release.x86_64 = "bin/libedit_distance.linux.release.x86_64.so"
+linux.debug.arm64 = "bin/libedit_distance.linux.debug.arm64.so"
+linux.release.arm64 = "bin/libedit_distance.linux.release.arm64.so"
+linux.debug.rv64 = "bin/libedit_distance.linux.debug.rv64.so"
+linux.release.rv64 = "bin/libedit_distance.linux.release.rv64.so"
