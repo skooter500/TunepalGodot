@@ -34,14 +34,14 @@ var edit_distance = EditDistance.new()
 
 func _ready():
 	record_bus_index = AudioServer.get_bus_index("Record")
-	AudioServer.get_bus_effect(record_bus_index, 0).set_buffer_length(.025)
-	AudioServer.get_bus_effect(record_bus_index, 0).tap_back_pos = .02
+	AudioServer.get_bus_effect(record_bus_index, 0).set_buffer_length(.1)
+	AudioServer.get_bus_effect(record_bus_index, 0).tap_back_pos = .05
 	spectrum = AudioServer.get_bus_effect_instance(record_bus_index, 0)
 	#print(spellings.size(), " ", fund_frequencies.size())
 	db.path = db_name
 	db.open_db()
 	db.read_only = true
-	db.query("select tuneindex.id as id, midi_sequence, tune_type, notation, source.id as sourceid, url, source.source as sourcename, title, alt_title, tunepalid, x, midi_file_name, key_sig, search_key from tuneindex, tunekeys, source where tunekeys.tuneid = tuneindex.id and tuneindex.source = source.id;")
+	db.query("select tuneindex.id as id, midi_sequence, tune_type, notation, source.id as sourceid, shortName, url, source.source as sourcename, title, alt_title, tunepalid, x, midi_file_name, key_sig, search_key from tuneindex, tunekeys, source where tunekeys.tuneid = tuneindex.id and tuneindex.source = source.id;")
 	await get_tree().create_timer(.5).timeout
 	query_result = db.query_result
 	db.close_db()
@@ -293,7 +293,7 @@ static func d_sort(a, b):
 	if a["confidence"] > b["confidence"]:
 		return true
 	return false
-	
+
 static func t_sort(a, b):
 	if a["time"] < b["time"]:
 		return true

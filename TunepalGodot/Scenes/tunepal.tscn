@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://dexlkh1cvmqhe"]
+[gd_scene load_steps=23 format=3 uid="uid://dexlkh1cvmqhe"]
 
 [ext_resource type="Script" path="res://Scripts/menu.gd" id="1_wce83"]
 [ext_resource type="Script" path="res://Scripts/results_songs.gd" id="2_ye5fa"]
@@ -9,9 +9,13 @@
 [ext_resource type="Script" path="res://Scripts/keywords_songs.gd" id="6_v2gy6"]
 [ext_resource type="Script" path="res://Scripts/searchbar_mytunes.gd" id="7_044ag"]
 [ext_resource type="ButtonGroup" uid="uid://crb2dhi12mxkp" path="res://Scenes/FundamentalButtonGroup.tres" id="8_wyeup"]
+[ext_resource type="ButtonGroup" uid="uid://k2oc73sqvq2j" path="res://TuneBooks_ButtonGroup.tres" id="9_ayqpd"]
 [ext_resource type="Texture2D" uid="uid://ciuejn78iqdma" path="res://Icon Pictures/Circle Arrows.png" id="9_uqbit"]
 [ext_resource type="Texture2D" uid="uid://wo3yrh1mjav5" path="res://Icon Pictures/Map Symbol.png" id="10_ddg03"]
+[ext_resource type="ButtonGroup" uid="uid://bmhsrgdnd711k" path="res://TimeSigButtonGroup.tres" id="10_puvgn"]
+[ext_resource type="ButtonGroup" uid="uid://bfjlhmbqvvsnc" path="res://CountdownButtonGroup.tres" id="11_jkp81"]
 [ext_resource type="Texture2D" uid="uid://hhxi5sl5meko" path="res://Icon Pictures/Help symbol.png" id="11_moik7"]
+[ext_resource type="ButtonGroup" uid="uid://bws70dgqx0ljc" path="res://LanguageButtonGroup.tres" id="12_gtba4"]
 [ext_resource type="Texture2D" uid="uid://bwhoarolysagy" path="res://Icon Pictures/Facebook symbol.png" id="12_hsncw"]
 [ext_resource type="ButtonGroup" uid="uid://b6m85x57xm6cw" path="res://Scenes/button_group.tres" id="13_28b28"]
 
@@ -81,7 +85,6 @@ bus = &"Record"
 one_shot = true
 
 [node name="KeywordsMenu" type="Node2D" parent="Control/Menus"]
-visible = false
 
 [node name="Control" type="Control" parent="Control/Menus/KeywordsMenu"]
 layout_mode = 3
@@ -106,252 +109,1102 @@ script = ExtResource("6_v2gy6")
 [node name="Button" type="Button" parent="Control/Menus/KeywordsMenu/Control/ScrollContainer/Songs"]
 custom_minimum_size = Vector2(2.08165e-12, 83)
 layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
 theme_override_styles/normal = SubResource("StyleBoxFlat_e21rs")
+alignment = 0
+
+[node name="Label" type="Label" parent="Control/Menus/KeywordsMenu/Control/ScrollContainer/Songs/Button"]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 54.0
+offset_right = 559.0
+offset_bottom = 77.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+horizontal_alignment = 2
+vertical_alignment = 1
+visible_characters_behavior = 1
 
 [node name="Button2" type="Button" parent="Control/Menus/KeywordsMenu/Control/ScrollContainer/Songs"]
 custom_minimum_size = Vector2(2.08165e-12, 83)
 layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
 theme_override_styles/normal = SubResource("StyleBoxFlat_e21rs")
+alignment = 0
+
+[node name="Label" type="Label" parent="Control/Menus/KeywordsMenu/Control/ScrollContainer/Songs/Button2"]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 54.0
+offset_right = 559.0
+offset_bottom = 77.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+horizontal_alignment = 2
+vertical_alignment = 1
+visible_characters_behavior = 1
 
 [node name="Button3" type="Button" parent="Control/Menus/KeywordsMenu/Control/ScrollContainer/Songs"]
 custom_minimum_size = Vector2(2.08165e-12, 83)
 layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
 theme_override_styles/normal = SubResource("StyleBoxFlat_e21rs")
+alignment = 0
+
+[node name="Label" type="Label" parent="Control/Menus/KeywordsMenu/Control/ScrollContainer/Songs/Button3"]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 54.0
+offset_right = 559.0
+offset_bottom = 77.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+horizontal_alignment = 2
+vertical_alignment = 1
+visible_characters_behavior = 1
 
 [node name="Button4" type="Button" parent="Control/Menus/KeywordsMenu/Control/ScrollContainer/Songs"]
 custom_minimum_size = Vector2(2.08165e-12, 83)
 layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
 theme_override_styles/normal = SubResource("StyleBoxFlat_e21rs")
+alignment = 0
+
+[node name="Label" type="Label" parent="Control/Menus/KeywordsMenu/Control/ScrollContainer/Songs/Button4"]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 54.0
+offset_right = 559.0
+offset_bottom = 77.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+horizontal_alignment = 2
+vertical_alignment = 1
+visible_characters_behavior = 1
 
 [node name="Button5" type="Button" parent="Control/Menus/KeywordsMenu/Control/ScrollContainer/Songs"]
 custom_minimum_size = Vector2(2.08165e-12, 83)
 layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
 theme_override_styles/normal = SubResource("StyleBoxFlat_e21rs")
+alignment = 0
+
+[node name="Label" type="Label" parent="Control/Menus/KeywordsMenu/Control/ScrollContainer/Songs/Button5"]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 54.0
+offset_right = 559.0
+offset_bottom = 77.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+horizontal_alignment = 2
+vertical_alignment = 1
+visible_characters_behavior = 1
 
 [node name="Button6" type="Button" parent="Control/Menus/KeywordsMenu/Control/ScrollContainer/Songs"]
 custom_minimum_size = Vector2(2.08165e-12, 83)
 layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
 theme_override_styles/normal = SubResource("StyleBoxFlat_e21rs")
+alignment = 0
+
+[node name="Label" type="Label" parent="Control/Menus/KeywordsMenu/Control/ScrollContainer/Songs/Button6"]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 54.0
+offset_right = 559.0
+offset_bottom = 77.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+horizontal_alignment = 2
+vertical_alignment = 1
+visible_characters_behavior = 1
 
 [node name="Button7" type="Button" parent="Control/Menus/KeywordsMenu/Control/ScrollContainer/Songs"]
 custom_minimum_size = Vector2(2.08165e-12, 83)
 layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
 theme_override_styles/normal = SubResource("StyleBoxFlat_e21rs")
+alignment = 0
+
+[node name="Label" type="Label" parent="Control/Menus/KeywordsMenu/Control/ScrollContainer/Songs/Button7"]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 54.0
+offset_right = 559.0
+offset_bottom = 77.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+horizontal_alignment = 2
+vertical_alignment = 1
+visible_characters_behavior = 1
 
 [node name="Button8" type="Button" parent="Control/Menus/KeywordsMenu/Control/ScrollContainer/Songs"]
 custom_minimum_size = Vector2(2.08165e-12, 83)
 layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
 theme_override_styles/normal = SubResource("StyleBoxFlat_e21rs")
+alignment = 0
+
+[node name="Label" type="Label" parent="Control/Menus/KeywordsMenu/Control/ScrollContainer/Songs/Button8"]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 54.0
+offset_right = 559.0
+offset_bottom = 77.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+horizontal_alignment = 2
+vertical_alignment = 1
+visible_characters_behavior = 1
 
 [node name="Button9" type="Button" parent="Control/Menus/KeywordsMenu/Control/ScrollContainer/Songs"]
 custom_minimum_size = Vector2(2.08165e-12, 83)
 layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
 theme_override_styles/normal = SubResource("StyleBoxFlat_e21rs")
+alignment = 0
+
+[node name="Label" type="Label" parent="Control/Menus/KeywordsMenu/Control/ScrollContainer/Songs/Button9"]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 54.0
+offset_right = 559.0
+offset_bottom = 77.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+horizontal_alignment = 2
+vertical_alignment = 1
+visible_characters_behavior = 1
 
 [node name="Button10" type="Button" parent="Control/Menus/KeywordsMenu/Control/ScrollContainer/Songs"]
 custom_minimum_size = Vector2(2.08165e-12, 83)
 layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
 theme_override_styles/normal = SubResource("StyleBoxFlat_e21rs")
+alignment = 0
+
+[node name="Label" type="Label" parent="Control/Menus/KeywordsMenu/Control/ScrollContainer/Songs/Button10"]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 54.0
+offset_right = 559.0
+offset_bottom = 77.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+horizontal_alignment = 2
+vertical_alignment = 1
+visible_characters_behavior = 1
 
 [node name="Button11" type="Button" parent="Control/Menus/KeywordsMenu/Control/ScrollContainer/Songs"]
 custom_minimum_size = Vector2(2.08165e-12, 83)
 layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
 theme_override_styles/normal = SubResource("StyleBoxFlat_e21rs")
+alignment = 0
+
+[node name="Label" type="Label" parent="Control/Menus/KeywordsMenu/Control/ScrollContainer/Songs/Button11"]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 54.0
+offset_right = 559.0
+offset_bottom = 77.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+horizontal_alignment = 2
+vertical_alignment = 1
+visible_characters_behavior = 1
 
 [node name="Button12" type="Button" parent="Control/Menus/KeywordsMenu/Control/ScrollContainer/Songs"]
 custom_minimum_size = Vector2(2.08165e-12, 83)
 layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
 theme_override_styles/normal = SubResource("StyleBoxFlat_e21rs")
+alignment = 0
+
+[node name="Label" type="Label" parent="Control/Menus/KeywordsMenu/Control/ScrollContainer/Songs/Button12"]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 54.0
+offset_right = 559.0
+offset_bottom = 77.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+horizontal_alignment = 2
+vertical_alignment = 1
+visible_characters_behavior = 1
 
 [node name="Button13" type="Button" parent="Control/Menus/KeywordsMenu/Control/ScrollContainer/Songs"]
 custom_minimum_size = Vector2(2.08165e-12, 83)
 layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
 theme_override_styles/normal = SubResource("StyleBoxFlat_e21rs")
+alignment = 0
+
+[node name="Label" type="Label" parent="Control/Menus/KeywordsMenu/Control/ScrollContainer/Songs/Button13"]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 54.0
+offset_right = 559.0
+offset_bottom = 77.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+horizontal_alignment = 2
+vertical_alignment = 1
+visible_characters_behavior = 1
 
 [node name="Button14" type="Button" parent="Control/Menus/KeywordsMenu/Control/ScrollContainer/Songs"]
 custom_minimum_size = Vector2(2.08165e-12, 83)
 layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
 theme_override_styles/normal = SubResource("StyleBoxFlat_e21rs")
+alignment = 0
+
+[node name="Label" type="Label" parent="Control/Menus/KeywordsMenu/Control/ScrollContainer/Songs/Button14"]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 54.0
+offset_right = 559.0
+offset_bottom = 77.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+horizontal_alignment = 2
+vertical_alignment = 1
+visible_characters_behavior = 1
 
 [node name="Button15" type="Button" parent="Control/Menus/KeywordsMenu/Control/ScrollContainer/Songs"]
 custom_minimum_size = Vector2(2.08165e-12, 83)
 layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
 theme_override_styles/normal = SubResource("StyleBoxFlat_e21rs")
+alignment = 0
+
+[node name="Label" type="Label" parent="Control/Menus/KeywordsMenu/Control/ScrollContainer/Songs/Button15"]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 54.0
+offset_right = 559.0
+offset_bottom = 77.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+horizontal_alignment = 2
+vertical_alignment = 1
+visible_characters_behavior = 1
 
 [node name="Button16" type="Button" parent="Control/Menus/KeywordsMenu/Control/ScrollContainer/Songs"]
 custom_minimum_size = Vector2(2.08165e-12, 83)
 layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
 theme_override_styles/normal = SubResource("StyleBoxFlat_e21rs")
+alignment = 0
+
+[node name="Label" type="Label" parent="Control/Menus/KeywordsMenu/Control/ScrollContainer/Songs/Button16"]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 54.0
+offset_right = 559.0
+offset_bottom = 77.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+horizontal_alignment = 2
+vertical_alignment = 1
+visible_characters_behavior = 1
 
 [node name="Button17" type="Button" parent="Control/Menus/KeywordsMenu/Control/ScrollContainer/Songs"]
 custom_minimum_size = Vector2(2.08165e-12, 83)
 layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
 theme_override_styles/normal = SubResource("StyleBoxFlat_e21rs")
+alignment = 0
+
+[node name="Label" type="Label" parent="Control/Menus/KeywordsMenu/Control/ScrollContainer/Songs/Button17"]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 54.0
+offset_right = 559.0
+offset_bottom = 77.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+horizontal_alignment = 2
+vertical_alignment = 1
+visible_characters_behavior = 1
 
 [node name="Button18" type="Button" parent="Control/Menus/KeywordsMenu/Control/ScrollContainer/Songs"]
 custom_minimum_size = Vector2(2.08165e-12, 83)
 layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
 theme_override_styles/normal = SubResource("StyleBoxFlat_e21rs")
+alignment = 0
+
+[node name="Label" type="Label" parent="Control/Menus/KeywordsMenu/Control/ScrollContainer/Songs/Button18"]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 54.0
+offset_right = 559.0
+offset_bottom = 77.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+horizontal_alignment = 2
+vertical_alignment = 1
+visible_characters_behavior = 1
 
 [node name="Button19" type="Button" parent="Control/Menus/KeywordsMenu/Control/ScrollContainer/Songs"]
 custom_minimum_size = Vector2(2.08165e-12, 83)
 layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
 theme_override_styles/normal = SubResource("StyleBoxFlat_e21rs")
+alignment = 0
+
+[node name="Label" type="Label" parent="Control/Menus/KeywordsMenu/Control/ScrollContainer/Songs/Button19"]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 54.0
+offset_right = 559.0
+offset_bottom = 77.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+horizontal_alignment = 2
+vertical_alignment = 1
+visible_characters_behavior = 1
 
 [node name="Button20" type="Button" parent="Control/Menus/KeywordsMenu/Control/ScrollContainer/Songs"]
 custom_minimum_size = Vector2(2.08165e-12, 83)
 layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
 theme_override_styles/normal = SubResource("StyleBoxFlat_e21rs")
+alignment = 0
+
+[node name="Label" type="Label" parent="Control/Menus/KeywordsMenu/Control/ScrollContainer/Songs/Button20"]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 54.0
+offset_right = 559.0
+offset_bottom = 77.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+horizontal_alignment = 2
+vertical_alignment = 1
+visible_characters_behavior = 1
 
 [node name="Button21" type="Button" parent="Control/Menus/KeywordsMenu/Control/ScrollContainer/Songs"]
 custom_minimum_size = Vector2(2.08165e-12, 83)
 layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
 theme_override_styles/normal = SubResource("StyleBoxFlat_e21rs")
+alignment = 0
+
+[node name="Label" type="Label" parent="Control/Menus/KeywordsMenu/Control/ScrollContainer/Songs/Button21"]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 54.0
+offset_right = 559.0
+offset_bottom = 77.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+horizontal_alignment = 2
+vertical_alignment = 1
+visible_characters_behavior = 1
 
 [node name="Button22" type="Button" parent="Control/Menus/KeywordsMenu/Control/ScrollContainer/Songs"]
 custom_minimum_size = Vector2(2.08165e-12, 83)
 layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
 theme_override_styles/normal = SubResource("StyleBoxFlat_e21rs")
+alignment = 0
+
+[node name="Label" type="Label" parent="Control/Menus/KeywordsMenu/Control/ScrollContainer/Songs/Button22"]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 54.0
+offset_right = 559.0
+offset_bottom = 77.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+horizontal_alignment = 2
+vertical_alignment = 1
+visible_characters_behavior = 1
 
 [node name="Button23" type="Button" parent="Control/Menus/KeywordsMenu/Control/ScrollContainer/Songs"]
 custom_minimum_size = Vector2(2.08165e-12, 83)
 layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
 theme_override_styles/normal = SubResource("StyleBoxFlat_e21rs")
+alignment = 0
+
+[node name="Label" type="Label" parent="Control/Menus/KeywordsMenu/Control/ScrollContainer/Songs/Button23"]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 54.0
+offset_right = 559.0
+offset_bottom = 77.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+horizontal_alignment = 2
+vertical_alignment = 1
+visible_characters_behavior = 1
 
 [node name="Button24" type="Button" parent="Control/Menus/KeywordsMenu/Control/ScrollContainer/Songs"]
 custom_minimum_size = Vector2(2.08165e-12, 83)
 layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
 theme_override_styles/normal = SubResource("StyleBoxFlat_e21rs")
+alignment = 0
+
+[node name="Label" type="Label" parent="Control/Menus/KeywordsMenu/Control/ScrollContainer/Songs/Button24"]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 54.0
+offset_right = 559.0
+offset_bottom = 77.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+horizontal_alignment = 2
+vertical_alignment = 1
+visible_characters_behavior = 1
 
 [node name="Button25" type="Button" parent="Control/Menus/KeywordsMenu/Control/ScrollContainer/Songs"]
 custom_minimum_size = Vector2(2.08165e-12, 83)
 layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
 theme_override_styles/normal = SubResource("StyleBoxFlat_e21rs")
+alignment = 0
+
+[node name="Label" type="Label" parent="Control/Menus/KeywordsMenu/Control/ScrollContainer/Songs/Button25"]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 54.0
+offset_right = 559.0
+offset_bottom = 77.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+horizontal_alignment = 2
+vertical_alignment = 1
+visible_characters_behavior = 1
 
 [node name="Button26" type="Button" parent="Control/Menus/KeywordsMenu/Control/ScrollContainer/Songs"]
 custom_minimum_size = Vector2(2.08165e-12, 83)
 layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
 theme_override_styles/normal = SubResource("StyleBoxFlat_e21rs")
+alignment = 0
+
+[node name="Label" type="Label" parent="Control/Menus/KeywordsMenu/Control/ScrollContainer/Songs/Button26"]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 54.0
+offset_right = 559.0
+offset_bottom = 77.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+horizontal_alignment = 2
+vertical_alignment = 1
+visible_characters_behavior = 1
 
 [node name="Button27" type="Button" parent="Control/Menus/KeywordsMenu/Control/ScrollContainer/Songs"]
 custom_minimum_size = Vector2(2.08165e-12, 83)
 layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
 theme_override_styles/normal = SubResource("StyleBoxFlat_e21rs")
+alignment = 0
+
+[node name="Label" type="Label" parent="Control/Menus/KeywordsMenu/Control/ScrollContainer/Songs/Button27"]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 54.0
+offset_right = 559.0
+offset_bottom = 77.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+horizontal_alignment = 2
+vertical_alignment = 1
+visible_characters_behavior = 1
 
 [node name="Button28" type="Button" parent="Control/Menus/KeywordsMenu/Control/ScrollContainer/Songs"]
 custom_minimum_size = Vector2(2.08165e-12, 83)
 layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
 theme_override_styles/normal = SubResource("StyleBoxFlat_e21rs")
+alignment = 0
+
+[node name="Label" type="Label" parent="Control/Menus/KeywordsMenu/Control/ScrollContainer/Songs/Button28"]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 54.0
+offset_right = 559.0
+offset_bottom = 77.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+horizontal_alignment = 2
+vertical_alignment = 1
+visible_characters_behavior = 1
 
 [node name="Button29" type="Button" parent="Control/Menus/KeywordsMenu/Control/ScrollContainer/Songs"]
 custom_minimum_size = Vector2(2.08165e-12, 83)
 layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
 theme_override_styles/normal = SubResource("StyleBoxFlat_e21rs")
+alignment = 0
+
+[node name="Label" type="Label" parent="Control/Menus/KeywordsMenu/Control/ScrollContainer/Songs/Button29"]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 54.0
+offset_right = 559.0
+offset_bottom = 77.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+horizontal_alignment = 2
+vertical_alignment = 1
+visible_characters_behavior = 1
 
 [node name="Button30" type="Button" parent="Control/Menus/KeywordsMenu/Control/ScrollContainer/Songs"]
 custom_minimum_size = Vector2(2.08165e-12, 83)
 layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
 theme_override_styles/normal = SubResource("StyleBoxFlat_e21rs")
+alignment = 0
+
+[node name="Label" type="Label" parent="Control/Menus/KeywordsMenu/Control/ScrollContainer/Songs/Button30"]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 54.0
+offset_right = 559.0
+offset_bottom = 77.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+horizontal_alignment = 2
+vertical_alignment = 1
+visible_characters_behavior = 1
 
 [node name="Button31" type="Button" parent="Control/Menus/KeywordsMenu/Control/ScrollContainer/Songs"]
 custom_minimum_size = Vector2(2.08165e-12, 83)
 layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
 theme_override_styles/normal = SubResource("StyleBoxFlat_e21rs")
+alignment = 0
+
+[node name="Label" type="Label" parent="Control/Menus/KeywordsMenu/Control/ScrollContainer/Songs/Button31"]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 54.0
+offset_right = 559.0
+offset_bottom = 77.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+horizontal_alignment = 2
+vertical_alignment = 1
+visible_characters_behavior = 1
 
 [node name="Button32" type="Button" parent="Control/Menus/KeywordsMenu/Control/ScrollContainer/Songs"]
 custom_minimum_size = Vector2(2.08165e-12, 83)
 layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
 theme_override_styles/normal = SubResource("StyleBoxFlat_e21rs")
+alignment = 0
+
+[node name="Label" type="Label" parent="Control/Menus/KeywordsMenu/Control/ScrollContainer/Songs/Button32"]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 54.0
+offset_right = 559.0
+offset_bottom = 77.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+horizontal_alignment = 2
+vertical_alignment = 1
+visible_characters_behavior = 1
 
 [node name="Button33" type="Button" parent="Control/Menus/KeywordsMenu/Control/ScrollContainer/Songs"]
 custom_minimum_size = Vector2(2.08165e-12, 83)
 layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
 theme_override_styles/normal = SubResource("StyleBoxFlat_e21rs")
+alignment = 0
+
+[node name="Label" type="Label" parent="Control/Menus/KeywordsMenu/Control/ScrollContainer/Songs/Button33"]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 54.0
+offset_right = 559.0
+offset_bottom = 77.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+horizontal_alignment = 2
+vertical_alignment = 1
+visible_characters_behavior = 1
 
 [node name="Button34" type="Button" parent="Control/Menus/KeywordsMenu/Control/ScrollContainer/Songs"]
 custom_minimum_size = Vector2(2.08165e-12, 83)
 layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
 theme_override_styles/normal = SubResource("StyleBoxFlat_e21rs")
+alignment = 0
+
+[node name="Label" type="Label" parent="Control/Menus/KeywordsMenu/Control/ScrollContainer/Songs/Button34"]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 54.0
+offset_right = 559.0
+offset_bottom = 77.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+horizontal_alignment = 2
+vertical_alignment = 1
+visible_characters_behavior = 1
 
 [node name="Button35" type="Button" parent="Control/Menus/KeywordsMenu/Control/ScrollContainer/Songs"]
 custom_minimum_size = Vector2(2.08165e-12, 83)
 layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
 theme_override_styles/normal = SubResource("StyleBoxFlat_e21rs")
+alignment = 0
+
+[node name="Label" type="Label" parent="Control/Menus/KeywordsMenu/Control/ScrollContainer/Songs/Button35"]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 54.0
+offset_right = 559.0
+offset_bottom = 77.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+horizontal_alignment = 2
+vertical_alignment = 1
+visible_characters_behavior = 1
 
 [node name="Button36" type="Button" parent="Control/Menus/KeywordsMenu/Control/ScrollContainer/Songs"]
 custom_minimum_size = Vector2(2.08165e-12, 83)
 layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
 theme_override_styles/normal = SubResource("StyleBoxFlat_e21rs")
+alignment = 0
+
+[node name="Label" type="Label" parent="Control/Menus/KeywordsMenu/Control/ScrollContainer/Songs/Button36"]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 54.0
+offset_right = 559.0
+offset_bottom = 77.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+horizontal_alignment = 2
+vertical_alignment = 1
+visible_characters_behavior = 1
 
 [node name="Button37" type="Button" parent="Control/Menus/KeywordsMenu/Control/ScrollContainer/Songs"]
 custom_minimum_size = Vector2(2.08165e-12, 83)
 layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
 theme_override_styles/normal = SubResource("StyleBoxFlat_e21rs")
+alignment = 0
+
+[node name="Label" type="Label" parent="Control/Menus/KeywordsMenu/Control/ScrollContainer/Songs/Button37"]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 54.0
+offset_right = 559.0
+offset_bottom = 77.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+horizontal_alignment = 2
+vertical_alignment = 1
+visible_characters_behavior = 1
 
 [node name="Button38" type="Button" parent="Control/Menus/KeywordsMenu/Control/ScrollContainer/Songs"]
 custom_minimum_size = Vector2(2.08165e-12, 83)
 layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
 theme_override_styles/normal = SubResource("StyleBoxFlat_e21rs")
+alignment = 0
+
+[node name="Label" type="Label" parent="Control/Menus/KeywordsMenu/Control/ScrollContainer/Songs/Button38"]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 54.0
+offset_right = 559.0
+offset_bottom = 77.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+horizontal_alignment = 2
+vertical_alignment = 1
+visible_characters_behavior = 1
 
 [node name="Button39" type="Button" parent="Control/Menus/KeywordsMenu/Control/ScrollContainer/Songs"]
 custom_minimum_size = Vector2(2.08165e-12, 83)
 layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
 theme_override_styles/normal = SubResource("StyleBoxFlat_e21rs")
+alignment = 0
+
+[node name="Label" type="Label" parent="Control/Menus/KeywordsMenu/Control/ScrollContainer/Songs/Button39"]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 54.0
+offset_right = 559.0
+offset_bottom = 77.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+horizontal_alignment = 2
+vertical_alignment = 1
+visible_characters_behavior = 1
 
 [node name="Button40" type="Button" parent="Control/Menus/KeywordsMenu/Control/ScrollContainer/Songs"]
 custom_minimum_size = Vector2(2.08165e-12, 83)
 layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
 theme_override_styles/normal = SubResource("StyleBoxFlat_e21rs")
+alignment = 0
+
+[node name="Label" type="Label" parent="Control/Menus/KeywordsMenu/Control/ScrollContainer/Songs/Button40"]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 54.0
+offset_right = 559.0
+offset_bottom = 77.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+horizontal_alignment = 2
+vertical_alignment = 1
+visible_characters_behavior = 1
 
 [node name="Button41" type="Button" parent="Control/Menus/KeywordsMenu/Control/ScrollContainer/Songs"]
 custom_minimum_size = Vector2(2.08165e-12, 83)
 layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
 theme_override_styles/normal = SubResource("StyleBoxFlat_e21rs")
+alignment = 0
+
+[node name="Label" type="Label" parent="Control/Menus/KeywordsMenu/Control/ScrollContainer/Songs/Button41"]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 54.0
+offset_right = 559.0
+offset_bottom = 77.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+horizontal_alignment = 2
+vertical_alignment = 1
+visible_characters_behavior = 1
 
 [node name="Button42" type="Button" parent="Control/Menus/KeywordsMenu/Control/ScrollContainer/Songs"]
 custom_minimum_size = Vector2(2.08165e-12, 83)
 layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
 theme_override_styles/normal = SubResource("StyleBoxFlat_e21rs")
+alignment = 0
+
+[node name="Label" type="Label" parent="Control/Menus/KeywordsMenu/Control/ScrollContainer/Songs/Button42"]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 54.0
+offset_right = 559.0
+offset_bottom = 77.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+horizontal_alignment = 2
+vertical_alignment = 1
+visible_characters_behavior = 1
 
 [node name="Button43" type="Button" parent="Control/Menus/KeywordsMenu/Control/ScrollContainer/Songs"]
 custom_minimum_size = Vector2(2.08165e-12, 83)
 layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
 theme_override_styles/normal = SubResource("StyleBoxFlat_e21rs")
+alignment = 0
+
+[node name="Label" type="Label" parent="Control/Menus/KeywordsMenu/Control/ScrollContainer/Songs/Button43"]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 54.0
+offset_right = 559.0
+offset_bottom = 77.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+horizontal_alignment = 2
+vertical_alignment = 1
+visible_characters_behavior = 1
 
 [node name="Button44" type="Button" parent="Control/Menus/KeywordsMenu/Control/ScrollContainer/Songs"]
 custom_minimum_size = Vector2(2.08165e-12, 83)
 layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
 theme_override_styles/normal = SubResource("StyleBoxFlat_e21rs")
+alignment = 0
+
+[node name="Label" type="Label" parent="Control/Menus/KeywordsMenu/Control/ScrollContainer/Songs/Button44"]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 54.0
+offset_right = 559.0
+offset_bottom = 77.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+horizontal_alignment = 2
+vertical_alignment = 1
+visible_characters_behavior = 1
 
 [node name="Button45" type="Button" parent="Control/Menus/KeywordsMenu/Control/ScrollContainer/Songs"]
 custom_minimum_size = Vector2(2.08165e-12, 83)
 layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
 theme_override_styles/normal = SubResource("StyleBoxFlat_e21rs")
+alignment = 0
+
+[node name="Label" type="Label" parent="Control/Menus/KeywordsMenu/Control/ScrollContainer/Songs/Button45"]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 54.0
+offset_right = 559.0
+offset_bottom = 77.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+horizontal_alignment = 2
+vertical_alignment = 1
+visible_characters_behavior = 1
 
 [node name="Button46" type="Button" parent="Control/Menus/KeywordsMenu/Control/ScrollContainer/Songs"]
 custom_minimum_size = Vector2(2.08165e-12, 83)
 layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
 theme_override_styles/normal = SubResource("StyleBoxFlat_e21rs")
+alignment = 0
+
+[node name="Label" type="Label" parent="Control/Menus/KeywordsMenu/Control/ScrollContainer/Songs/Button46"]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 54.0
+offset_right = 559.0
+offset_bottom = 77.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+horizontal_alignment = 2
+vertical_alignment = 1
+visible_characters_behavior = 1
 
 [node name="Button47" type="Button" parent="Control/Menus/KeywordsMenu/Control/ScrollContainer/Songs"]
 custom_minimum_size = Vector2(2.08165e-12, 83)
 layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
 theme_override_styles/normal = SubResource("StyleBoxFlat_e21rs")
+alignment = 0
+
+[node name="Label" type="Label" parent="Control/Menus/KeywordsMenu/Control/ScrollContainer/Songs/Button47"]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 54.0
+offset_right = 559.0
+offset_bottom = 77.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+horizontal_alignment = 2
+vertical_alignment = 1
+visible_characters_behavior = 1
 
 [node name="Button48" type="Button" parent="Control/Menus/KeywordsMenu/Control/ScrollContainer/Songs"]
 custom_minimum_size = Vector2(2.08165e-12, 83)
 layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
 theme_override_styles/normal = SubResource("StyleBoxFlat_e21rs")
+alignment = 0
+
+[node name="Label" type="Label" parent="Control/Menus/KeywordsMenu/Control/ScrollContainer/Songs/Button48"]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 54.0
+offset_right = 559.0
+offset_bottom = 77.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+horizontal_alignment = 2
+vertical_alignment = 1
+visible_characters_behavior = 1
 
 [node name="Button49" type="Button" parent="Control/Menus/KeywordsMenu/Control/ScrollContainer/Songs"]
 custom_minimum_size = Vector2(2.08165e-12, 83)
 layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
 theme_override_styles/normal = SubResource("StyleBoxFlat_e21rs")
+alignment = 0
+
+[node name="Label" type="Label" parent="Control/Menus/KeywordsMenu/Control/ScrollContainer/Songs/Button49"]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 54.0
+offset_right = 559.0
+offset_bottom = 77.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+horizontal_alignment = 2
+vertical_alignment = 1
+visible_characters_behavior = 1
 
 [node name="Button50" type="Button" parent="Control/Menus/KeywordsMenu/Control/ScrollContainer/Songs"]
 custom_minimum_size = Vector2(2.08165e-12, 83)
 layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
 theme_override_styles/normal = SubResource("StyleBoxFlat_e21rs")
+alignment = 0
+
+[node name="Label" type="Label" parent="Control/Menus/KeywordsMenu/Control/ScrollContainer/Songs/Button50"]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 54.0
+offset_right = 559.0
+offset_bottom = 77.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+horizontal_alignment = 2
+vertical_alignment = 1
+visible_characters_behavior = 1
 
 [node name="ColorRect" type="ColorRect" parent="Control/Menus/KeywordsMenu/Control"]
 layout_mode = 0
@@ -373,10 +1226,20 @@ offset_right = 275.0
 offset_bottom = 16.6665
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_selected_color = Color(0, 0, 0, 1)
+theme_override_colors/font_uneditable_color = Color(0, 0, 0, 1)
 theme_override_colors/font_placeholder_color = Color(0, 0, 0, 1)
+theme_override_colors/caret_color = Color(0, 0, 0, 1)
+theme_override_colors/clear_button_color = Color(0, 0, 0, 1)
 theme_override_styles/normal = SubResource("StyleBoxFlat_2fq0c")
 placeholder_text = "Search"
 alignment = 1
+expand_to_text_length = true
+virtual_keyboard_type = 4
+clear_button_enabled = true
+caret_blink = true
+caret_blink_interval = 0.45
 
 [node name="ColorRect2" type="ColorRect" parent="Control/Menus/KeywordsMenu/Control"]
 layout_mode = 0
@@ -394,7 +1257,6 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="MyTunesMenu" type="Node2D" parent="Control/Menus"]
-visible = false
 
 [node name="Control" type="Control" parent="Control/Menus/MyTunesMenu"]
 layout_mode = 3
@@ -707,10 +1569,8 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="PreferencesMenu" type="Node2D" parent="Control/Menus"]
-visible = false
 
 [node name="MainMenu" type="Node2D" parent="Control/Menus/PreferencesMenu"]
-visible = false
 
 [node name="Control" type="Control" parent="Control/Menus/PreferencesMenu/MainMenu"]
 layout_mode = 3
@@ -1080,7 +1940,7 @@ offset_right = 576.0
 offset_bottom = 85.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 27
-text = "Fundamental Menu"
+text = "Fundamental Selection"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -1208,7 +2068,7 @@ theme_override_colors/icon_disabled_color = Color(0, 0, 0, 1)
 theme_override_styles/normal = SubResource("StyleBoxFlat_e21rs")
 toggle_mode = true
 button_pressed = true
-action_mode = 0
+keep_pressed_outside = true
 button_group = ExtResource("8_wyeup")
 text = "  D"
 alignment = 0
@@ -1285,6 +2145,1488 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_e21rs")
 toggle_mode = true
 button_group = ExtResource("8_wyeup")
 text = "  G"
+alignment = 0
+icon_alignment = 2
+expand_icon = true
+
+[node name="TuneBooksMenu" type="Node2D" parent="Control/Menus/PreferencesMenu"]
+
+[node name="ColorRect2" type="ColorRect" parent="Control/Menus/PreferencesMenu/TuneBooksMenu"]
+offset_right = 576.0
+offset_bottom = 85.0
+
+[node name="Label" type="Label" parent="Control/Menus/PreferencesMenu/TuneBooksMenu/ColorRect2"]
+layout_mode = 0
+offset_right = 576.0
+offset_bottom = 85.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 27
+text = "Tune Book Selection"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Back to Preferences" type="Button" parent="Control/Menus/PreferencesMenu/TuneBooksMenu/ColorRect2"]
+use_parent_material = true
+layout_mode = 0
+offset_right = 105.0
+offset_bottom = 60.0
+theme_override_colors/font_color = Color(0, 0, 1, 1)
+text = "< Prefrences"
+flat = true
+
+[node name="ColorRect" type="ColorRect" parent="Control/Menus/PreferencesMenu/TuneBooksMenu/ColorRect2"]
+layout_mode = 0
+offset_top = 85.0
+offset_right = 576.0
+offset_bottom = 1024.0
+
+[node name="TuneBooks" type="Control" parent="Control/Menus/PreferencesMenu/TuneBooksMenu"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Control/Menus/PreferencesMenu/TuneBooksMenu/TuneBooks"]
+custom_minimum_size = Vector2(576, 0)
+layout_mode = 0
+offset_top = 85.0
+offset_right = 576.0
+offset_bottom = 939.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/Menus/PreferencesMenu/TuneBooksMenu/TuneBooks/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="All" type="Button" parent="Control/Menus/PreferencesMenu/TuneBooksMenu/TuneBooks/ScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0.207843, 0.768627, 0.215686, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_normal_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_disabled_color = Color(0, 0, 0, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_e21rs")
+toggle_mode = true
+button_pressed = true
+keep_pressed_outside = true
+button_group = ExtResource("9_ayqpd")
+text = "  All"
+alignment = 0
+icon_alignment = 2
+expand_icon = true
+
+[node name="thesessionorg" type="Button" parent="Control/Menus/PreferencesMenu/TuneBooksMenu/TuneBooks/ScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0.207843, 0.768627, 0.215686, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_normal_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_disabled_color = Color(0, 0, 0, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_e21rs")
+toggle_mode = true
+button_group = ExtResource("9_ayqpd")
+text = "  thesession.org"
+alignment = 0
+icon_alignment = 2
+expand_icon = true
+
+[node name="ONeills 1001" type="Button" parent="Control/Menus/PreferencesMenu/TuneBooksMenu/TuneBooks/ScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0.207843, 0.768627, 0.215686, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_normal_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_disabled_color = Color(0, 0, 0, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_e21rs")
+toggle_mode = true
+button_group = ExtResource("9_ayqpd")
+text = "  O'Neill's 1001"
+alignment = 0
+icon_alignment = 2
+expand_icon = true
+
+[node name="CRE1" type="Button" parent="Control/Menus/PreferencesMenu/TuneBooksMenu/TuneBooks/ScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0.207843, 0.768627, 0.215686, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_normal_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_disabled_color = Color(0, 0, 0, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_e21rs")
+toggle_mode = true
+action_mode = 0
+button_group = ExtResource("9_ayqpd")
+text = "  CRÉ1 Transcribed by Bill Black"
+alignment = 0
+icon_alignment = 2
+expand_icon = true
+
+[node name="CRE2" type="Button" parent="Control/Menus/PreferencesMenu/TuneBooksMenu/TuneBooks/ScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0.207843, 0.768627, 0.215686, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_normal_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_disabled_color = Color(0, 0, 0, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_e21rs")
+toggle_mode = true
+action_mode = 0
+button_group = ExtResource("9_ayqpd")
+text = "  CRÉ2 Transcribed by Bill Black
+"
+alignment = 0
+icon_alignment = 2
+expand_icon = true
+
+[node name="CRE3" type="Button" parent="Control/Menus/PreferencesMenu/TuneBooksMenu/TuneBooks/ScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0.207843, 0.768627, 0.215686, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_normal_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_disabled_color = Color(0, 0, 0, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_e21rs")
+toggle_mode = true
+button_group = ExtResource("9_ayqpd")
+text = "  CRÉ3 Transcribed by Bill Black"
+alignment = 0
+icon_alignment = 2
+expand_icon = true
+
+[node name="CRE4" type="Button" parent="Control/Menus/PreferencesMenu/TuneBooksMenu/TuneBooks/ScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0.207843, 0.768627, 0.215686, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_normal_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_disabled_color = Color(0, 0, 0, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_e21rs")
+toggle_mode = true
+button_group = ExtResource("9_ayqpd")
+text = "  CRÉ4 Trancribed by Bill Black"
+alignment = 0
+icon_alignment = 2
+expand_icon = true
+
+[node name="CRE5" type="Button" parent="Control/Menus/PreferencesMenu/TuneBooksMenu/TuneBooks/ScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0.207843, 0.768627, 0.215686, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_normal_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_disabled_color = Color(0, 0, 0, 1)
+toggle_mode = true
+button_group = ExtResource("9_ayqpd")
+text = "  CRÉ5 Transcribed by Bill Black"
+flat = true
+alignment = 0
+expand_icon = true
+
+[node name="OLeary" type="Button" parent="Control/Menus/PreferencesMenu/TuneBooksMenu/TuneBooks/ScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0.207843, 0.768627, 0.215686, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_normal_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_disabled_color = Color(0, 0, 0, 1)
+toggle_mode = true
+button_group = ExtResource("9_ayqpd")
+text = "  O'Leary Transcribed by Bill Black"
+flat = true
+alignment = 0
+expand_icon = true
+
+[node name="Nigel Gathere" type="Button" parent="Control/Menus/PreferencesMenu/TuneBooksMenu/TuneBooks/ScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0.207843, 0.768627, 0.215686, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_normal_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_disabled_color = Color(0, 0, 0, 1)
+toggle_mode = true
+button_group = ExtResource("9_ayqpd")
+text = "  Nigel Gatherer"
+flat = true
+alignment = 0
+expand_icon = true
+
+[node name="The Microphone" type="Button" parent="Control/Menus/PreferencesMenu/TuneBooksMenu/TuneBooks/ScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0.207843, 0.768627, 0.215686, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_normal_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_disabled_color = Color(0, 0, 0, 1)
+toggle_mode = true
+button_group = ExtResource("9_ayqpd")
+text = "  The Microphone Rambles"
+flat = true
+alignment = 0
+expand_icon = true
+
+[node name="Welsh Music" type="Button" parent="Control/Menus/PreferencesMenu/TuneBooksMenu/TuneBooks/ScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0.207843, 0.768627, 0.215686, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_normal_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_disabled_color = Color(0, 0, 0, 1)
+toggle_mode = true
+button_group = ExtResource("9_ayqpd")
+text = "  Welsh Music (John Tose)"
+flat = true
+alignment = 0
+expand_icon = true
+
+[node name="Scottish Flute Music" type="Button" parent="Control/Menus/PreferencesMenu/TuneBooksMenu/TuneBooks/ScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0.207843, 0.768627, 0.215686, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_normal_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_disabled_color = Color(0, 0, 0, 1)
+toggle_mode = true
+button_group = ExtResource("9_ayqpd")
+text = "  Scottish Flute Music (Jack Campin)"
+flat = true
+alignment = 0
+expand_icon = true
+
+[node name="Company of Fife and Drum" type="Button" parent="Control/Menus/PreferencesMenu/TuneBooksMenu/TuneBooks/ScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0.207843, 0.768627, 0.215686, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_normal_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_disabled_color = Color(0, 0, 0, 1)
+toggle_mode = true
+button_group = ExtResource("9_ayqpd")
+text = "  Company of Fife and Drum"
+flat = true
+alignment = 0
+expand_icon = true
+
+[node name="Nottingham Music Database" type="Button" parent="Control/Menus/PreferencesMenu/TuneBooksMenu/TuneBooks/ScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0.207843, 0.768627, 0.215686, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_normal_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_disabled_color = Color(0, 0, 0, 1)
+toggle_mode = true
+button_group = ExtResource("9_ayqpd")
+text = "  Nottingham Music Database"
+flat = true
+alignment = 0
+expand_icon = true
+
+[node name="Airds Airs" type="Button" parent="Control/Menus/PreferencesMenu/TuneBooksMenu/TuneBooks/ScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0.207843, 0.768627, 0.215686, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_normal_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_disabled_color = Color(0, 0, 0, 1)
+toggle_mode = true
+button_group = ExtResource("9_ayqpd")
+text = "  Aird's Airs (Jack Campin)"
+flat = true
+alignment = 0
+expand_icon = true
+
+[node name="Bill Black Tune Collection" type="Button" parent="Control/Menus/PreferencesMenu/TuneBooksMenu/TuneBooks/ScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0.207843, 0.768627, 0.215686, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_normal_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_disabled_color = Color(0, 0, 0, 1)
+toggle_mode = true
+button_group = ExtResource("9_ayqpd")
+text = "  Bill Black Irish Tune Collection Transcribed by Bill Black"
+flat = true
+alignment = 0
+expand_icon = true
+
+[node name="Turroe Stone" type="Button" parent="Control/Menus/PreferencesMenu/TuneBooksMenu/TuneBooks/ScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0.207843, 0.768627, 0.215686, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_normal_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_disabled_color = Color(0, 0, 0, 1)
+toggle_mode = true
+button_group = ExtResource("9_ayqpd")
+text = "  Turroe Stone Transcribed by Bill Black"
+flat = true
+alignment = 0
+expand_icon = true
+
+[node name="Hardings" type="Button" parent="Control/Menus/PreferencesMenu/TuneBooksMenu/TuneBooks/ScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0.207843, 0.768627, 0.215686, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_normal_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_disabled_color = Color(0, 0, 0, 1)
+toggle_mode = true
+button_group = ExtResource("9_ayqpd")
+text = "  Hardings's Transcribed by Bill Black"
+flat = true
+alignment = 0
+expand_icon = true
+
+[node name="Comhaltas" type="Button" parent="Control/Menus/PreferencesMenu/TuneBooksMenu/TuneBooks/ScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0.207843, 0.768627, 0.215686, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_normal_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_disabled_color = Color(0, 0, 0, 1)
+toggle_mode = true
+button_group = ExtResource("9_ayqpd")
+text = "  Comhaltas Transcribed by Bill Black"
+flat = true
+alignment = 0
+expand_icon = true
+
+[node name="Leitrim Fiddler Vol1" type="Button" parent="Control/Menus/PreferencesMenu/TuneBooksMenu/TuneBooks/ScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0.207843, 0.768627, 0.215686, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_normal_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_disabled_color = Color(0, 0, 0, 1)
+toggle_mode = true
+button_group = ExtResource("9_ayqpd")
+text = "  Leitrim Fiddler - Vol 1 Transcribed by Bill Black"
+flat = true
+alignment = 0
+expand_icon = true
+
+[node name="Leitrim Vol2" type="Button" parent="Control/Menus/PreferencesMenu/TuneBooksMenu/TuneBooks/ScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0.207843, 0.768627, 0.215686, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_normal_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_disabled_color = Color(0, 0, 0, 1)
+toggle_mode = true
+button_group = ExtResource("9_ayqpd")
+text = "  Leitrim Fiddler - Vol 1 Transcribed by Bill Black"
+flat = true
+alignment = 0
+expand_icon = true
+
+[node name="OFarrell V1" type="Button" parent="Control/Menus/PreferencesMenu/TuneBooksMenu/TuneBooks/ScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0.207843, 0.768627, 0.215686, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_normal_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_disabled_color = Color(0, 0, 0, 1)
+toggle_mode = true
+button_group = ExtResource("9_ayqpd")
+text = "  O'Farrell's - Vol 1 Transcribed by Bill Black"
+flat = true
+alignment = 0
+expand_icon = true
+
+[node name="OFarrell V2" type="Button" parent="Control/Menus/PreferencesMenu/TuneBooksMenu/TuneBooks/ScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0.207843, 0.768627, 0.215686, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_normal_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_disabled_color = Color(0, 0, 0, 1)
+toggle_mode = true
+button_group = ExtResource("9_ayqpd")
+text = "  O'Farrell's - Vol 2 Transcribed by Bill Black"
+flat = true
+alignment = 0
+expand_icon = true
+
+[node name="OFarrel V3" type="Button" parent="Control/Menus/PreferencesMenu/TuneBooksMenu/TuneBooks/ScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0.207843, 0.768627, 0.215686, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_normal_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_disabled_color = Color(0, 0, 0, 1)
+toggle_mode = true
+button_group = ExtResource("9_ayqpd")
+text = "  O'Farrell's - Vol 3 Transcribed by Bill Black"
+flat = true
+alignment = 0
+expand_icon = true
+
+[node name="OFarrell V4" type="Button" parent="Control/Menus/PreferencesMenu/TuneBooksMenu/TuneBooks/ScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0.207843, 0.768627, 0.215686, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_normal_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_disabled_color = Color(0, 0, 0, 1)
+toggle_mode = true
+button_group = ExtResource("9_ayqpd")
+text = "  O'Farrell's - Vol 4 Transcribed by Bill Black"
+flat = true
+alignment = 0
+expand_icon = true
+
+[node name="OFarrell Collection" type="Button" parent="Control/Menus/PreferencesMenu/TuneBooksMenu/TuneBooks/ScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0.207843, 0.768627, 0.215686, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_normal_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_disabled_color = Color(0, 0, 0, 1)
+toggle_mode = true
+button_group = ExtResource("9_ayqpd")
+text = "  O'Farrell's Collection Transcribed by Bill Black"
+flat = true
+alignment = 0
+expand_icon = true
+
+[node name="Brenda Tonra" type="Button" parent="Control/Menus/PreferencesMenu/TuneBooksMenu/TuneBooks/ScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0.207843, 0.768627, 0.215686, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_normal_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_disabled_color = Color(0, 0, 0, 1)
+toggle_mode = true
+button_group = ExtResource("9_ayqpd")
+text = "  Brenda Tonra Transcribed by Bill Black"
+flat = true
+alignment = 0
+expand_icon = true
+
+[node name="Luke OMalley" type="Button" parent="Control/Menus/PreferencesMenu/TuneBooksMenu/TuneBooks/ScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0.207843, 0.768627, 0.215686, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_normal_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_disabled_color = Color(0, 0, 0, 1)
+toggle_mode = true
+button_group = ExtResource("9_ayqpd")
+text = "  Luke O'Malley Transcribed by Bill Black"
+flat = true
+alignment = 0
+expand_icon = true
+
+[node name="Blacks Misc" type="Button" parent="Control/Menus/PreferencesMenu/TuneBooksMenu/TuneBooks/ScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0.207843, 0.768627, 0.215686, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_normal_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_disabled_color = Color(0, 0, 0, 1)
+toggle_mode = true
+button_group = ExtResource("9_ayqpd")
+text = "  Black's Miscellaneous Transcribed by Bill Black"
+flat = true
+alignment = 0
+expand_icon = true
+
+[node name="Mostly Gems" type="Button" parent="Control/Menus/PreferencesMenu/TuneBooksMenu/TuneBooks/ScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0.207843, 0.768627, 0.215686, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_normal_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_disabled_color = Color(0, 0, 0, 1)
+toggle_mode = true
+button_group = ExtResource("9_ayqpd")
+text = "  Mostly Gems Composed by Bill Black"
+flat = true
+alignment = 0
+expand_icon = true
+
+[node name="Paul Hardy" type="Button" parent="Control/Menus/PreferencesMenu/TuneBooksMenu/TuneBooks/ScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0.207843, 0.768627, 0.215686, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_normal_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_disabled_color = Color(0, 0, 0, 1)
+toggle_mode = true
+button_group = ExtResource("9_ayqpd")
+text = "  Paul Hardy Traditional Celtic and English Tunes from British Isles"
+flat = true
+alignment = 0
+expand_icon = true
+
+[node name="William Clarke" type="Button" parent="Control/Menus/PreferencesMenu/TuneBooksMenu/TuneBooks/ScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0.207843, 0.768627, 0.215686, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_normal_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_disabled_color = Color(0, 0, 0, 1)
+toggle_mode = true
+button_group = ExtResource("9_ayqpd")
+text = "William Clarke Transcribed by Paul Hardy"
+flat = true
+alignment = 0
+expand_icon = true
+
+[node name="Blumer & Sharpely" type="Button" parent="Control/Menus/PreferencesMenu/TuneBooksMenu/TuneBooks/ScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0.207843, 0.768627, 0.215686, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_normal_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_disabled_color = Color(0, 0, 0, 1)
+toggle_mode = true
+button_group = ExtResource("9_ayqpd")
+text = "  Blumer & Sharpely Transcribed by Bill Black"
+flat = true
+alignment = 0
+expand_icon = true
+
+[node name="TimeSignaturesMenu" type="Node2D" parent="Control/Menus/PreferencesMenu"]
+
+[node name="ColorRect2" type="ColorRect" parent="Control/Menus/PreferencesMenu/TimeSignaturesMenu"]
+offset_right = 576.0
+offset_bottom = 85.0
+
+[node name="Label" type="Label" parent="Control/Menus/PreferencesMenu/TimeSignaturesMenu/ColorRect2"]
+layout_mode = 0
+offset_right = 576.0
+offset_bottom = 85.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 27
+text = "Time Signature Selection"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Back to Preferences" type="Button" parent="Control/Menus/PreferencesMenu/TimeSignaturesMenu/ColorRect2"]
+use_parent_material = true
+layout_mode = 0
+offset_right = 105.0
+offset_bottom = 60.0
+theme_override_colors/font_color = Color(0, 0, 1, 1)
+text = "< Prefrences"
+flat = true
+
+[node name="ColorRect" type="ColorRect" parent="Control/Menus/PreferencesMenu/TimeSignaturesMenu/ColorRect2"]
+layout_mode = 0
+offset_top = 85.0
+offset_right = 576.0
+offset_bottom = 1024.0
+
+[node name="TimeSignatures" type="Control" parent="Control/Menus/PreferencesMenu/TimeSignaturesMenu"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Control/Menus/PreferencesMenu/TimeSignaturesMenu/TimeSignatures"]
+custom_minimum_size = Vector2(576, 0)
+layout_mode = 0
+offset_top = 85.0
+offset_right = 576.0
+offset_bottom = 939.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/Menus/PreferencesMenu/TimeSignaturesMenu/TimeSignatures/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="All" type="Button" parent="Control/Menus/PreferencesMenu/TimeSignaturesMenu/TimeSignatures/ScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0.207843, 0.768627, 0.215686, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_normal_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_disabled_color = Color(0, 0, 0, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_e21rs")
+toggle_mode = true
+button_pressed = true
+keep_pressed_outside = true
+button_group = ExtResource("10_puvgn")
+text = "  All"
+alignment = 0
+icon_alignment = 2
+expand_icon = true
+
+[node name="Reels Hornpipes" type="Button" parent="Control/Menus/PreferencesMenu/TimeSignaturesMenu/TimeSignatures/ScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0.207843, 0.768627, 0.215686, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_normal_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_disabled_color = Color(0, 0, 0, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_e21rs")
+toggle_mode = true
+button_group = ExtResource("10_puvgn")
+text = "  C, C|, 4/4, 2/4, 2/2, 4/2 - 	Reels, hornpipes, polkas etc."
+alignment = 0
+icon_alignment = 2
+expand_icon = true
+
+[node name="Jigs slides etc" type="Button" parent="Control/Menus/PreferencesMenu/TimeSignaturesMenu/TimeSignatures/ScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0.207843, 0.768627, 0.215686, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_normal_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_disabled_color = Color(0, 0, 0, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_e21rs")
+toggle_mode = true
+button_group = ExtResource("10_puvgn")
+text = "  6/8, 12/8 - Jigs, slides etc."
+alignment = 0
+icon_alignment = 2
+expand_icon = true
+
+[node name="Slip Jigs, hop jigs" type="Button" parent="Control/Menus/PreferencesMenu/TimeSignaturesMenu/TimeSignatures/ScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0.207843, 0.768627, 0.215686, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_normal_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_disabled_color = Color(0, 0, 0, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_e21rs")
+toggle_mode = true
+action_mode = 0
+button_group = ExtResource("10_puvgn")
+text = "  9/8 - Slip Jigs, hop jigs"
+alignment = 0
+icon_alignment = 2
+expand_icon = true
+
+[node name="Waltzes Mazurkas" type="Button" parent="Control/Menus/PreferencesMenu/TimeSignaturesMenu/TimeSignatures/ScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0.207843, 0.768627, 0.215686, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_normal_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_disabled_color = Color(0, 0, 0, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_e21rs")
+toggle_mode = true
+action_mode = 0
+button_group = ExtResource("10_puvgn")
+text = "  3/4 - Waltzes, mazurkas, polskas, minutes etc.
+"
+alignment = 0
+icon_alignment = 2
+expand_icon = true
+
+[node name="Unsusual Jigs" type="Button" parent="Control/Menus/PreferencesMenu/TimeSignaturesMenu/TimeSignatures/ScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0.207843, 0.768627, 0.215686, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_normal_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_disabled_color = Color(0, 0, 0, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_e21rs")
+toggle_mode = true
+button_group = ExtResource("10_puvgn")
+text = "  3/8 - Unusual jigs & waltzes"
+alignment = 0
+icon_alignment = 2
+expand_icon = true
+
+[node name="Unusual English Hornpipes" type="Button" parent="Control/Menus/PreferencesMenu/TimeSignaturesMenu/TimeSignatures/ScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0.207843, 0.768627, 0.215686, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_normal_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_disabled_color = Color(0, 0, 0, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_e21rs")
+toggle_mode = true
+button_group = ExtResource("10_puvgn")
+text = "  3/2, 6/4 Unusual English hornpipes and country dances"
+alignment = 0
+icon_alignment = 2
+expand_icon = true
+
+[node name="CountdownMenu" type="Node2D" parent="Control/Menus/PreferencesMenu"]
+
+[node name="ColorRect2" type="ColorRect" parent="Control/Menus/PreferencesMenu/CountdownMenu"]
+offset_right = 576.0
+offset_bottom = 85.0
+
+[node name="Label" type="Label" parent="Control/Menus/PreferencesMenu/CountdownMenu/ColorRect2"]
+layout_mode = 0
+offset_right = 576.0
+offset_bottom = 85.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 27
+text = "Countdown Selection"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Back to Preferences" type="Button" parent="Control/Menus/PreferencesMenu/CountdownMenu/ColorRect2"]
+use_parent_material = true
+layout_mode = 0
+offset_right = 105.0
+offset_bottom = 60.0
+theme_override_colors/font_color = Color(0, 0, 1, 1)
+text = "< Prefrences"
+flat = true
+
+[node name="ColorRect" type="ColorRect" parent="Control/Menus/PreferencesMenu/CountdownMenu/ColorRect2"]
+layout_mode = 0
+offset_top = 85.0
+offset_right = 576.0
+offset_bottom = 1024.0
+
+[node name="Countdown" type="Control" parent="Control/Menus/PreferencesMenu/CountdownMenu"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Control/Menus/PreferencesMenu/CountdownMenu/Countdown"]
+custom_minimum_size = Vector2(576, 0)
+layout_mode = 0
+offset_top = 85.0
+offset_right = 576.0
+offset_bottom = 939.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/Menus/PreferencesMenu/CountdownMenu/Countdown/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="0 Seconds" type="Button" parent="Control/Menus/PreferencesMenu/CountdownMenu/Countdown/ScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0.207843, 0.768627, 0.215686, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_normal_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_disabled_color = Color(0, 0, 0, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_e21rs")
+toggle_mode = true
+button_group = ExtResource("11_jkp81")
+text = "  0 seconds "
+alignment = 0
+icon_alignment = 2
+expand_icon = true
+
+[node name="1 Secods" type="Button" parent="Control/Menus/PreferencesMenu/CountdownMenu/Countdown/ScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0.207843, 0.768627, 0.215686, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_normal_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_disabled_color = Color(0, 0, 0, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_e21rs")
+toggle_mode = true
+button_group = ExtResource("11_jkp81")
+text = "  1 second"
+alignment = 0
+icon_alignment = 2
+expand_icon = true
+
+[node name="2 Seconds" type="Button" parent="Control/Menus/PreferencesMenu/CountdownMenu/Countdown/ScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0.207843, 0.768627, 0.215686, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_normal_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_disabled_color = Color(0, 0, 0, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_e21rs")
+toggle_mode = true
+button_group = ExtResource("11_jkp81")
+text = "  2 seconds"
+alignment = 0
+icon_alignment = 2
+expand_icon = true
+
+[node name="3 Seconds" type="Button" parent="Control/Menus/PreferencesMenu/CountdownMenu/Countdown/ScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0.207843, 0.768627, 0.215686, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_normal_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_disabled_color = Color(0, 0, 0, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_e21rs")
+toggle_mode = true
+button_pressed = true
+action_mode = 0
+keep_pressed_outside = true
+button_group = ExtResource("11_jkp81")
+text = "  3 seconds"
+alignment = 0
+icon_alignment = 2
+expand_icon = true
+
+[node name="4 Seconds" type="Button" parent="Control/Menus/PreferencesMenu/CountdownMenu/Countdown/ScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0.207843, 0.768627, 0.215686, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_normal_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_disabled_color = Color(0, 0, 0, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_e21rs")
+toggle_mode = true
+action_mode = 0
+button_group = ExtResource("11_jkp81")
+text = "  4 seconds
+"
+alignment = 0
+icon_alignment = 2
+expand_icon = true
+
+[node name="5 Seconds" type="Button" parent="Control/Menus/PreferencesMenu/CountdownMenu/Countdown/ScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0.207843, 0.768627, 0.215686, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_normal_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_disabled_color = Color(0, 0, 0, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_e21rs")
+toggle_mode = true
+button_group = ExtResource("11_jkp81")
+text = "  5 seconds"
+alignment = 0
+icon_alignment = 2
+expand_icon = true
+
+[node name="6 Seconds" type="Button" parent="Control/Menus/PreferencesMenu/CountdownMenu/Countdown/ScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0.207843, 0.768627, 0.215686, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_normal_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_disabled_color = Color(0, 0, 0, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_e21rs")
+toggle_mode = true
+button_group = ExtResource("11_jkp81")
+text = "  6 seconds"
+alignment = 0
+icon_alignment = 2
+expand_icon = true
+
+[node name="7 Seconds" type="Button" parent="Control/Menus/PreferencesMenu/CountdownMenu/Countdown/ScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0.207843, 0.768627, 0.215686, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_normal_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_disabled_color = Color(0, 0, 0, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_e21rs")
+toggle_mode = true
+button_group = ExtResource("11_jkp81")
+text = "  7 seconds"
+alignment = 0
+icon_alignment = 2
+expand_icon = true
+
+[node name="8 Seconds" type="Button" parent="Control/Menus/PreferencesMenu/CountdownMenu/Countdown/ScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0.207843, 0.768627, 0.215686, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_normal_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_disabled_color = Color(0, 0, 0, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_e21rs")
+toggle_mode = true
+button_group = ExtResource("11_jkp81")
+text = "  8 seconds"
+alignment = 0
+icon_alignment = 2
+expand_icon = true
+
+[node name="9 Seconds" type="Button" parent="Control/Menus/PreferencesMenu/CountdownMenu/Countdown/ScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0.207843, 0.768627, 0.215686, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_normal_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_disabled_color = Color(0, 0, 0, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_e21rs")
+toggle_mode = true
+button_group = ExtResource("11_jkp81")
+text = "  9 seconds"
+alignment = 0
+icon_alignment = 2
+expand_icon = true
+
+[node name="10 Seconds" type="Button" parent="Control/Menus/PreferencesMenu/CountdownMenu/Countdown/ScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0.207843, 0.768627, 0.215686, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_normal_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_disabled_color = Color(0, 0, 0, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_e21rs")
+toggle_mode = true
+button_group = ExtResource("11_jkp81")
+text = "  10 seconds"
+alignment = 0
+icon_alignment = 2
+expand_icon = true
+
+[node name="LanguageMenu" type="Node2D" parent="Control/Menus/PreferencesMenu"]
+
+[node name="ColorRect3" type="ColorRect" parent="Control/Menus/PreferencesMenu/LanguageMenu"]
+offset_right = 576.0
+offset_bottom = 85.0
+
+[node name="Label2" type="Label" parent="Control/Menus/PreferencesMenu/LanguageMenu/ColorRect3"]
+layout_mode = 0
+offset_right = 576.0
+offset_bottom = 85.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 27
+text = "Language Selection"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Back to Preferences" type="Button" parent="Control/Menus/PreferencesMenu/LanguageMenu/ColorRect3"]
+use_parent_material = true
+layout_mode = 0
+offset_right = 105.0
+offset_bottom = 60.0
+theme_override_colors/font_color = Color(0, 0, 1, 1)
+text = "< Prefrences"
+flat = true
+
+[node name="ColorRect2" type="ColorRect" parent="Control/Menus/PreferencesMenu/LanguageMenu/ColorRect3"]
+layout_mode = 0
+offset_top = 85.0
+offset_right = 576.0
+offset_bottom = 1024.0
+
+[node name="Language" type="Control" parent="Control/Menus/PreferencesMenu/LanguageMenu"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="ScrollContainer2" type="ScrollContainer" parent="Control/Menus/PreferencesMenu/LanguageMenu/Language"]
+custom_minimum_size = Vector2(576, 0)
+layout_mode = 0
+offset_top = 85.0
+offset_right = 576.0
+offset_bottom = 939.0
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="Control/Menus/PreferencesMenu/LanguageMenu/Language/ScrollContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="English" type="Button" parent="Control/Menus/PreferencesMenu/LanguageMenu/Language/ScrollContainer2/VBoxContainer2"]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0.207843, 0.768627, 0.215686, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_normal_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_disabled_color = Color(0, 0, 0, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_e21rs")
+toggle_mode = true
+button_pressed = true
+keep_pressed_outside = true
+button_group = ExtResource("12_gtba4")
+text = "  English"
+alignment = 0
+icon_alignment = 2
+expand_icon = true
+
+[node name="Gaeilge" type="Button" parent="Control/Menus/PreferencesMenu/LanguageMenu/Language/ScrollContainer2/VBoxContainer2"]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0.207843, 0.768627, 0.215686, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_normal_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_disabled_color = Color(0, 0, 0, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_e21rs")
+toggle_mode = true
+button_group = ExtResource("12_gtba4")
+text = " Gaeilge"
 alignment = 0
 icon_alignment = 2
 expand_icon = true
@@ -1414,6 +3756,16 @@ layout_mode = 2
 theme_override_styles/normal = SubResource("StyleBoxFlat_e21rs")
 
 [node name="Button10" type="Button" parent="Control/Menus/MoreMenu/Control/ScrollContainer/Songs"]
+custom_minimum_size = Vector2(2.08165e-12, 83)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_e21rs")
+
+[node name="Button11" type="Button" parent="Control/Menus/MoreMenu/Control/ScrollContainer/Songs"]
+custom_minimum_size = Vector2(2.08165e-12, 83)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_e21rs")
+
+[node name="Button12" type="Button" parent="Control/Menus/MoreMenu/Control/ScrollContainer/Songs"]
 custom_minimum_size = Vector2(2.08165e-12, 83)
 layout_mode = 2
 theme_override_styles/normal = SubResource("StyleBoxFlat_e21rs")
@@ -1600,10 +3952,18 @@ flat = true
 
 [connection signal="pressed" from="Control/Menus/RecordMenu/Control/Record" to="Control/Menus/RecordMenu/Control" method="_on_record_pressed"]
 [connection signal="timeout" from="Control/Menus/RecordMenu/Control/Timer" to="Control/Menus/RecordMenu/Control" method="_on_timer_timeout"]
-[connection signal="text_submitted" from="Control/Menus/KeywordsMenu/Control/ColorRect/SearchBar" to="Control/Menus/KeywordsMenu/Control" method="_on_search_bar_text_submitted"]
+[connection signal="text_submitted" from="Control/Menus/KeywordsMenu/Control/ColorRect/SearchBar" to="Control/Menus/KeywordsMenu/Control/ScrollContainer/Songs" method="_on_search_bar_text_submitted"]
 [connection signal="text_submitted" from="Control/Menus/MyTunesMenu/Control/ColorRect/SearchBar" to="Control/Menus/MyTunesMenu/Control" method="_on_search_bar_text_submitted"]
 [connection signal="pressed" from="Control/Menus/PreferencesMenu/MainMenu/Control/ScrollContainer/Songs/Transcription Fundamental" to="Control" method="_on_transcription_fundamental_pressed"]
+[connection signal="pressed" from="Control/Menus/PreferencesMenu/MainMenu/Control/ScrollContainer/Songs/Tune Books" to="Control" method="_on_tune_books_pressed"]
+[connection signal="pressed" from="Control/Menus/PreferencesMenu/MainMenu/Control/ScrollContainer/Songs/Time Signatures" to="Control" method="_on_time_signatures_pressed"]
+[connection signal="pressed" from="Control/Menus/PreferencesMenu/MainMenu/Control/ScrollContainer/Songs/Countdown" to="Control" method="_on_countdown_pressed"]
+[connection signal="pressed" from="Control/Menus/PreferencesMenu/MainMenu/Control/ScrollContainer/Songs/Language" to="Control" method="_on_language_pressed"]
 [connection signal="pressed" from="Control/Menus/PreferencesMenu/FundamentalMenu/ColorRect2/Back to Preferences" to="Control" method="_on_back_to_preferences_pressed"]
+[connection signal="pressed" from="Control/Menus/PreferencesMenu/TuneBooksMenu/ColorRect2/Back to Preferences" to="Control" method="_on_back_to_preferences_pressed"]
+[connection signal="pressed" from="Control/Menus/PreferencesMenu/TimeSignaturesMenu/ColorRect2/Back to Preferences" to="Control" method="_on_back_to_preferences_pressed"]
+[connection signal="pressed" from="Control/Menus/PreferencesMenu/CountdownMenu/ColorRect2/Back to Preferences" to="Control" method="_on_back_to_preferences_pressed"]
+[connection signal="pressed" from="Control/Menus/PreferencesMenu/LanguageMenu/ColorRect3/Back to Preferences" to="Control" method="_on_back_to_preferences_pressed"]
 [connection signal="pressed" from="Control/Menus/ResultMenu/Control/Back To Record" to="Control" method="_on_back_to_record_pressed"]
 [connection signal="pressed" from="Control/UI/MenuButtons/ColorRect/HBoxContainer/Record" to="Control" method="_on_record_pressed"]
 [connection signal="pressed" from="Control/UI/MenuButtons/ColorRect/HBoxContainer/Keywords" to="Control" method="_on_keywords_pressed"]
