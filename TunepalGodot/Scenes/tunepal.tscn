@@ -1,7 +1,8 @@
-[gd_scene load_steps=22 format=3 uid="uid://dexlkh1cvmqhe"]
+[gd_scene load_steps=23 format=3 uid="uid://dexlkh1cvmqhe"]
 
 [ext_resource type="Script" path="res://Scripts/menu.gd" id="1_wce83"]
 [ext_resource type="Script" path="res://Scripts/results_songs.gd" id="2_ye5fa"]
+[ext_resource type="Script" path="res://Scenes/Button.gd" id="3_5ovlr"]
 [ext_resource type="Script" path="res://Scripts/record.gd" id="3_tmdbb"]
 [ext_resource type="Texture2D" uid="uid://c1h80phoadlat" path="res://Icon Pictures/tunepal.png" id="4_12owa"]
 [ext_resource type="Script" path="res://Scripts/searchbar_keywords.gd" id="5_7pkwy"]
@@ -18,10 +19,10 @@
 [ext_resource type="Texture2D" uid="uid://bwhoarolysagy" path="res://Icon Pictures/Facebook symbol.png" id="12_hsncw"]
 [ext_resource type="ButtonGroup" uid="uid://b6m85x57xm6cw" path="res://Scenes/button_group.tres" id="13_28b28"]
 
+[sub_resource type="AudioStreamMicrophone" id="AudioStreamMicrophone_e84lj"]
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_e21rs"]
 bg_color = Color(1, 1, 1, 1)
-
-[sub_resource type="AudioStreamMicrophone" id="AudioStreamMicrophone_e84lj"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2fq0c"]
 bg_color = Color(1, 1, 1, 1)
@@ -42,1051 +43,6 @@ script = ExtResource("1_wce83")
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
-
-[node name="ResultMenu" type="Node2D" parent="Control/Menus"]
-visible = false
-
-[node name="Control" type="Control" parent="Control/Menus/ResultMenu"]
-layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="ScrollContainer" type="ScrollContainer" parent="Control/Menus/ResultMenu/Control"]
-layout_mode = 0
-offset_top = 85.0
-offset_right = 576.0
-offset_bottom = 939.0
-
-[node name="Songs" type="VBoxContainer" parent="Control/Menus/ResultMenu/Control/ScrollContainer"]
-custom_minimum_size = Vector2(2.08165e-12, 2.08165e-12)
-layout_mode = 2
-size_flags_horizontal = 3
-theme_override_constants/separation = 1
-script = ExtResource("2_ye5fa")
-
-[node name="Button" type="Button" parent="Control/Menus/ResultMenu/Control/ScrollContainer/Songs"]
-custom_minimum_size = Vector2(2.08165e-12, 83)
-layout_mode = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
-theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
-theme_override_styles/normal = SubResource("StyleBoxFlat_e21rs")
-
-[node name="Button2" type="Button" parent="Control/Menus/ResultMenu/Control/ScrollContainer/Songs"]
-custom_minimum_size = Vector2(2.08165e-12, 83)
-layout_mode = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
-theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
-theme_override_styles/normal = SubResource("StyleBoxFlat_e21rs")
-
-[node name="Button3" type="Button" parent="Control/Menus/ResultMenu/Control/ScrollContainer/Songs"]
-custom_minimum_size = Vector2(2.08165e-12, 83)
-layout_mode = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
-theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
-theme_override_styles/normal = SubResource("StyleBoxFlat_e21rs")
-
-[node name="Button4" type="Button" parent="Control/Menus/ResultMenu/Control/ScrollContainer/Songs"]
-custom_minimum_size = Vector2(2.08165e-12, 83)
-layout_mode = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
-theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
-theme_override_styles/normal = SubResource("StyleBoxFlat_e21rs")
-
-[node name="Button5" type="Button" parent="Control/Menus/ResultMenu/Control/ScrollContainer/Songs"]
-custom_minimum_size = Vector2(2.08165e-12, 83)
-layout_mode = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
-theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
-theme_override_styles/normal = SubResource("StyleBoxFlat_e21rs")
-
-[node name="Button6" type="Button" parent="Control/Menus/ResultMenu/Control/ScrollContainer/Songs"]
-custom_minimum_size = Vector2(2.08165e-12, 83)
-layout_mode = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
-theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
-theme_override_styles/normal = SubResource("StyleBoxFlat_e21rs")
-
-[node name="Button7" type="Button" parent="Control/Menus/ResultMenu/Control/ScrollContainer/Songs"]
-custom_minimum_size = Vector2(2.08165e-12, 83)
-layout_mode = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
-theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
-theme_override_styles/normal = SubResource("StyleBoxFlat_e21rs")
-
-[node name="Button8" type="Button" parent="Control/Menus/ResultMenu/Control/ScrollContainer/Songs"]
-custom_minimum_size = Vector2(2.08165e-12, 83)
-layout_mode = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
-theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
-theme_override_styles/normal = SubResource("StyleBoxFlat_e21rs")
-
-[node name="Button9" type="Button" parent="Control/Menus/ResultMenu/Control/ScrollContainer/Songs"]
-custom_minimum_size = Vector2(2.08165e-12, 83)
-layout_mode = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
-theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
-theme_override_styles/normal = SubResource("StyleBoxFlat_e21rs")
-
-[node name="Button10" type="Button" parent="Control/Menus/ResultMenu/Control/ScrollContainer/Songs"]
-custom_minimum_size = Vector2(2.08165e-12, 83)
-layout_mode = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
-theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
-theme_override_styles/normal = SubResource("StyleBoxFlat_e21rs")
-
-[node name="Button11" type="Button" parent="Control/Menus/ResultMenu/Control/ScrollContainer/Songs"]
-custom_minimum_size = Vector2(2.08165e-12, 83)
-layout_mode = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
-theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
-theme_override_styles/normal = SubResource("StyleBoxFlat_e21rs")
-
-[node name="Button12" type="Button" parent="Control/Menus/ResultMenu/Control/ScrollContainer/Songs"]
-custom_minimum_size = Vector2(2.08165e-12, 83)
-layout_mode = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
-theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
-theme_override_styles/normal = SubResource("StyleBoxFlat_e21rs")
-
-[node name="Button13" type="Button" parent="Control/Menus/ResultMenu/Control/ScrollContainer/Songs"]
-custom_minimum_size = Vector2(2.08165e-12, 83)
-layout_mode = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
-theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
-theme_override_styles/normal = SubResource("StyleBoxFlat_e21rs")
-
-[node name="Button14" type="Button" parent="Control/Menus/ResultMenu/Control/ScrollContainer/Songs"]
-custom_minimum_size = Vector2(2.08165e-12, 83)
-layout_mode = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
-theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
-theme_override_styles/normal = SubResource("StyleBoxFlat_e21rs")
-
-[node name="Button15" type="Button" parent="Control/Menus/ResultMenu/Control/ScrollContainer/Songs"]
-custom_minimum_size = Vector2(2.08165e-12, 83)
-layout_mode = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
-theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
-theme_override_styles/normal = SubResource("StyleBoxFlat_e21rs")
-
-[node name="Button16" type="Button" parent="Control/Menus/ResultMenu/Control/ScrollContainer/Songs"]
-custom_minimum_size = Vector2(2.08165e-12, 83)
-layout_mode = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
-theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
-theme_override_styles/normal = SubResource("StyleBoxFlat_e21rs")
-
-[node name="Button17" type="Button" parent="Control/Menus/ResultMenu/Control/ScrollContainer/Songs"]
-custom_minimum_size = Vector2(2.08165e-12, 83)
-layout_mode = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
-theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
-theme_override_styles/normal = SubResource("StyleBoxFlat_e21rs")
-
-[node name="Button18" type="Button" parent="Control/Menus/ResultMenu/Control/ScrollContainer/Songs"]
-custom_minimum_size = Vector2(2.08165e-12, 83)
-layout_mode = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
-theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
-theme_override_styles/normal = SubResource("StyleBoxFlat_e21rs")
-
-[node name="Button19" type="Button" parent="Control/Menus/ResultMenu/Control/ScrollContainer/Songs"]
-custom_minimum_size = Vector2(2.08165e-12, 83)
-layout_mode = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
-theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
-theme_override_styles/normal = SubResource("StyleBoxFlat_e21rs")
-
-[node name="Button20" type="Button" parent="Control/Menus/ResultMenu/Control/ScrollContainer/Songs"]
-custom_minimum_size = Vector2(2.08165e-12, 83)
-layout_mode = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
-theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
-theme_override_styles/normal = SubResource("StyleBoxFlat_e21rs")
-
-[node name="Button21" type="Button" parent="Control/Menus/ResultMenu/Control/ScrollContainer/Songs"]
-custom_minimum_size = Vector2(2.08165e-12, 83)
-layout_mode = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
-theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
-theme_override_styles/normal = SubResource("StyleBoxFlat_e21rs")
-
-[node name="Button22" type="Button" parent="Control/Menus/ResultMenu/Control/ScrollContainer/Songs"]
-custom_minimum_size = Vector2(2.08165e-12, 83)
-layout_mode = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
-theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
-theme_override_styles/normal = SubResource("StyleBoxFlat_e21rs")
-
-[node name="Button23" type="Button" parent="Control/Menus/ResultMenu/Control/ScrollContainer/Songs"]
-custom_minimum_size = Vector2(2.08165e-12, 83)
-layout_mode = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
-theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
-theme_override_styles/normal = SubResource("StyleBoxFlat_e21rs")
-
-[node name="Button24" type="Button" parent="Control/Menus/ResultMenu/Control/ScrollContainer/Songs"]
-custom_minimum_size = Vector2(2.08165e-12, 83)
-layout_mode = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
-theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
-theme_override_styles/normal = SubResource("StyleBoxFlat_e21rs")
-
-[node name="Button25" type="Button" parent="Control/Menus/ResultMenu/Control/ScrollContainer/Songs"]
-custom_minimum_size = Vector2(2.08165e-12, 83)
-layout_mode = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
-theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
-theme_override_styles/normal = SubResource("StyleBoxFlat_e21rs")
-
-[node name="Button26" type="Button" parent="Control/Menus/ResultMenu/Control/ScrollContainer/Songs"]
-custom_minimum_size = Vector2(2.08165e-12, 83)
-layout_mode = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
-theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
-theme_override_styles/normal = SubResource("StyleBoxFlat_e21rs")
-
-[node name="Button27" type="Button" parent="Control/Menus/ResultMenu/Control/ScrollContainer/Songs"]
-custom_minimum_size = Vector2(2.08165e-12, 83)
-layout_mode = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
-theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
-theme_override_styles/normal = SubResource("StyleBoxFlat_e21rs")
-
-[node name="Button28" type="Button" parent="Control/Menus/ResultMenu/Control/ScrollContainer/Songs"]
-custom_minimum_size = Vector2(2.08165e-12, 83)
-layout_mode = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
-theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
-theme_override_styles/normal = SubResource("StyleBoxFlat_e21rs")
-
-[node name="Button29" type="Button" parent="Control/Menus/ResultMenu/Control/ScrollContainer/Songs"]
-custom_minimum_size = Vector2(2.08165e-12, 83)
-layout_mode = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
-theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
-theme_override_styles/normal = SubResource("StyleBoxFlat_e21rs")
-
-[node name="Button30" type="Button" parent="Control/Menus/ResultMenu/Control/ScrollContainer/Songs"]
-custom_minimum_size = Vector2(2.08165e-12, 83)
-layout_mode = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
-theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
-theme_override_styles/normal = SubResource("StyleBoxFlat_e21rs")
-
-[node name="Button31" type="Button" parent="Control/Menus/ResultMenu/Control/ScrollContainer/Songs"]
-custom_minimum_size = Vector2(2.08165e-12, 83)
-layout_mode = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
-theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
-theme_override_styles/normal = SubResource("StyleBoxFlat_e21rs")
-
-[node name="Button32" type="Button" parent="Control/Menus/ResultMenu/Control/ScrollContainer/Songs"]
-custom_minimum_size = Vector2(2.08165e-12, 83)
-layout_mode = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
-theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
-theme_override_styles/normal = SubResource("StyleBoxFlat_e21rs")
-
-[node name="Button33" type="Button" parent="Control/Menus/ResultMenu/Control/ScrollContainer/Songs"]
-custom_minimum_size = Vector2(2.08165e-12, 83)
-layout_mode = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
-theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
-theme_override_styles/normal = SubResource("StyleBoxFlat_e21rs")
-
-[node name="Button34" type="Button" parent="Control/Menus/ResultMenu/Control/ScrollContainer/Songs"]
-custom_minimum_size = Vector2(2.08165e-12, 83)
-layout_mode = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
-theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
-theme_override_styles/normal = SubResource("StyleBoxFlat_e21rs")
-
-[node name="Button35" type="Button" parent="Control/Menus/ResultMenu/Control/ScrollContainer/Songs"]
-custom_minimum_size = Vector2(2.08165e-12, 83)
-layout_mode = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
-theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
-theme_override_styles/normal = SubResource("StyleBoxFlat_e21rs")
-
-[node name="Button36" type="Button" parent="Control/Menus/ResultMenu/Control/ScrollContainer/Songs"]
-custom_minimum_size = Vector2(2.08165e-12, 83)
-layout_mode = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
-theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
-theme_override_styles/normal = SubResource("StyleBoxFlat_e21rs")
-
-[node name="Button37" type="Button" parent="Control/Menus/ResultMenu/Control/ScrollContainer/Songs"]
-custom_minimum_size = Vector2(2.08165e-12, 83)
-layout_mode = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
-theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
-theme_override_styles/normal = SubResource("StyleBoxFlat_e21rs")
-
-[node name="Button38" type="Button" parent="Control/Menus/ResultMenu/Control/ScrollContainer/Songs"]
-custom_minimum_size = Vector2(2.08165e-12, 83)
-layout_mode = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
-theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
-theme_override_styles/normal = SubResource("StyleBoxFlat_e21rs")
-
-[node name="Button39" type="Button" parent="Control/Menus/ResultMenu/Control/ScrollContainer/Songs"]
-custom_minimum_size = Vector2(2.08165e-12, 83)
-layout_mode = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
-theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
-theme_override_styles/normal = SubResource("StyleBoxFlat_e21rs")
-
-[node name="Button40" type="Button" parent="Control/Menus/ResultMenu/Control/ScrollContainer/Songs"]
-custom_minimum_size = Vector2(2.08165e-12, 83)
-layout_mode = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
-theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
-theme_override_styles/normal = SubResource("StyleBoxFlat_e21rs")
-
-[node name="Button41" type="Button" parent="Control/Menus/ResultMenu/Control/ScrollContainer/Songs"]
-custom_minimum_size = Vector2(2.08165e-12, 83)
-layout_mode = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
-theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
-theme_override_styles/normal = SubResource("StyleBoxFlat_e21rs")
-
-[node name="Button42" type="Button" parent="Control/Menus/ResultMenu/Control/ScrollContainer/Songs"]
-custom_minimum_size = Vector2(2.08165e-12, 83)
-layout_mode = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
-theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
-theme_override_styles/normal = SubResource("StyleBoxFlat_e21rs")
-
-[node name="Button43" type="Button" parent="Control/Menus/ResultMenu/Control/ScrollContainer/Songs"]
-custom_minimum_size = Vector2(2.08165e-12, 83)
-layout_mode = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
-theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
-theme_override_styles/normal = SubResource("StyleBoxFlat_e21rs")
-
-[node name="Button44" type="Button" parent="Control/Menus/ResultMenu/Control/ScrollContainer/Songs"]
-custom_minimum_size = Vector2(2.08165e-12, 83)
-layout_mode = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
-theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
-theme_override_styles/normal = SubResource("StyleBoxFlat_e21rs")
-
-[node name="Button45" type="Button" parent="Control/Menus/ResultMenu/Control/ScrollContainer/Songs"]
-custom_minimum_size = Vector2(2.08165e-12, 83)
-layout_mode = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
-theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
-theme_override_styles/normal = SubResource("StyleBoxFlat_e21rs")
-
-[node name="Button46" type="Button" parent="Control/Menus/ResultMenu/Control/ScrollContainer/Songs"]
-custom_minimum_size = Vector2(2.08165e-12, 83)
-layout_mode = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
-theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
-theme_override_styles/normal = SubResource("StyleBoxFlat_e21rs")
-
-[node name="Button47" type="Button" parent="Control/Menus/ResultMenu/Control/ScrollContainer/Songs"]
-custom_minimum_size = Vector2(2.08165e-12, 83)
-layout_mode = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
-theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
-theme_override_styles/normal = SubResource("StyleBoxFlat_e21rs")
-
-[node name="Button48" type="Button" parent="Control/Menus/ResultMenu/Control/ScrollContainer/Songs"]
-custom_minimum_size = Vector2(2.08165e-12, 83)
-layout_mode = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
-theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
-theme_override_styles/normal = SubResource("StyleBoxFlat_e21rs")
-
-[node name="Button49" type="Button" parent="Control/Menus/ResultMenu/Control/ScrollContainer/Songs"]
-custom_minimum_size = Vector2(2.08165e-12, 83)
-layout_mode = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
-theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
-theme_override_styles/normal = SubResource("StyleBoxFlat_e21rs")
-
-[node name="Button50" type="Button" parent="Control/Menus/ResultMenu/Control/ScrollContainer/Songs"]
-custom_minimum_size = Vector2(2.08165e-12, 83)
-layout_mode = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
-theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
-theme_override_styles/normal = SubResource("StyleBoxFlat_e21rs")
-
-[node name="Button51" type="Button" parent="Control/Menus/ResultMenu/Control/ScrollContainer/Songs"]
-custom_minimum_size = Vector2(2.08165e-12, 83)
-layout_mode = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
-theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
-theme_override_styles/normal = SubResource("StyleBoxFlat_e21rs")
-
-[node name="Button52" type="Button" parent="Control/Menus/ResultMenu/Control/ScrollContainer/Songs"]
-custom_minimum_size = Vector2(2.08165e-12, 83)
-layout_mode = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
-theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
-theme_override_styles/normal = SubResource("StyleBoxFlat_e21rs")
-
-[node name="Button53" type="Button" parent="Control/Menus/ResultMenu/Control/ScrollContainer/Songs"]
-custom_minimum_size = Vector2(2.08165e-12, 83)
-layout_mode = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
-theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
-theme_override_styles/normal = SubResource("StyleBoxFlat_e21rs")
-
-[node name="Button54" type="Button" parent="Control/Menus/ResultMenu/Control/ScrollContainer/Songs"]
-custom_minimum_size = Vector2(2.08165e-12, 83)
-layout_mode = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
-theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
-theme_override_styles/normal = SubResource("StyleBoxFlat_e21rs")
-
-[node name="Button55" type="Button" parent="Control/Menus/ResultMenu/Control/ScrollContainer/Songs"]
-custom_minimum_size = Vector2(2.08165e-12, 83)
-layout_mode = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
-theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
-theme_override_styles/normal = SubResource("StyleBoxFlat_e21rs")
-
-[node name="Button56" type="Button" parent="Control/Menus/ResultMenu/Control/ScrollContainer/Songs"]
-custom_minimum_size = Vector2(2.08165e-12, 83)
-layout_mode = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
-theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
-theme_override_styles/normal = SubResource("StyleBoxFlat_e21rs")
-
-[node name="Button57" type="Button" parent="Control/Menus/ResultMenu/Control/ScrollContainer/Songs"]
-custom_minimum_size = Vector2(2.08165e-12, 83)
-layout_mode = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
-theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
-theme_override_styles/normal = SubResource("StyleBoxFlat_e21rs")
-
-[node name="Button58" type="Button" parent="Control/Menus/ResultMenu/Control/ScrollContainer/Songs"]
-custom_minimum_size = Vector2(2.08165e-12, 83)
-layout_mode = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
-theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
-theme_override_styles/normal = SubResource("StyleBoxFlat_e21rs")
-
-[node name="Button59" type="Button" parent="Control/Menus/ResultMenu/Control/ScrollContainer/Songs"]
-custom_minimum_size = Vector2(2.08165e-12, 83)
-layout_mode = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
-theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
-theme_override_styles/normal = SubResource("StyleBoxFlat_e21rs")
-
-[node name="Button60" type="Button" parent="Control/Menus/ResultMenu/Control/ScrollContainer/Songs"]
-custom_minimum_size = Vector2(2.08165e-12, 83)
-layout_mode = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
-theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
-theme_override_styles/normal = SubResource("StyleBoxFlat_e21rs")
-
-[node name="Button61" type="Button" parent="Control/Menus/ResultMenu/Control/ScrollContainer/Songs"]
-custom_minimum_size = Vector2(2.08165e-12, 83)
-layout_mode = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
-theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
-theme_override_styles/normal = SubResource("StyleBoxFlat_e21rs")
-
-[node name="Button62" type="Button" parent="Control/Menus/ResultMenu/Control/ScrollContainer/Songs"]
-custom_minimum_size = Vector2(2.08165e-12, 83)
-layout_mode = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
-theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
-theme_override_styles/normal = SubResource("StyleBoxFlat_e21rs")
-
-[node name="Button63" type="Button" parent="Control/Menus/ResultMenu/Control/ScrollContainer/Songs"]
-custom_minimum_size = Vector2(2.08165e-12, 83)
-layout_mode = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
-theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
-theme_override_styles/normal = SubResource("StyleBoxFlat_e21rs")
-
-[node name="Button64" type="Button" parent="Control/Menus/ResultMenu/Control/ScrollContainer/Songs"]
-custom_minimum_size = Vector2(2.08165e-12, 83)
-layout_mode = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
-theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
-theme_override_styles/normal = SubResource("StyleBoxFlat_e21rs")
-
-[node name="Button65" type="Button" parent="Control/Menus/ResultMenu/Control/ScrollContainer/Songs"]
-custom_minimum_size = Vector2(2.08165e-12, 83)
-layout_mode = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
-theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
-theme_override_styles/normal = SubResource("StyleBoxFlat_e21rs")
-
-[node name="Button66" type="Button" parent="Control/Menus/ResultMenu/Control/ScrollContainer/Songs"]
-custom_minimum_size = Vector2(2.08165e-12, 83)
-layout_mode = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
-theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
-theme_override_styles/normal = SubResource("StyleBoxFlat_e21rs")
-
-[node name="Button67" type="Button" parent="Control/Menus/ResultMenu/Control/ScrollContainer/Songs"]
-custom_minimum_size = Vector2(2.08165e-12, 83)
-layout_mode = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
-theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
-theme_override_styles/normal = SubResource("StyleBoxFlat_e21rs")
-
-[node name="Button68" type="Button" parent="Control/Menus/ResultMenu/Control/ScrollContainer/Songs"]
-custom_minimum_size = Vector2(2.08165e-12, 83)
-layout_mode = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
-theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
-theme_override_styles/normal = SubResource("StyleBoxFlat_e21rs")
-
-[node name="Button69" type="Button" parent="Control/Menus/ResultMenu/Control/ScrollContainer/Songs"]
-custom_minimum_size = Vector2(2.08165e-12, 83)
-layout_mode = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
-theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
-theme_override_styles/normal = SubResource("StyleBoxFlat_e21rs")
-
-[node name="Button70" type="Button" parent="Control/Menus/ResultMenu/Control/ScrollContainer/Songs"]
-custom_minimum_size = Vector2(2.08165e-12, 83)
-layout_mode = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
-theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
-theme_override_styles/normal = SubResource("StyleBoxFlat_e21rs")
-
-[node name="Button71" type="Button" parent="Control/Menus/ResultMenu/Control/ScrollContainer/Songs"]
-custom_minimum_size = Vector2(2.08165e-12, 83)
-layout_mode = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
-theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
-theme_override_styles/normal = SubResource("StyleBoxFlat_e21rs")
-
-[node name="Button72" type="Button" parent="Control/Menus/ResultMenu/Control/ScrollContainer/Songs"]
-custom_minimum_size = Vector2(2.08165e-12, 83)
-layout_mode = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
-theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
-theme_override_styles/normal = SubResource("StyleBoxFlat_e21rs")
-
-[node name="Button73" type="Button" parent="Control/Menus/ResultMenu/Control/ScrollContainer/Songs"]
-custom_minimum_size = Vector2(2.08165e-12, 83)
-layout_mode = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
-theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
-theme_override_styles/normal = SubResource("StyleBoxFlat_e21rs")
-
-[node name="Button74" type="Button" parent="Control/Menus/ResultMenu/Control/ScrollContainer/Songs"]
-custom_minimum_size = Vector2(2.08165e-12, 83)
-layout_mode = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
-theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
-theme_override_styles/normal = SubResource("StyleBoxFlat_e21rs")
-
-[node name="Button75" type="Button" parent="Control/Menus/ResultMenu/Control/ScrollContainer/Songs"]
-custom_minimum_size = Vector2(2.08165e-12, 83)
-layout_mode = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
-theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
-theme_override_styles/normal = SubResource("StyleBoxFlat_e21rs")
-
-[node name="Button76" type="Button" parent="Control/Menus/ResultMenu/Control/ScrollContainer/Songs"]
-custom_minimum_size = Vector2(2.08165e-12, 83)
-layout_mode = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
-theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
-theme_override_styles/normal = SubResource("StyleBoxFlat_e21rs")
-
-[node name="Button77" type="Button" parent="Control/Menus/ResultMenu/Control/ScrollContainer/Songs"]
-custom_minimum_size = Vector2(2.08165e-12, 83)
-layout_mode = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
-theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
-theme_override_styles/normal = SubResource("StyleBoxFlat_e21rs")
-
-[node name="Button78" type="Button" parent="Control/Menus/ResultMenu/Control/ScrollContainer/Songs"]
-custom_minimum_size = Vector2(2.08165e-12, 83)
-layout_mode = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
-theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
-theme_override_styles/normal = SubResource("StyleBoxFlat_e21rs")
-
-[node name="Button79" type="Button" parent="Control/Menus/ResultMenu/Control/ScrollContainer/Songs"]
-custom_minimum_size = Vector2(2.08165e-12, 83)
-layout_mode = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
-theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
-theme_override_styles/normal = SubResource("StyleBoxFlat_e21rs")
-
-[node name="Button80" type="Button" parent="Control/Menus/ResultMenu/Control/ScrollContainer/Songs"]
-custom_minimum_size = Vector2(2.08165e-12, 83)
-layout_mode = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
-theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
-theme_override_styles/normal = SubResource("StyleBoxFlat_e21rs")
-
-[node name="Button81" type="Button" parent="Control/Menus/ResultMenu/Control/ScrollContainer/Songs"]
-custom_minimum_size = Vector2(2.08165e-12, 83)
-layout_mode = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
-theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
-theme_override_styles/normal = SubResource("StyleBoxFlat_e21rs")
-
-[node name="Button82" type="Button" parent="Control/Menus/ResultMenu/Control/ScrollContainer/Songs"]
-custom_minimum_size = Vector2(2.08165e-12, 83)
-layout_mode = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
-theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
-theme_override_styles/normal = SubResource("StyleBoxFlat_e21rs")
-
-[node name="Button83" type="Button" parent="Control/Menus/ResultMenu/Control/ScrollContainer/Songs"]
-custom_minimum_size = Vector2(2.08165e-12, 83)
-layout_mode = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
-theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
-theme_override_styles/normal = SubResource("StyleBoxFlat_e21rs")
-
-[node name="Button84" type="Button" parent="Control/Menus/ResultMenu/Control/ScrollContainer/Songs"]
-custom_minimum_size = Vector2(2.08165e-12, 83)
-layout_mode = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
-theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
-theme_override_styles/normal = SubResource("StyleBoxFlat_e21rs")
-
-[node name="Button85" type="Button" parent="Control/Menus/ResultMenu/Control/ScrollContainer/Songs"]
-custom_minimum_size = Vector2(2.08165e-12, 83)
-layout_mode = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
-theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
-theme_override_styles/normal = SubResource("StyleBoxFlat_e21rs")
-
-[node name="Button86" type="Button" parent="Control/Menus/ResultMenu/Control/ScrollContainer/Songs"]
-custom_minimum_size = Vector2(2.08165e-12, 83)
-layout_mode = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
-theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
-theme_override_styles/normal = SubResource("StyleBoxFlat_e21rs")
-
-[node name="Button87" type="Button" parent="Control/Menus/ResultMenu/Control/ScrollContainer/Songs"]
-custom_minimum_size = Vector2(2.08165e-12, 83)
-layout_mode = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
-theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
-theme_override_styles/normal = SubResource("StyleBoxFlat_e21rs")
-
-[node name="Button88" type="Button" parent="Control/Menus/ResultMenu/Control/ScrollContainer/Songs"]
-custom_minimum_size = Vector2(2.08165e-12, 83)
-layout_mode = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
-theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
-theme_override_styles/normal = SubResource("StyleBoxFlat_e21rs")
-
-[node name="Button89" type="Button" parent="Control/Menus/ResultMenu/Control/ScrollContainer/Songs"]
-custom_minimum_size = Vector2(2.08165e-12, 83)
-layout_mode = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
-theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
-theme_override_styles/normal = SubResource("StyleBoxFlat_e21rs")
-
-[node name="Button90" type="Button" parent="Control/Menus/ResultMenu/Control/ScrollContainer/Songs"]
-custom_minimum_size = Vector2(2.08165e-12, 83)
-layout_mode = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
-theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
-theme_override_styles/normal = SubResource("StyleBoxFlat_e21rs")
-
-[node name="Button91" type="Button" parent="Control/Menus/ResultMenu/Control/ScrollContainer/Songs"]
-custom_minimum_size = Vector2(2.08165e-12, 83)
-layout_mode = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
-theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
-theme_override_styles/normal = SubResource("StyleBoxFlat_e21rs")
-
-[node name="Button92" type="Button" parent="Control/Menus/ResultMenu/Control/ScrollContainer/Songs"]
-custom_minimum_size = Vector2(2.08165e-12, 83)
-layout_mode = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
-theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
-theme_override_styles/normal = SubResource("StyleBoxFlat_e21rs")
-
-[node name="Button93" type="Button" parent="Control/Menus/ResultMenu/Control/ScrollContainer/Songs"]
-custom_minimum_size = Vector2(2.08165e-12, 83)
-layout_mode = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
-theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
-theme_override_styles/normal = SubResource("StyleBoxFlat_e21rs")
-
-[node name="Button94" type="Button" parent="Control/Menus/ResultMenu/Control/ScrollContainer/Songs"]
-custom_minimum_size = Vector2(2.08165e-12, 83)
-layout_mode = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
-theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
-theme_override_styles/normal = SubResource("StyleBoxFlat_e21rs")
-
-[node name="Button95" type="Button" parent="Control/Menus/ResultMenu/Control/ScrollContainer/Songs"]
-custom_minimum_size = Vector2(2.08165e-12, 83)
-layout_mode = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
-theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
-theme_override_styles/normal = SubResource("StyleBoxFlat_e21rs")
-
-[node name="Button96" type="Button" parent="Control/Menus/ResultMenu/Control/ScrollContainer/Songs"]
-custom_minimum_size = Vector2(2.08165e-12, 83)
-layout_mode = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
-theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
-theme_override_styles/normal = SubResource("StyleBoxFlat_e21rs")
-
-[node name="Button97" type="Button" parent="Control/Menus/ResultMenu/Control/ScrollContainer/Songs"]
-custom_minimum_size = Vector2(2.08165e-12, 83)
-layout_mode = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
-theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
-theme_override_styles/normal = SubResource("StyleBoxFlat_e21rs")
-
-[node name="Button98" type="Button" parent="Control/Menus/ResultMenu/Control/ScrollContainer/Songs"]
-custom_minimum_size = Vector2(2.08165e-12, 83)
-layout_mode = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
-theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
-theme_override_styles/normal = SubResource("StyleBoxFlat_e21rs")
-
-[node name="Button99" type="Button" parent="Control/Menus/ResultMenu/Control/ScrollContainer/Songs"]
-custom_minimum_size = Vector2(2.08165e-12, 83)
-layout_mode = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
-theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
-theme_override_styles/normal = SubResource("StyleBoxFlat_e21rs")
-
-[node name="Button100" type="Button" parent="Control/Menus/ResultMenu/Control/ScrollContainer/Songs"]
-custom_minimum_size = Vector2(2.08165e-12, 83)
-layout_mode = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
-theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
-theme_override_styles/normal = SubResource("StyleBoxFlat_e21rs")
-
-[node name="ColorRect2" type="ColorRect" parent="Control/Menus/ResultMenu/Control"]
-layout_mode = 0
-offset_right = 576.0
-offset_bottom = 85.0
-
-[node name="Label" type="Label" parent="Control/Menus/ResultMenu/Control/ColorRect2"]
-layout_mode = 0
-offset_right = 576.0
-offset_bottom = 85.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 27
-text = "Search Results"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Back To Record" type="Button" parent="Control/Menus/ResultMenu/Control"]
-layout_mode = 0
-offset_right = 105.0
-offset_bottom = 60.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-text = "<- Record"
-flat = true
 
 [node name="RecordMenu" type="Node2D" parent="Control/Menus"]
 visible = false
@@ -4813,6 +3769,82 @@ custom_minimum_size = Vector2(2.08165e-12, 83)
 layout_mode = 2
 theme_override_styles/normal = SubResource("StyleBoxFlat_e21rs")
 
+[node name="ResultMenu" type="Node2D" parent="Control/Menus"]
+visible = false
+
+[node name="Control" type="Control" parent="Control/Menus/ResultMenu"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Control/Menus/ResultMenu/Control"]
+layout_mode = 0
+offset_top = 85.0
+offset_right = 576.0
+offset_bottom = 939.0
+
+[node name="Songs" type="VBoxContainer" parent="Control/Menus/ResultMenu/Control/ScrollContainer"]
+custom_minimum_size = Vector2(2.08165e-12, 2.08165e-12)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 1
+script = ExtResource("2_ye5fa")
+
+[node name="Button" type="Button" parent="Control/Menus/ResultMenu/Control/ScrollContainer/Songs"]
+custom_minimum_size = Vector2(2.08165e-12, 83)
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_e21rs")
+script = ExtResource("3_5ovlr")
+
+[node name="ColorRect" type="ColorRect" parent="Control/Menus/ResultMenu/Control"]
+layout_mode = 0
+offset_right = 576.0
+offset_bottom = 85.0
+
+[node name="Label" type="Label" parent="Control/Menus/ResultMenu/Control/ColorRect"]
+layout_mode = 0
+offset_right = 576.0
+offset_bottom = 85.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 27
+text = "Search Results"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Back To Record" type="Button" parent="Control/Menus/ResultMenu/Control"]
+layout_mode = 0
+offset_right = 105.0
+offset_bottom = 60.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "<- Record"
+flat = true
+
+[node name="ABCMenu" type="Node2D" parent="Control/Menus"]
+
+[node name="Control" type="Control" parent="Control/Menus/ABCMenu"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="ColorRect" type="ColorRect" parent="Control/Menus/ABCMenu/Control"]
+layout_mode = 0
+offset_right = 576.0
+offset_bottom = 939.0
+
+[node name="ABC" type="Label" parent="Control/Menus/ABCMenu/Control/ColorRect"]
+layout_mode = 0
+offset_top = 62.0
+offset_right = 576.0
+offset_bottom = 499.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+
 [node name="UI" type="Control" parent="Control"]
 anchors_preset = 0
 
@@ -4896,7 +3928,6 @@ text = "More
 "
 flat = true
 
-[connection signal="pressed" from="Control/Menus/ResultMenu/Control/Back To Record" to="Control" method="_on_back_to_record_pressed"]
 [connection signal="pressed" from="Control/Menus/RecordMenu/Control/Record" to="Control/Menus/RecordMenu/Control" method="_on_record_pressed"]
 [connection signal="timeout" from="Control/Menus/RecordMenu/Control/Timer" to="Control/Menus/RecordMenu/Control" method="_on_timer_timeout"]
 [connection signal="text_submitted" from="Control/Menus/KeywordsMenu/Control/ColorRect/SearchBar" to="Control/Menus/KeywordsMenu/Control/ScrollContainer/Songs" method="_on_search_bar_text_submitted"]
@@ -4911,6 +3942,7 @@ flat = true
 [connection signal="pressed" from="Control/Menus/PreferencesMenu/TimeSignaturesMenu/ColorRect2/Back to Preferences" to="Control" method="_on_back_to_preferences_pressed"]
 [connection signal="pressed" from="Control/Menus/PreferencesMenu/CountdownMenu/ColorRect2/Back to Preferences" to="Control" method="_on_back_to_preferences_pressed"]
 [connection signal="pressed" from="Control/Menus/PreferencesMenu/LanguageMenu/ColorRect3/Back to Preferences" to="Control" method="_on_back_to_preferences_pressed"]
+[connection signal="pressed" from="Control/Menus/ResultMenu/Control/Back To Record" to="Control" method="_on_back_to_record_pressed"]
 [connection signal="pressed" from="Control/UI/MenuButtons/ColorRect2/HBoxContainer/Record" to="Control" method="_on_record_pressed"]
 [connection signal="pressed" from="Control/UI/MenuButtons/ColorRect2/HBoxContainer/Keywords" to="Control" method="_on_keywords_pressed"]
 [connection signal="pressed" from="Control/UI/MenuButtons/ColorRect2/HBoxContainer/MyTunes" to="Control" method="_on_my_tunes_pressed"]
