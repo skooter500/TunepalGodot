@@ -1,21 +1,22 @@
-[gd_scene load_steps=19 format=3 uid="uid://dexlkh1cvmqhe"]
+[gd_scene load_steps=22 format=3 uid="uid://dexlkh1cvmqhe"]
 
-[ext_resource type="Texture2D" uid="uid://c1h80phoadlat" path="res://Icon Pictures/tunepal.png" id="1_gqfjs"]
-[ext_resource type="Script" path="res://Scripts/menu.gd" id="1_qhsuj"]
-[ext_resource type="ButtonGroup" uid="uid://b6m85x57xm6cw" path="res://Scenes/button_group.tres" id="2_ltoqc"]
-[ext_resource type="Script" path="res://Scripts/record.gd" id="2_o0meu"]
-[ext_resource type="Script" path="res://Scripts/searchbar_mytunes.gd" id="3_btya1"]
-[ext_resource type="Script" path="res://Scripts/searchbar_keywords.gd" id="4_d1io7"]
-[ext_resource type="Script" path="res://Scripts/keywords_songs.gd" id="4_wpkyc"]
-[ext_resource type="Script" path="res://Scripts/mytunes_songs.gd" id="5_lkohk"]
-[ext_resource type="Texture2D" uid="uid://ciuejn78iqdma" path="res://Icon Pictures/Circle Arrows.png" id="8_3dypw"]
-[ext_resource type="ButtonGroup" uid="uid://crb2dhi12mxkp" path="res://FundamentalButtonGroup.tres" id="8_7lcto"]
+[ext_resource type="Script" path="res://Scripts/menu.gd" id="1_wce83"]
+[ext_resource type="Script" path="res://Scripts/results_songs.gd" id="2_ye5fa"]
+[ext_resource type="Script" path="res://Scripts/record.gd" id="3_tmdbb"]
+[ext_resource type="Texture2D" uid="uid://c1h80phoadlat" path="res://Icon Pictures/tunepal.png" id="4_12owa"]
+[ext_resource type="Script" path="res://Scripts/searchbar_keywords.gd" id="5_7pkwy"]
+[ext_resource type="Script" path="res://Scripts/keywords_songs.gd" id="6_v2gy6"]
+[ext_resource type="Script" path="res://Scripts/searchbar_mytunes.gd" id="7_044ag"]
+[ext_resource type="ButtonGroup" uid="uid://crb2dhi12mxkp" path="res://Scenes/FundamentalButtonGroup.tres" id="8_wyeup"]
 [ext_resource type="ButtonGroup" uid="uid://k2oc73sqvq2j" path="res://TuneBooks_ButtonGroup.tres" id="9_ayqpd"]
-[ext_resource type="Texture2D" uid="uid://wo3yrh1mjav5" path="res://Icon Pictures/Map Symbol.png" id="9_yffl5"]
-[ext_resource type="Texture2D" uid="uid://hhxi5sl5meko" path="res://Icon Pictures/Help symbol.png" id="10_sp6gv"]
-[ext_resource type="Texture2D" uid="uid://bwhoarolysagy" path="res://Icon Pictures/Facebook symbol.png" id="11_172h4"]
-
-[sub_resource type="AudioStreamMicrophone" id="AudioStreamMicrophone_e84lj"]
+[ext_resource type="Texture2D" uid="uid://ciuejn78iqdma" path="res://Icon Pictures/Circle Arrows.png" id="9_uqbit"]
+[ext_resource type="Texture2D" uid="uid://wo3yrh1mjav5" path="res://Icon Pictures/Map Symbol.png" id="10_ddg03"]
+[ext_resource type="ButtonGroup" uid="uid://bmhsrgdnd711k" path="res://TimeSigButtonGroup.tres" id="10_puvgn"]
+[ext_resource type="ButtonGroup" uid="uid://bfjlhmbqvvsnc" path="res://CountdownButtonGroup.tres" id="11_jkp81"]
+[ext_resource type="Texture2D" uid="uid://hhxi5sl5meko" path="res://Icon Pictures/Help symbol.png" id="11_moik7"]
+[ext_resource type="ButtonGroup" uid="uid://bws70dgqx0ljc" path="res://LanguageButtonGroup.tres" id="12_gtba4"]
+[ext_resource type="Texture2D" uid="uid://bwhoarolysagy" path="res://Icon Pictures/Facebook symbol.png" id="12_hsncw"]
+[ext_resource type="ButtonGroup" uid="uid://b6m85x57xm6cw" path="res://Scenes/button_group.tres" id="13_28b28"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_e21rs"]
 bg_color = Color(1, 1, 1, 1)
@@ -1127,7 +1128,6 @@ bus = &"Record"
 one_shot = true
 
 [node name="KeywordsMenu" type="Node2D" parent="Control/Menus"]
-visible = false
 
 [node name="Control" type="Control" parent="Control/Menus/KeywordsMenu"]
 layout_mode = 3
@@ -2300,7 +2300,6 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="MyTunesMenu" type="Node2D" parent="Control/Menus"]
-visible = false
 
 [node name="Control" type="Control" parent="Control/Menus/MyTunesMenu"]
 layout_mode = 3
@@ -2597,13 +2596,8 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_2fq0c")
 placeholder_text = "Search"
 alignment = 1
 
-
-[node name="PreferencesMenu" type="Node2D" parent="Control/Menus"]
-
-[node name="MainMenu" type="Node2D" parent="Control/Menus/PreferencesMenu"]
-
-[node name="ColorRect" type="ColorRect" parent="Control/Menus/PreferencesMenu/MainMenu"]
-
+[node name="ColorRect2" type="ColorRect" parent="Control/Menus/MyTunesMenu/Control"]
+layout_mode = 0
 offset_right = 576.0
 offset_bottom = 85.0
 
@@ -2618,10 +2612,8 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="PreferencesMenu" type="Node2D" parent="Control/Menus"]
-visible = false
 
 [node name="MainMenu" type="Node2D" parent="Control/Menus/PreferencesMenu"]
-visible = false
 
 [node name="Control" type="Control" parent="Control/Menus/PreferencesMenu/MainMenu"]
 layout_mode = 3
@@ -3119,7 +3111,7 @@ theme_override_colors/icon_disabled_color = Color(0, 0, 0, 1)
 theme_override_styles/normal = SubResource("StyleBoxFlat_e21rs")
 toggle_mode = true
 button_pressed = true
-action_mode = 0
+keep_pressed_outside = true
 button_group = ExtResource("8_wyeup")
 text = "  D"
 alignment = 0
@@ -3201,7 +3193,6 @@ icon_alignment = 2
 expand_icon = true
 
 [node name="TuneBooksMenu" type="Node2D" parent="Control/Menus/PreferencesMenu"]
-visible = false
 
 [node name="ColorRect2" type="ColorRect" parent="Control/Menus/PreferencesMenu/TuneBooksMenu"]
 offset_right = 576.0
@@ -3268,6 +3259,8 @@ theme_override_colors/icon_focus_color = Color(0, 0, 0, 1)
 theme_override_colors/icon_disabled_color = Color(0, 0, 0, 1)
 theme_override_styles/normal = SubResource("StyleBoxFlat_e21rs")
 toggle_mode = true
+button_pressed = true
+keep_pressed_outside = true
 button_group = ExtResource("9_ayqpd")
 text = "  All"
 alignment = 0
@@ -3340,7 +3333,6 @@ theme_override_colors/icon_focus_color = Color(0, 0, 0, 1)
 theme_override_colors/icon_disabled_color = Color(0, 0, 0, 1)
 theme_override_styles/normal = SubResource("StyleBoxFlat_e21rs")
 toggle_mode = true
-button_pressed = true
 action_mode = 0
 button_group = ExtResource("9_ayqpd")
 text = "  CRÉ1 Transcribed by Bill Black"
@@ -4044,7 +4036,6 @@ alignment = 0
 expand_icon = true
 
 [node name="TimeSignaturesMenu" type="Node2D" parent="Control/Menus/PreferencesMenu"]
-visible = false
 
 [node name="ColorRect2" type="ColorRect" parent="Control/Menus/PreferencesMenu/TimeSignaturesMenu"]
 offset_right = 576.0
@@ -4111,7 +4102,9 @@ theme_override_colors/icon_focus_color = Color(0, 0, 0, 1)
 theme_override_colors/icon_disabled_color = Color(0, 0, 0, 1)
 theme_override_styles/normal = SubResource("StyleBoxFlat_e21rs")
 toggle_mode = true
-button_group = ExtResource("8_7lcto")
+button_pressed = true
+keep_pressed_outside = true
+button_group = ExtResource("10_puvgn")
 text = "  All"
 alignment = 0
 icon_alignment = 2
@@ -4135,7 +4128,7 @@ theme_override_colors/icon_focus_color = Color(0, 0, 0, 1)
 theme_override_colors/icon_disabled_color = Color(0, 0, 0, 1)
 theme_override_styles/normal = SubResource("StyleBoxFlat_e21rs")
 toggle_mode = true
-button_group = ExtResource("8_7lcto")
+button_group = ExtResource("10_puvgn")
 text = "  C, C|, 4/4, 2/4, 2/2, 4/2 - 	Reels, hornpipes, polkas etc."
 alignment = 0
 icon_alignment = 2
@@ -4159,7 +4152,7 @@ theme_override_colors/icon_focus_color = Color(0, 0, 0, 1)
 theme_override_colors/icon_disabled_color = Color(0, 0, 0, 1)
 theme_override_styles/normal = SubResource("StyleBoxFlat_e21rs")
 toggle_mode = true
-button_group = ExtResource("8_7lcto")
+button_group = ExtResource("10_puvgn")
 text = "  6/8, 12/8 - Jigs, slides etc."
 alignment = 0
 icon_alignment = 2
@@ -4183,9 +4176,8 @@ theme_override_colors/icon_focus_color = Color(0, 0, 0, 1)
 theme_override_colors/icon_disabled_color = Color(0, 0, 0, 1)
 theme_override_styles/normal = SubResource("StyleBoxFlat_e21rs")
 toggle_mode = true
-button_pressed = true
 action_mode = 0
-button_group = ExtResource("8_7lcto")
+button_group = ExtResource("10_puvgn")
 text = "  9/8 - Slip Jigs, hop jigs"
 alignment = 0
 icon_alignment = 2
@@ -4210,7 +4202,7 @@ theme_override_colors/icon_disabled_color = Color(0, 0, 0, 1)
 theme_override_styles/normal = SubResource("StyleBoxFlat_e21rs")
 toggle_mode = true
 action_mode = 0
-button_group = ExtResource("8_7lcto")
+button_group = ExtResource("10_puvgn")
 text = "  3/4 - Waltzes, mazurkas, polskas, minutes etc.
 "
 alignment = 0
@@ -4235,7 +4227,7 @@ theme_override_colors/icon_focus_color = Color(0, 0, 0, 1)
 theme_override_colors/icon_disabled_color = Color(0, 0, 0, 1)
 theme_override_styles/normal = SubResource("StyleBoxFlat_e21rs")
 toggle_mode = true
-button_group = ExtResource("8_7lcto")
+button_group = ExtResource("10_puvgn")
 text = "  3/8 - Unusual jigs & waltzes"
 alignment = 0
 icon_alignment = 2
@@ -4259,14 +4251,13 @@ theme_override_colors/icon_focus_color = Color(0, 0, 0, 1)
 theme_override_colors/icon_disabled_color = Color(0, 0, 0, 1)
 theme_override_styles/normal = SubResource("StyleBoxFlat_e21rs")
 toggle_mode = true
-button_group = ExtResource("8_7lcto")
+button_group = ExtResource("10_puvgn")
 text = "  3/2, 6/4 Unusual English hornpipes and country dances"
 alignment = 0
 icon_alignment = 2
 expand_icon = true
 
 [node name="CountdownMenu" type="Node2D" parent="Control/Menus/PreferencesMenu"]
-visible = false
 
 [node name="ColorRect2" type="ColorRect" parent="Control/Menus/PreferencesMenu/CountdownMenu"]
 offset_right = 576.0
@@ -4333,7 +4324,7 @@ theme_override_colors/icon_focus_color = Color(0, 0, 0, 1)
 theme_override_colors/icon_disabled_color = Color(0, 0, 0, 1)
 theme_override_styles/normal = SubResource("StyleBoxFlat_e21rs")
 toggle_mode = true
-button_group = ExtResource("8_7lcto")
+button_group = ExtResource("11_jkp81")
 text = "  0 seconds "
 alignment = 0
 icon_alignment = 2
@@ -4357,7 +4348,7 @@ theme_override_colors/icon_focus_color = Color(0, 0, 0, 1)
 theme_override_colors/icon_disabled_color = Color(0, 0, 0, 1)
 theme_override_styles/normal = SubResource("StyleBoxFlat_e21rs")
 toggle_mode = true
-button_group = ExtResource("8_7lcto")
+button_group = ExtResource("11_jkp81")
 text = "  1 second"
 alignment = 0
 icon_alignment = 2
@@ -4381,7 +4372,7 @@ theme_override_colors/icon_focus_color = Color(0, 0, 0, 1)
 theme_override_colors/icon_disabled_color = Color(0, 0, 0, 1)
 theme_override_styles/normal = SubResource("StyleBoxFlat_e21rs")
 toggle_mode = true
-button_group = ExtResource("8_7lcto")
+button_group = ExtResource("11_jkp81")
 text = "  2 seconds"
 alignment = 0
 icon_alignment = 2
@@ -4407,7 +4398,8 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_e21rs")
 toggle_mode = true
 button_pressed = true
 action_mode = 0
-button_group = ExtResource("8_7lcto")
+keep_pressed_outside = true
+button_group = ExtResource("11_jkp81")
 text = "  3 seconds"
 alignment = 0
 icon_alignment = 2
@@ -4432,7 +4424,7 @@ theme_override_colors/icon_disabled_color = Color(0, 0, 0, 1)
 theme_override_styles/normal = SubResource("StyleBoxFlat_e21rs")
 toggle_mode = true
 action_mode = 0
-button_group = ExtResource("8_7lcto")
+button_group = ExtResource("11_jkp81")
 text = "  4 seconds
 "
 alignment = 0
@@ -4457,7 +4449,7 @@ theme_override_colors/icon_focus_color = Color(0, 0, 0, 1)
 theme_override_colors/icon_disabled_color = Color(0, 0, 0, 1)
 theme_override_styles/normal = SubResource("StyleBoxFlat_e21rs")
 toggle_mode = true
-button_group = ExtResource("8_7lcto")
+button_group = ExtResource("11_jkp81")
 text = "  5 seconds"
 alignment = 0
 icon_alignment = 2
@@ -4481,7 +4473,7 @@ theme_override_colors/icon_focus_color = Color(0, 0, 0, 1)
 theme_override_colors/icon_disabled_color = Color(0, 0, 0, 1)
 theme_override_styles/normal = SubResource("StyleBoxFlat_e21rs")
 toggle_mode = true
-button_group = ExtResource("8_7lcto")
+button_group = ExtResource("11_jkp81")
 text = "  6 seconds"
 alignment = 0
 icon_alignment = 2
@@ -4505,7 +4497,7 @@ theme_override_colors/icon_focus_color = Color(0, 0, 0, 1)
 theme_override_colors/icon_disabled_color = Color(0, 0, 0, 1)
 theme_override_styles/normal = SubResource("StyleBoxFlat_e21rs")
 toggle_mode = true
-button_group = ExtResource("8_7lcto")
+button_group = ExtResource("11_jkp81")
 text = "  7 seconds"
 alignment = 0
 icon_alignment = 2
@@ -4529,7 +4521,7 @@ theme_override_colors/icon_focus_color = Color(0, 0, 0, 1)
 theme_override_colors/icon_disabled_color = Color(0, 0, 0, 1)
 theme_override_styles/normal = SubResource("StyleBoxFlat_e21rs")
 toggle_mode = true
-button_group = ExtResource("8_7lcto")
+button_group = ExtResource("11_jkp81")
 text = "  8 seconds"
 alignment = 0
 icon_alignment = 2
@@ -4553,7 +4545,7 @@ theme_override_colors/icon_focus_color = Color(0, 0, 0, 1)
 theme_override_colors/icon_disabled_color = Color(0, 0, 0, 1)
 theme_override_styles/normal = SubResource("StyleBoxFlat_e21rs")
 toggle_mode = true
-button_group = ExtResource("8_7lcto")
+button_group = ExtResource("11_jkp81")
 text = "  9 seconds"
 alignment = 0
 icon_alignment = 2
@@ -4577,20 +4569,19 @@ theme_override_colors/icon_focus_color = Color(0, 0, 0, 1)
 theme_override_colors/icon_disabled_color = Color(0, 0, 0, 1)
 theme_override_styles/normal = SubResource("StyleBoxFlat_e21rs")
 toggle_mode = true
-button_group = ExtResource("8_7lcto")
+button_group = ExtResource("11_jkp81")
 text = "  10 seconds"
 alignment = 0
 icon_alignment = 2
 expand_icon = true
 
 [node name="LanguageMenu" type="Node2D" parent="Control/Menus/PreferencesMenu"]
-visible = false
 
-[node name="ColorRect2" type="ColorRect" parent="Control/Menus/PreferencesMenu/LanguageMenu"]
+[node name="ColorRect3" type="ColorRect" parent="Control/Menus/PreferencesMenu/LanguageMenu"]
 offset_right = 576.0
 offset_bottom = 85.0
 
-[node name="Label" type="Label" parent="Control/Menus/PreferencesMenu/LanguageMenu/ColorRect2"]
+[node name="Label2" type="Label" parent="Control/Menus/PreferencesMenu/LanguageMenu/ColorRect3"]
 layout_mode = 0
 offset_right = 576.0
 offset_bottom = 85.0
@@ -4600,7 +4591,7 @@ text = "Language Selection"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Back to Preferences" type="Button" parent="Control/Menus/PreferencesMenu/LanguageMenu/ColorRect2"]
+[node name="Back to Preferences" type="Button" parent="Control/Menus/PreferencesMenu/LanguageMenu/ColorRect3"]
 use_parent_material = true
 layout_mode = 0
 offset_right = 105.0
@@ -4609,7 +4600,7 @@ theme_override_colors/font_color = Color(0, 0, 1, 1)
 text = "< Prefrences"
 flat = true
 
-[node name="ColorRect" type="ColorRect" parent="Control/Menus/PreferencesMenu/LanguageMenu/ColorRect2"]
+[node name="ColorRect2" type="ColorRect" parent="Control/Menus/PreferencesMenu/LanguageMenu/ColorRect3"]
 layout_mode = 0
 offset_top = 85.0
 offset_right = 576.0
@@ -4621,19 +4612,19 @@ anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="ScrollContainer" type="ScrollContainer" parent="Control/Menus/PreferencesMenu/LanguageMenu/Language"]
+[node name="ScrollContainer2" type="ScrollContainer" parent="Control/Menus/PreferencesMenu/LanguageMenu/Language"]
 custom_minimum_size = Vector2(576, 0)
 layout_mode = 0
 offset_top = 85.0
 offset_right = 576.0
 offset_bottom = 939.0
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Control/Menus/PreferencesMenu/LanguageMenu/Language/ScrollContainer"]
+[node name="VBoxContainer2" type="VBoxContainer" parent="Control/Menus/PreferencesMenu/LanguageMenu/Language/ScrollContainer2"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="English" type="Button" parent="Control/Menus/PreferencesMenu/LanguageMenu/Language/ScrollContainer/VBoxContainer"]
+[node name="English" type="Button" parent="Control/Menus/PreferencesMenu/LanguageMenu/Language/ScrollContainer2/VBoxContainer2"]
 custom_minimum_size = Vector2(0, 40)
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
@@ -4651,13 +4642,15 @@ theme_override_colors/icon_focus_color = Color(0, 0, 0, 1)
 theme_override_colors/icon_disabled_color = Color(0, 0, 0, 1)
 theme_override_styles/normal = SubResource("StyleBoxFlat_e21rs")
 toggle_mode = true
-button_group = ExtResource("8_7lcto")
+button_pressed = true
+keep_pressed_outside = true
+button_group = ExtResource("12_gtba4")
 text = "  English"
 alignment = 0
 icon_alignment = 2
 expand_icon = true
 
-[node name="Gaeilge" type="Button" parent="Control/Menus/PreferencesMenu/LanguageMenu/Language/ScrollContainer/VBoxContainer"]
+[node name="Gaeilge" type="Button" parent="Control/Menus/PreferencesMenu/LanguageMenu/Language/ScrollContainer2/VBoxContainer2"]
 custom_minimum_size = Vector2(0, 40)
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
@@ -4675,8 +4668,8 @@ theme_override_colors/icon_focus_color = Color(0, 0, 0, 1)
 theme_override_colors/icon_disabled_color = Color(0, 0, 0, 1)
 theme_override_styles/normal = SubResource("StyleBoxFlat_e21rs")
 toggle_mode = true
-button_group = ExtResource("8_7lcto")
-text = "  Gaeilge"
+button_group = ExtResource("12_gtba4")
+text = " Gaeilge"
 alignment = 0
 icon_alignment = 2
 expand_icon = true
@@ -4810,6 +4803,16 @@ custom_minimum_size = Vector2(2.08165e-12, 83)
 layout_mode = 2
 theme_override_styles/normal = SubResource("StyleBoxFlat_e21rs")
 
+[node name="Button11" type="Button" parent="Control/Menus/MoreMenu/Control/ScrollContainer/Songs"]
+custom_minimum_size = Vector2(2.08165e-12, 83)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_e21rs")
+
+[node name="Button12" type="Button" parent="Control/Menus/MoreMenu/Control/ScrollContainer/Songs"]
+custom_minimum_size = Vector2(2.08165e-12, 83)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_e21rs")
+
 [node name="UI" type="Control" parent="Control"]
 anchors_preset = 0
 
@@ -4907,7 +4910,7 @@ flat = true
 [connection signal="pressed" from="Control/Menus/PreferencesMenu/TuneBooksMenu/ColorRect2/Back to Preferences" to="Control" method="_on_back_to_preferences_pressed"]
 [connection signal="pressed" from="Control/Menus/PreferencesMenu/TimeSignaturesMenu/ColorRect2/Back to Preferences" to="Control" method="_on_back_to_preferences_pressed"]
 [connection signal="pressed" from="Control/Menus/PreferencesMenu/CountdownMenu/ColorRect2/Back to Preferences" to="Control" method="_on_back_to_preferences_pressed"]
-[connection signal="pressed" from="Control/Menus/PreferencesMenu/LanguageMenu/ColorRect2/Back to Preferences" to="Control" method="_on_back_to_preferences_pressed"]
+[connection signal="pressed" from="Control/Menus/PreferencesMenu/LanguageMenu/ColorRect3/Back to Preferences" to="Control" method="_on_back_to_preferences_pressed"]
 [connection signal="pressed" from="Control/UI/MenuButtons/ColorRect2/HBoxContainer/Record" to="Control" method="_on_record_pressed"]
 [connection signal="pressed" from="Control/UI/MenuButtons/ColorRect2/HBoxContainer/Keywords" to="Control" method="_on_keywords_pressed"]
 [connection signal="pressed" from="Control/UI/MenuButtons/ColorRect2/HBoxContainer/MyTunes" to="Control" method="_on_my_tunes_pressed"]

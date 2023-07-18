@@ -10,14 +10,11 @@ var preferencesMainMenu
 var preferencesFundamentalMenu
 var preferencesMenus
 var preferencesCurrentMenu
-<<<<<<< HEAD
 var preferencesTuneBooksMenu
 var preferencesTimeSignaturesMenu
 var preferencesCountdownMenu
 var preferencesLanguageMenu
-=======
 var resultMenu
->>>>>>> 0e63ac95a9b0d8577784ecfbd889a33e3cd5f342
 
 func _ready():
 	menus = $Menus.get_children()
@@ -86,7 +83,6 @@ func _on_back_to_preferences_pressed():
 	preferencesCurrentMenu.visible = true
 	preferencesMenu.visible = true
 
-<<<<<<< HEAD
 func _on_tune_books_pressed():
 	for i in menus:
 		i.visible = false
@@ -123,11 +119,10 @@ func _on_language_pressed():
 	preferencesMenu.visible = true
 	preferencesCurrentMenu = preferencesLanguageMenu
 	preferencesCurrentMenu.visible = true
-=======
+
 func _on_back_to_record_pressed():
 	for i in menus:
 		i.visible = false
 	recordMenu.visible = true
 	
-	
->>>>>>> 0e63ac95a9b0d8577784ecfbd889a33e3cd5f342
+

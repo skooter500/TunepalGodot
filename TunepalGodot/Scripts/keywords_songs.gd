@@ -2,10 +2,8 @@ extends VBoxContainer
 
 #Placeholder array to debug code, eventually this should come
 #from database I think
-<<<<<<< HEAD
+
 @onready var stuff = get_node("../../../../RecordMenu/Control").get("db").query_result
-=======
->>>>>>> 0e63ac95a9b0d8577784ecfbd889a33e3cd5f342
 
 @onready var buttons = get_children()
 @onready var labels = []

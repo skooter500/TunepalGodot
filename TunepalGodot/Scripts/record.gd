@@ -45,15 +45,10 @@ func _ready():
 	db.path = db_name
 	db.open_db()
 	db.read_only = true
-<<<<<<< HEAD
-	#db.query("select tuneindex.id as id, tune_type, notation, source.id as sourceid, url, source.source as sourcename, title, alt_title, tunepalid, x, midi_file_name, key_sig from tuneindex, tunekeys, source where tuneindex.source = source.id and tunekeys.tuneid= tuneindex.id order by downloaded desc;")
 	db.query("select tuneindex.id as id, tune_type, notation, source.id as sourceid, shortName, source.source as sourcename, title, alt_title, search_key, key_sig from tuneindex, tunekeys, source where tunekeys.tuneid = tuneindex.id and tuneindex.source = source.id;")
-=======
-	db.query("select tuneindex.id as id, tune_type, notation, source.id as sourceid, url, source.source as sourcename, title, alt_title, tunepalid, x, midi_file_name, key_sig, search_key from tuneindex, tunekeys, source where tunekeys.tuneid = tuneindex.id and tuneindex.source = source.id;")
 	await get_tree().create_timer(.5).timeout
 	query_result = db.query_result
 	db.close_db()
->>>>>>> 0e63ac95a9b0d8577784ecfbd889a33e3cd5f342
 
 func _physics_process(_delta):
 	if timer.get_time_left() > 0:
@@ -263,14 +258,11 @@ static func d_sort(a, b):
 	if a["confidence"] > b["confidence"]:
 		return true
 	return false
-<<<<<<< HEAD
-=======
-	
+
 static func t_sort(a, b):
 	if a["time"] < b["time"]:
 		return true
 	return false
->>>>>>> 0e63ac95a9b0d8577784ecfbd889a33e3cd5f342
 
 func _on_record_pressed():
 	if !active:
