@@ -35,7 +35,6 @@ func _ready():
 	for i in menus:
 		i.visible = false
 	recordMenu.visible = true
-	print("DOne")
 	
 func _on_record_pressed():
 	for i in menus:

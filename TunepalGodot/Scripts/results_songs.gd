@@ -12,6 +12,7 @@ func _process(_delta):
 		if button.button_pressed:
 			get_node("../../../../ResultMenu").visible = false
 			get_node("../../../../ABCMenu/Control/ColorRect/ABC").text = information[button.index]["notation"]
+			get_node("../../../../ABCMenu/Control/ColorRect/Title").text = information[button.index]["title"]
 			get_node("../../../../ABCMenu").visible = true
 
 func delete():
@@ -28,6 +29,14 @@ func populate(confidences):
 		add_child(button)
 		buttons.append(button)
 		button.set_text(str(confidences[i]["title"]) + " (" + String.num(confidences[i]["confidence"],2)+ "%)")
+		var string = ""
+		if confidences[i]["shortName"] != null:
+			string = string + confidences[i]["shortName"]
+		if confidences[i]["tune_type"] != null:
+			string = string + " | " + confidences[i]["tune_type"]
+		if confidences[i]["key_sig"] != null:
+			string = string + " | " + confidences[i]["key_sig"]
+		button.get_child(0).text = string
 		button.visible = true
 		if i == 99:
 			break

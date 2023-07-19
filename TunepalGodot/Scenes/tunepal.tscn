@@ -72,6 +72,7 @@ offset_left = 188.0
 offset_top = 700.0
 offset_right = 388.0
 offset_bottom = 900.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
 text = "Record
 "
 
@@ -1256,6 +1257,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="MyTunesMenu" type="Node2D" parent="Control/Menus"]
+visible = false
 
 [node name="Control" type="Control" parent="Control/Menus/MyTunesMenu"]
 layout_mode = 3
@@ -1568,6 +1570,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="PreferencesMenu" type="Node2D" parent="Control/Menus"]
+visible = false
 
 [node name="MainMenu" type="Node2D" parent="Control/Menus/PreferencesMenu"]
 
@@ -3800,7 +3803,19 @@ theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
 theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
 theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
 theme_override_styles/normal = SubResource("StyleBoxFlat_e21rs")
+alignment = 0
 script = ExtResource("3_5ovlr")
+
+[node name="Label" type="Label" parent="Control/Menus/ResultMenu/Control/ScrollContainer/Songs/Button"]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 54.0
+offset_right = 559.0
+offset_bottom = 77.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+horizontal_alignment = 2
+vertical_alignment = 1
+visible_characters_behavior = 1
 
 [node name="ColorRect" type="ColorRect" parent="Control/Menus/ResultMenu/Control"]
 layout_mode = 0
@@ -3826,6 +3841,7 @@ text = "<- Record"
 flat = true
 
 [node name="ABCMenu" type="Node2D" parent="Control/Menus"]
+visible = false
 
 [node name="Control" type="Control" parent="Control/Menus/ABCMenu"]
 layout_mode = 3
@@ -3840,28 +3856,49 @@ offset_bottom = 939.0
 
 [node name="ABC" type="Label" parent="Control/Menus/ABCMenu/Control/ColorRect"]
 layout_mode = 0
-offset_top = 62.0
-offset_right = 576.0
-offset_bottom = 499.0
+offset_left = 13.0
+offset_top = 100.0
+offset_right = 563.0
+offset_bottom = 537.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "ABC Stuff"
+
+[node name="Title" type="Label" parent="Control/Menus/ABCMenu/Control/ColorRect"]
+layout_mode = 0
+offset_right = 576.0
+offset_bottom = 100.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+text = "Title"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Play" type="Button" parent="Control/Menus/ABCMenu/Control/ColorRect"]
+layout_mode = 0
+offset_left = 213.0
+offset_top = 750.0
+offset_right = 363.0
+offset_bottom = 900.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+text = "Play"
 
 [node name="UI" type="Control" parent="Control"]
 anchors_preset = 0
 
 [node name="MenuButtons" type="Node2D" parent="Control/UI"]
 
-[node name="ColorRect2" type="ColorRect" parent="Control/UI/MenuButtons"]
+[node name="ColorRect" type="ColorRect" parent="Control/UI/MenuButtons"]
 custom_minimum_size = Vector2(576, 85)
 offset_top = 939.0
 offset_right = 576.0
 offset_bottom = 1024.0
 
-[node name="HBoxContainer" type="HBoxContainer" parent="Control/UI/MenuButtons/ColorRect2"]
+[node name="HBoxContainer" type="HBoxContainer" parent="Control/UI/MenuButtons/ColorRect"]
 layout_mode = 0
 offset_right = 576.0
 offset_bottom = 85.0
 
-[node name="Record" type="Button" parent="Control/UI/MenuButtons/ColorRect2/HBoxContainer"]
+[node name="Record" type="Button" parent="Control/UI/MenuButtons/ColorRect/HBoxContainer"]
 custom_minimum_size = Vector2(112, 0)
 layout_mode = 2
 theme_override_colors/font_color = Color(0.537255, 0.537255, 0.537255, 1)
@@ -3875,7 +3912,7 @@ button_group = ExtResource("13_28b28")
 text = "Record"
 flat = true
 
-[node name="Keywords" type="Button" parent="Control/UI/MenuButtons/ColorRect2/HBoxContainer"]
+[node name="Keywords" type="Button" parent="Control/UI/MenuButtons/ColorRect/HBoxContainer"]
 custom_minimum_size = Vector2(112, 0)
 layout_mode = 2
 theme_override_colors/font_color = Color(0.537255, 0.537255, 0.537255, 1)
@@ -3888,7 +3925,7 @@ button_group = ExtResource("13_28b28")
 text = "Keywords"
 flat = true
 
-[node name="MyTunes" type="Button" parent="Control/UI/MenuButtons/ColorRect2/HBoxContainer"]
+[node name="MyTunes" type="Button" parent="Control/UI/MenuButtons/ColorRect/HBoxContainer"]
 custom_minimum_size = Vector2(112, 0)
 layout_mode = 2
 theme_override_colors/font_color = Color(0.537255, 0.537255, 0.537255, 1)
@@ -3901,7 +3938,7 @@ button_group = ExtResource("13_28b28")
 text = "My Tunes"
 flat = true
 
-[node name="Preferences" type="Button" parent="Control/UI/MenuButtons/ColorRect2/HBoxContainer"]
+[node name="Preferences" type="Button" parent="Control/UI/MenuButtons/ColorRect/HBoxContainer"]
 custom_minimum_size = Vector2(112, 0)
 layout_mode = 2
 theme_override_colors/font_color = Color(0.537255, 0.537255, 0.537255, 1)
@@ -3914,7 +3951,7 @@ button_group = ExtResource("13_28b28")
 text = "Preferences"
 flat = true
 
-[node name="More" type="Button" parent="Control/UI/MenuButtons/ColorRect2/HBoxContainer"]
+[node name="More" type="Button" parent="Control/UI/MenuButtons/ColorRect/HBoxContainer"]
 custom_minimum_size = Vector2(112, 0)
 layout_mode = 2
 theme_override_colors/font_color = Color(0.537255, 0.537255, 0.537255, 1)
@@ -3944,8 +3981,8 @@ flat = true
 [connection signal="pressed" from="Control/Menus/PreferencesMenu/CountdownMenu/ColorRect2/Back to Preferences" to="Control" method="_on_back_to_preferences_pressed"]
 [connection signal="pressed" from="Control/Menus/PreferencesMenu/LanguageMenu/ColorRect3/Back to Preferences" to="Control" method="_on_back_to_preferences_pressed"]
 [connection signal="pressed" from="Control/Menus/ResultMenu/Control/Back To Record" to="Control" method="_on_back_to_record_pressed"]
-[connection signal="pressed" from="Control/UI/MenuButtons/ColorRect2/HBoxContainer/Record" to="Control" method="_on_record_pressed"]
-[connection signal="pressed" from="Control/UI/MenuButtons/ColorRect2/HBoxContainer/Keywords" to="Control" method="_on_keywords_pressed"]
-[connection signal="pressed" from="Control/UI/MenuButtons/ColorRect2/HBoxContainer/MyTunes" to="Control" method="_on_my_tunes_pressed"]
-[connection signal="pressed" from="Control/UI/MenuButtons/ColorRect2/HBoxContainer/Preferences" to="Control" method="_on_preferences_pressed"]
-[connection signal="pressed" from="Control/UI/MenuButtons/ColorRect2/HBoxContainer/More" to="Control" method="_on_more_pressed"]
+[connection signal="pressed" from="Control/UI/MenuButtons/ColorRect/HBoxContainer/Record" to="Control" method="_on_record_pressed"]
+[connection signal="pressed" from="Control/UI/MenuButtons/ColorRect/HBoxContainer/Keywords" to="Control" method="_on_keywords_pressed"]
+[connection signal="pressed" from="Control/UI/MenuButtons/ColorRect/HBoxContainer/MyTunes" to="Control" method="_on_my_tunes_pressed"]
+[connection signal="pressed" from="Control/UI/MenuButtons/ColorRect/HBoxContainer/Preferences" to="Control" method="_on_preferences_pressed"]
+[connection signal="pressed" from="Control/UI/MenuButtons/ColorRect/HBoxContainer/More" to="Control" method="_on_more_pressed"]

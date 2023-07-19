@@ -1,7 +1,5 @@
 extends Control
 
-
-#Idk how to dynamically show buttons and text... yet
 func _on_search_bar_text_submitted(new_text):
 	var matches = []
 	var buttons = $ScrollContainer/Songs.get_children()
@@ -24,4 +22,3 @@ func _on_search_bar_text_submitted(new_text):
 		i += 1
 		if i == matches.size():
 			return
-	#Not finished!
