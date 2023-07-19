@@ -4,10 +4,9 @@ extends VBoxContainer
 #from database I think
 
 @onready var stuff = get_node("../../../../RecordMenu/Control").get("db").query_result
-
+@onready var current_tune_type 
 @onready var buttons = get_children()
 @onready var labels = []
-
 func _on_search_bar_text_submitted(new_text):
 	for button in buttons:
 		labels.append(button.get_children())
@@ -24,11 +23,11 @@ func _on_search_bar_text_submitted(new_text):
 	for i in range(0, stuff.size()):
 		var button = buttons[j]
 		var label = labels[j]
-		var check = true
+		var check = false
 		for string in matches:
-			if !stuff[i]["title"].to_lower().contains(string):
-				check = false
-		
+			for time_signature in current_tune_type:
+				if stuff[i]["title"].to_lower().contains(string) and time_signature == stuff[i]["tune_type"]: 
+					check = true
 		if check:
 			button.set_text("  " + stuff[i]["title"])
 			var string = ""
@@ -38,7 +37,6 @@ func _on_search_bar_text_submitted(new_text):
 				string = string + " | " + stuff[i]["tune_type"]
 			if stuff[i]["key_sig"] != null:
 				string = string + " | " + stuff[i]["key_sig"]
-			
 			label[0].set_text(string)
 			print(label[0].text)
 			button.visible = true
@@ -46,11 +44,6 @@ func _on_search_bar_text_submitted(new_text):
 			j += 1
 		if j == 50:
 			break
-
-	
-	
-	
-
-
 func _on_reels_hornpipes_toggled(button_pressed):
-	pass # Replace with function body.
+	current_tune_type = ["hornpipe", "reel", "polka"]
+	
