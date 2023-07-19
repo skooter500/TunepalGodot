@@ -40,7 +40,7 @@ func _on_search_bar_text_submitted(new_text):
 				string = string + " | " + stuff[i]["key_sig"]
 			
 			label[0].set_text(string)
-			print(label[0].text)
+			#print(label[0].text)
 			button.visible = true
 			label[0].visible = true
 			j += 1

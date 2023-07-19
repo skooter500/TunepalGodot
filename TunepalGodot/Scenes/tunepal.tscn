@@ -1257,6 +1257,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="MyTunesMenu" type="Node2D" parent="Control/Menus"]
+visible = false
 
 [node name="Control" type="Control" parent="Control/Menus/MyTunesMenu"]
 layout_mode = 3
@@ -1569,6 +1570,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="PreferencesMenu" type="Node2D" parent="Control/Menus"]
+visible = false
 
 [node name="MainMenu" type="Node2D" parent="Control/Menus/PreferencesMenu"]
 
@@ -3801,7 +3803,19 @@ theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
 theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
 theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
 theme_override_styles/normal = SubResource("StyleBoxFlat_e21rs")
+alignment = 0
 script = ExtResource("3_5ovlr")
+
+[node name="Label" type="Label" parent="Control/Menus/ResultMenu/Control/ScrollContainer/Songs/Button"]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 54.0
+offset_right = 559.0
+offset_bottom = 77.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+horizontal_alignment = 2
+vertical_alignment = 1
+visible_characters_behavior = 1
 
 [node name="ColorRect" type="ColorRect" parent="Control/Menus/ResultMenu/Control"]
 layout_mode = 0
@@ -3827,6 +3841,7 @@ text = "<- Record"
 flat = true
 
 [node name="ABCMenu" type="Node2D" parent="Control/Menus"]
+visible = false
 
 [node name="Control" type="Control" parent="Control/Menus/ABCMenu"]
 layout_mode = 3
@@ -3861,9 +3876,9 @@ vertical_alignment = 1
 [node name="Play" type="Button" parent="Control/Menus/ABCMenu/Control/ColorRect"]
 layout_mode = 0
 offset_left = 213.0
-offset_top = 635.0
+offset_top = 750.0
 offset_right = 363.0
-offset_bottom = 785.0
+offset_bottom = 900.0
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 text = "Play"
 

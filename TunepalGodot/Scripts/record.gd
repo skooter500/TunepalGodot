@@ -104,7 +104,7 @@ func _physics_process(_delta):
 				minIndex = i
 		
 		if magnitude > 0.001:
-			print(spellings[minIndex], " ", frequency, " Hz ", magnitude)
+			#print(spellings[minIndex], " ", frequency, " Hz ", magnitude)
 			if temp_notes.size() != 0:
 				var check = false
 				for note in temp_notes:
@@ -116,17 +116,17 @@ func _physics_process(_delta):
 							if current_notes.size() == 0:
 								current_time = current_time - timer.get_time_left()
 								current_notes.append({"note" : spellings[minIndex], "time" : current_time})
-								print("ENTERED")
+								#print("ENTERED")
 								current_time = timer.get_time_left()
 							elif current_notes[current_notes.size()-1]["note"] != spellings[minIndex]:
 								current_time = current_time - timer.get_time_left()
 								current_notes.append({"note" : spellings[minIndex], "time" : current_time})
-								print("ENTERED")
+								#print("ENTERED")
 								current_time = timer.get_time_left()
 							else:
 								current_time = current_time - timer.get_time_left()
 								current_notes[current_notes.size()-1]["time"] += current_time
-								print("EXTENDED")
+								#print("EXTENDED")
 								current_time = timer.get_time_left()
 				if check == false:
 					temp_notes.append({"note" : spellings[minIndex], "count" : 1})
@@ -183,20 +183,20 @@ func stop_recording():
 	var average_time
 	var largest = 0
 	for bin in bins:
-		print("BIN")
+		#print("BIN")
 		var count = 0
 		var average = 0
 		for note in bin:
-			print(note.note, " ", note.time)
+			#print(note.note, " ", note.time)
 			average += note.time
 			count += 1
 		if count > largest:
 			largest = count
-			print(average, " ", bin.size())
+			#print(average, " ", bin.size())
 			average_time = (average / bin.size())
-	print("AVERAGE TIME: ", average_time)
+	#print("AVERAGE TIME: ", average_time)
 	note_string = create_string(current_notes, average_time)
-	print(note_string)
+	#print(note_string)
 	var time = Time.get_ticks_msec()
 	#note_string = "AFADGGGAGFDDEFDCAFADGGGAGGGBCDBGAGFFDGGGAGFDEFDCAFFDGGGAGGGDGGGAGFEDDD"
 	#note_string = "DDEBBABBEBBBABDBAGFDADBDADFDADDAF"
@@ -228,7 +228,7 @@ func stop_recording():
 	get_node("../../ResultMenu/Control/ScrollContainer/Songs").delete()
 	get_node("../../ResultMenu/Control/ScrollContainer/Songs").populate(confidences)
 	record_button.text = "Record"
-	print("Time = " + String.num(((float(Time.get_ticks_msec()) - float(time))/1000), 3) + " sec")
+	#print("Time = " + String.num(((float(Time.get_ticks_msec()) - float(time))/1000), 3) + " sec")
 
 func group_notes(notes):
 	var grouped_notes
@@ -246,7 +246,7 @@ func group_notes(notes):
 		var current_time = note["time"]
 		if current_average == 0:
 			current_average = current_time
-		print("(", current_average, " - ", current_time, ") / ", current_average, " = ", (abs(current_average - current_time) / current_average))
+		#print("(", current_average, " - ", current_time, ") / ", current_average, " = ", (abs(current_average - current_time) / current_average))
 		if abs((current_average - current_time) / current_average) <= .33:
 			# Add the note to the current bin
 			current_bin.append(note)
@@ -254,7 +254,7 @@ func group_notes(notes):
 			for stuff in current_bin:
 				current_average += stuff.time
 			current_average = current_average / current_bin.size()
-			print("CURRENT AVERAGE = ", current_average)
+			#print("CURRENT AVERAGE = ", current_average)
 		else:
 			# Start a new bin for notes played at a different time
 			current_average = 0
@@ -274,19 +274,19 @@ func create_string(notes, time):
 		var amount = note.time / time
 		if amount < 1:
 			amount = 1
-		print(note.note, " ", amount)
+		#print(note.note, " ", amount)
 		for i in range(amount):
 			string = string + note.note
 	return string
 	
 func search(start, end, thread):
-	print(start, " ", end)
+	#print(start, " ", end)
 	var info = []
 	for id in range(start, end):
 		var search_key = query_result[id]["search_key"]
 		if !search_key.length() < 50:
 			var confidence = edit_distance.edSubstring(note_string, search_key, thread)
-			info.append({"confidence" : confidence, "id" : query_result[id]["id"], "title" : query_result[id]["title"], "notation" : query_result[id]["notation"], "midi_sequence" : query_result[id]["midi_sequence"]})
+			info.append({"confidence" : confidence, "id" : query_result[id]["id"], "title" : query_result[id]["title"], "notation" : query_result[id]["notation"], "midi_sequence" : query_result[id]["midi_sequence"], "shortName" : query_result[id]["shortName"], "tune_type" : query_result[id]["tune_type"], "key_sig" : query_result[id]["key_sig"]})
 	return info
 			
 static func d_sort(a, b):
