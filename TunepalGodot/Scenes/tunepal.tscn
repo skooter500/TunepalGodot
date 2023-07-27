@@ -3977,6 +3977,7 @@ flat = true
 [connection signal="pressed" from="Control/Menus/PreferencesMenu/FundamentalMenu/ColorRect2/Back to Preferences" to="Control" method="_on_back_to_preferences_pressed"]
 [connection signal="pressed" from="Control/Menus/PreferencesMenu/TuneBooksMenu/ColorRect2/Back to Preferences" to="Control" method="_on_back_to_preferences_pressed"]
 [connection signal="pressed" from="Control/Menus/PreferencesMenu/TimeSignaturesMenu/ColorRect2/Back to Preferences" to="Control" method="_on_back_to_preferences_pressed"]
+[connection signal="toggled" from="Control/Menus/PreferencesMenu/TimeSignaturesMenu/TimeSignatures/ScrollContainer/VBoxContainer/Reels Hornpipes" to="Control/Menus/KeywordsMenu/Control/ScrollContainer/Songs" method="_on_reels_hornpipes_toggled"]
 [connection signal="pressed" from="Control/Menus/PreferencesMenu/CountdownMenu/ColorRect2/Back to Preferences" to="Control" method="_on_back_to_preferences_pressed"]
 [connection signal="pressed" from="Control/Menus/PreferencesMenu/LanguageMenu/ColorRect3/Back to Preferences" to="Control" method="_on_back_to_preferences_pressed"]
 [connection signal="pressed" from="Control/Menus/ResultMenu/Control/Back To Record" to="Control" method="_on_back_to_record_pressed"]
