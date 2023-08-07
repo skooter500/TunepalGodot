@@ -1,8 +1,5 @@
 extends VBoxContainer
 
-#Placeholder array to debug code, eventually this should come
-#from database I think
-
 @onready var stuff = get_node("../../../../RecordMenu/Control").get("db").query_result
 @onready var current_tune_type = ["all"]
 @onready var buttons = get_children()
@@ -25,12 +22,20 @@ func _on_search_bar_text_submitted(new_text):
 		var label = labels[j]
 		var check = false
 		for string in matches:
+<<<<<<< HEAD
 			if current_tune_type != ["all"]:
 				for time_sig in current_tune_type:
 					if stuff[i]["title"].to_lower().contains(string) and time_sig == stuff[i]["time_sig"]: 
 						check = true
 			elif stuff[i]["title"].to_lower().contains(string):
 				check = true
+=======
+			for time_signature in current_tune_type:
+				if stuff[i]["title"].to_lower().contains(string) and time_signature == stuff[i]["tune_type"]: 
+					check = true
+				elif stuff[i]["title"].to_lower().contains(string) and time_signature == "all":
+					check = true
+>>>>>>> 700cd799ad97696cf66091b41d2932dbb2df8641
 		if check:
 			button.set_text("  " + stuff[i]["title"])
 			var string = ""
