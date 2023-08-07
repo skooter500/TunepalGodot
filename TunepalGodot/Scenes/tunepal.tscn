@@ -3162,7 +3162,7 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_e21rs")
 toggle_mode = true
 action_mode = 0
 button_group = ExtResource("10_puvgn")
-text = "  3/4 - Waltzes, mazurkas, polskas, minutes etc.
+text = "  3/4 - Waltzes, mazurkas, polkas, minuets etc.
 "
 alignment = 0
 icon_alignment = 2
@@ -3841,7 +3841,6 @@ text = "<- Record"
 flat = true
 
 [node name="ABCMenu" type="Node2D" parent="Control/Menus"]
-visible = false
 
 [node name="Control" type="Control" parent="Control/Menus/ABCMenu"]
 layout_mode = 3
@@ -3977,7 +3976,13 @@ flat = true
 [connection signal="pressed" from="Control/Menus/PreferencesMenu/FundamentalMenu/ColorRect2/Back to Preferences" to="Control" method="_on_back_to_preferences_pressed"]
 [connection signal="pressed" from="Control/Menus/PreferencesMenu/TuneBooksMenu/ColorRect2/Back to Preferences" to="Control" method="_on_back_to_preferences_pressed"]
 [connection signal="pressed" from="Control/Menus/PreferencesMenu/TimeSignaturesMenu/ColorRect2/Back to Preferences" to="Control" method="_on_back_to_preferences_pressed"]
+[connection signal="toggled" from="Control/Menus/PreferencesMenu/TimeSignaturesMenu/TimeSignatures/ScrollContainer/VBoxContainer/All" to="Control/Menus/KeywordsMenu/Control/ScrollContainer/Songs" method="_on_all_toggled"]
 [connection signal="toggled" from="Control/Menus/PreferencesMenu/TimeSignaturesMenu/TimeSignatures/ScrollContainer/VBoxContainer/Reels Hornpipes" to="Control/Menus/KeywordsMenu/Control/ScrollContainer/Songs" method="_on_reels_hornpipes_toggled"]
+[connection signal="toggled" from="Control/Menus/PreferencesMenu/TimeSignaturesMenu/TimeSignatures/ScrollContainer/VBoxContainer/Jigs slides etc" to="Control/Menus/KeywordsMenu/Control/ScrollContainer/Songs" method="_on_jigs_slides_etc_toggled"]
+[connection signal="toggled" from="Control/Menus/PreferencesMenu/TimeSignaturesMenu/TimeSignatures/ScrollContainer/VBoxContainer/Slip Jigs, hop jigs" to="Control/Menus/KeywordsMenu/Control/ScrollContainer/Songs" method="_on_slip_jigs_hop_jigs_toggled"]
+[connection signal="toggled" from="Control/Menus/PreferencesMenu/TimeSignaturesMenu/TimeSignatures/ScrollContainer/VBoxContainer/Waltzes Mazurkas" to="Control/Menus/KeywordsMenu/Control/ScrollContainer/Songs" method="_on_waltzes_mazurkas_toggled"]
+[connection signal="toggled" from="Control/Menus/PreferencesMenu/TimeSignaturesMenu/TimeSignatures/ScrollContainer/VBoxContainer/Unsusual Jigs" to="Control/Menus/KeywordsMenu/Control/ScrollContainer/Songs" method="_on_unsusual_jigs_toggled"]
+[connection signal="toggled" from="Control/Menus/PreferencesMenu/TimeSignaturesMenu/TimeSignatures/ScrollContainer/VBoxContainer/Unusual English Hornpipes" to="Control/Menus/KeywordsMenu/Control/ScrollContainer/Songs" method="_on_unusual_english_hornpipes_toggled"]
 [connection signal="pressed" from="Control/Menus/PreferencesMenu/CountdownMenu/ColorRect2/Back to Preferences" to="Control" method="_on_back_to_preferences_pressed"]
 [connection signal="pressed" from="Control/Menus/PreferencesMenu/LanguageMenu/ColorRect3/Back to Preferences" to="Control" method="_on_back_to_preferences_pressed"]
 [connection signal="pressed" from="Control/Menus/ResultMenu/Control/Back To Record" to="Control" method="_on_back_to_record_pressed"]

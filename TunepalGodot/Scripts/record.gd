@@ -41,7 +41,7 @@ func _ready():
 	db.path = db_name
 	db.open_db()
 	db.read_only = true
-	db.query("select tuneindex.id as id, midi_sequence, tune_type, notation, source.id as sourceid, shortName, url, source.source as sourcename, title, alt_title, tunepalid, x, midi_file_name, key_sig, search_key from tuneindex, tunekeys, source where tunekeys.tuneid = tuneindex.id and tuneindex.source = source.id;")
+	db.query("select tuneindex.id as id, midi_sequence, tune_type, time_sig, notation, source.id as sourceid, shortName, url, source.source as sourcename, title, alt_title, tunepalid, x, midi_file_name, key_sig, search_key from tuneindex, tunekeys, source where tunekeys.tuneid = tuneindex.id and tuneindex.source = source.id;")
 	await get_tree().create_timer(.5).timeout
 	query_result = db.query_result
 	db.close_db()
@@ -85,8 +85,8 @@ func _physics_process(_delta):
 						minDiff = diff
 						minIndex = j
 				big_freqs.append({"note" : spellings[minIndex], "frequency" : i+(spec_range/2), "magnitude" : spectrum.get_magnitude_for_frequency_range(i,i+spec_range)[0]})
-		#for freq in big_freqs:
-			#print(freq)
+		for freq in big_freqs:
+			print(freq)
 		#print()
 		var frequency = 0
 		var magnitude = 0
@@ -104,7 +104,7 @@ func _physics_process(_delta):
 				minIndex = i
 		
 		if magnitude > 0.001:
-			#print(spellings[minIndex], " ", frequency, " Hz ", magnitude)
+			print(spellings[minIndex], " ", frequency, " Hz ", magnitude)
 			if temp_notes.size() != 0:
 				var check = false
 				for note in temp_notes:
@@ -134,7 +134,7 @@ func _physics_process(_delta):
 				temp_notes.append({"note" : spellings[minIndex], "count" : 1})
 		else:
 			current_time = timer.get_time_left()
-				
+		
 	if active and stop:
 		active = false
 		timer.stop()
