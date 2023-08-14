@@ -85,8 +85,10 @@ func _physics_process(_delta):
 						minDiff = diff
 						minIndex = j
 				big_freqs.append({"note" : spellings[minIndex], "frequency" : i+(spec_range/2), "magnitude" : spectrum.get_magnitude_for_frequency_range(i,i+spec_range)[0]})
-		for freq in big_freqs:
-			print(freq)
+		#BIG FREQS WAS USED TO SEE THE TOP FREQUENCIES BEING DETECTED, NOT JUST THE LOUDEST FREQUENCY. HOWEVER,
+		#TESTING DIDN'T LEAD ANYWHERE. :(	
+		#for freq in big_freqs:
+			#print(freq)
 		#print()
 		var frequency = 0
 		var magnitude = 0
@@ -116,17 +118,17 @@ func _physics_process(_delta):
 							if current_notes.size() == 0:
 								current_time = current_time - timer.get_time_left()
 								current_notes.append({"note" : spellings[minIndex], "time" : current_time})
-								#print("ENTERED")
+								print("ENTERED")
 								current_time = timer.get_time_left()
 							elif current_notes[current_notes.size()-1]["note"] != spellings[minIndex]:
 								current_time = current_time - timer.get_time_left()
 								current_notes.append({"note" : spellings[minIndex], "time" : current_time})
-								#print("ENTERED")
+								print("ENTERED")
 								current_time = timer.get_time_left()
 							else:
 								current_time = current_time - timer.get_time_left()
 								current_notes[current_notes.size()-1]["time"] += current_time
-								#print("EXTENDED")
+								print("EXTENDED")
 								current_time = timer.get_time_left()
 				if check == false:
 					temp_notes.append({"note" : spellings[minIndex], "count" : 1})
@@ -183,20 +185,20 @@ func stop_recording():
 	var average_time
 	var largest = 0
 	for bin in bins:
-		#print("BIN")
+		print("BIN")
 		var count = 0
 		var average = 0
 		for note in bin:
-			#print(note.note, " ", note.time)
+			print(note.note, " ", note.time)
 			average += note.time
 			count += 1
 		if count > largest:
 			largest = count
-			#print(average, " ", bin.size())
+			print(average, " ", bin.size())
 			average_time = (average / bin.size())
-	#print("AVERAGE TIME: ", average_time)
+	print("AVERAGE TIME: ", average_time)
 	note_string = create_string(current_notes, average_time)
-	#print(note_string)
+	print(note_string)
 	var time = Time.get_ticks_msec()
 	#note_string = "AFADGGGAGFDDEFDCAFADGGGAGGGBCDBGAGFFDGGGAGFDEFDCAFFDGGGAGGGDGGGAGFEDDD"
 	#note_string = "DDEBBABBEBBBABDBAGFDADBDADFDADDAF"
@@ -228,16 +230,12 @@ func stop_recording():
 	get_node("../../ResultMenu/Control/ScrollContainer/Songs").delete()
 	get_node("../../ResultMenu/Control/ScrollContainer/Songs").populate(confidences)
 	record_button.text = "Record"
-	#print("Time = " + String.num(((float(Time.get_ticks_msec()) - float(time))/1000), 3) + " sec")
+	print("Time = " + String.num(((float(Time.get_ticks_msec()) - float(time))/1000), 3) + " sec")
 
 func group_notes(notes):
 	var grouped_notes
 	# Sort the notes based on their time values
 	notes.sort_custom(t_sort)
-	#var time_interval = .3
-	
-	#var enough_bins = false
-	#while enough_bins == false:
 	grouped_notes = []
 	var current_bin = []
 	var current_average = 0
@@ -263,9 +261,6 @@ func group_notes(notes):
 	
 	# Add the last bin to the grouped notes
 	grouped_notes.append(current_bin)
-	#time_interval += .05
-	#if grouped_notes.size() <= 3:
-		#enough_bins = true
 	return grouped_notes
 
 func create_string(notes, time):
@@ -280,7 +275,7 @@ func create_string(notes, time):
 	return string
 	
 func search(start, end, thread):
-	#print(start, " ", end)
+	print(start, " ", end)
 	var info = []
 	for id in range(start, end):
 		var search_key = query_result[id]["search_key"]
