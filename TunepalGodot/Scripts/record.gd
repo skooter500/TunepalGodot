@@ -161,24 +161,24 @@ func start_recording():
 	stop = false
 	active = true
 	record_button.text = "Recording in 3"
-	await get_tree().create_timer(1).timeout
-	if stop:
-		stop = false
-		return
-	record_button.text = "Recording in 2"
-	await get_tree().create_timer(1).timeout
-	if stop:
-		stop = false
-		return
-	record_button.text = "Recording in 1"
-	await get_tree().create_timer(1).timeout
-	if stop:
-		stop = false
-		return
+	await get_tree().create_timer(0.1).timeout
+	#if stop:
+		#stop = false
+		#return
+	#record_button.text = "Recording in 2"
+	#await get_tree().create_timer(1).timeout
+	#if stop:
+		#stop = false
+		#return
+	#record_button.text = "Recording in 1"
+	#await get_tree().create_timer(1).timeout
+	#if stop:
+		#stop = false
+		#return
 	current_notes = []
 	temp_notes = []
 	record_button.text = "Recording..."
-	timer.start(12)
+	timer.start(0.1)
 	note_string = ""
 	
 	
@@ -217,7 +217,8 @@ func stop_recording():
 	var time = Time.get_ticks_msec()
 	#note_string = "AFADGGGAGFDDEFDCAFADGGGAGGGBCDBGAGFFDGGGAGFDEFDCAFFDGGGAGGGDGGGAGFEDDD"
 	#note_string = "DDEBBABBEBBBABDBAGFDADBDADFDADDAF"
-	#print(note_string.length())
+	note_string = "ADBGGABGDBCADDGABGABCBABDABEDBGGABGABCADGGDBGACBACBGGGBGDGEGDG"
+	print(note_string.length())
 	var length = float(query_result.size()) / float(thread_count)
 	var threads = []
 	
@@ -295,7 +296,7 @@ func search(start, end, thread):
 	for id in range(start, end):
 		var search_key = query_result[id]["search_key"]
 		if !search_key.length() < 50:
-			var confidence = tunepal.edSubstring(search_key, note_string, thread)
+			var confidence = tunepal.edSubstring(note_string, search_key, thread)
 			info.append({"confidence" : confidence, "id" : query_result[id]["id"], "title" : query_result[id]["title"], "notation" : query_result[id]["notation"], "midi_sequence" : query_result[id]["midi_sequence"], "shortName" : query_result[id]["shortName"], "tune_type" : query_result[id]["tune_type"], "key_sig" : query_result[id]["key_sig"]})
 	return info
 			
