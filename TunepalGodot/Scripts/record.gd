@@ -32,18 +32,33 @@ var temp_notes
 # var edit_distance = EditDistance.new()
 
 var tunepal = Tunepal.new()
+ 
 
+func tunepal_test():
+	var pattern = "BRDXX"
+	var text = "THERE IS NO BREAD"
+	tunepal.say_hello()
+	print(tunepal.edSubstring(pattern, text, 0))
+	pass
+	
+	
 
 func _ready():
+	tunepal_test()
 	record_bus_index = AudioServer.get_bus_index("Record")
 	AudioServer.get_bus_effect(record_bus_index, 0).set_buffer_length(.1)
 	AudioServer.get_bus_effect(record_bus_index, 0).tap_back_pos = .05
 	spectrum = AudioServer.get_bus_effect_instance(record_bus_index, 0)
+	
+	
+	
+	
+	
 	#print(spellings.size(), " ", fund_frequencies.size())
 	db.path = db_name
 	db.open_db()
 	db.read_only = true
-	db.query("select tuneindex.id as id, midi_sequence, tune_type, time_sig, notation, source.id as sourceid, shortName, url, source.source as sourcename, title, alt_title, tunepalid, x, midi_file_name, key_sig, search_key from tuneindex, tunekeys, source where tunekeys.tuneid = tuneindex.id and tuneindex.source = source.id;")
+	db.query("select tuneindex.id as id, midi_sequence, tune_type, time_sig, notation, source.id as sourceid, shortName, url, source.source as sourcename, title, alt_title, tunepalid, x, midi_file_name, key_sig, search_key from tuneindex, tunekeys, source where tunekeys.tuneid = tuneindex.id and tuneindex.source = source.id limit 1000;")
 	await get_tree().create_timer(.5).timeout
 	query_result = db.query_result
 	db.close_db()
@@ -52,7 +67,7 @@ func _physics_process(_delta):
 	if timer.get_time_left() > 0:
 		if current_time == null:
 			current_time = timer.get_time_left()
-		
+	  	
 		var biggest_mag = 0
 		var big_freqs = []
 		var minIndex = -1
@@ -277,12 +292,12 @@ func create_string(notes, time):
 	return string
 	
 func search(start, end, thread):
-	print(start, " ", end)
+	print("Start: " + str(start) + "\tEnd:" + str(end))
 	var info = []
 	for id in range(start, end):
 		var search_key = query_result[id]["search_key"]
 		if !search_key.length() < 50:
-			var confidence = tunepal.edSubstring(note_string, search_key, thread)
+			var confidence = tunepal.edSubstring(search_key, note_string, thread)
 			info.append({"confidence" : confidence, "id" : query_result[id]["id"], "title" : query_result[id]["title"], "notation" : query_result[id]["notation"], "midi_sequence" : query_result[id]["midi_sequence"], "shortName" : query_result[id]["shortName"], "tune_type" : query_result[id]["tune_type"], "key_sig" : query_result[id]["key_sig"]})
 	return info
 			

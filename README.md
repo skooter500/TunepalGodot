@@ -16,9 +16,23 @@ The new Tunepal:
 - Interactive music scores with playback, repeat sections and slowdown
 - Support for full range of instruments, sessions and recordings
 - Import new sources
-- Europeana sounds integration - connection to the Comhaltas archive, ITMA and others
+- Europeana sounds integration - connection to the Comhaltas archive, ITMA and other sources
 - Backup Tunebooks in the cloud and share across devices
 - Share Tunes and sets with other users
 - Integration with thesession.org
 - Platform for future research and development
-- Free and open-source forever
+- Free and open-source
+
+The current prototype:
+
+- sqlite.db database of tunes embedded into the app
+- EditDistance is in C++ as a GDExtension
+- Search by playing works but is slow
+- Compiles for Windows
+
+These are the broad tasks!
+
+- Searching by playing performance improvements. Needs to take a few seconds max
+- Score visualization. Probably this will use ABCJS. We will need a way to render a local html page in Godot via a "WebView" type of node.
+- Playback. This can use abc2midi and [Godot MIDI Player](https://godotengine.org/asset-library/asset/1667)
+- Local tune management

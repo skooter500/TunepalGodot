@@ -9,7 +9,7 @@ class Tunepal : public Node2D {
 	GDCLASS(Tunepal, Node2D)
 
 private:
-	int matrix[400][400];
+	
 
 protected:
 	static void _bind_methods();
