@@ -6,3 +6,13 @@ This goal of this project is to create a new, modern Tunepal that solves a numbe
 
 The plan is to rebuild Tunepal from the ground up using Godot for its cross platform capabilities and and support for extensions in different languages.
 
+The new Tunepal:
+
+- One project for all platforms
+- Fast, off-line searches, running on device
+- Better accuracy
+- Updated corpus
+- Support for full range of instruments, sessions and recordings
+- Import new sources
+- Europeana sounds integration - connection to the Comhaltas archive, ITMA and others
+- Free and open-source forever
