@@ -8,11 +8,17 @@ The plan is to rebuild Tunepal from the ground up using Godot for its cross plat
 
 The new Tunepal:
 
-- One project for all platforms
+- One project for all platforms: Android, IOS and Web
+- Support for different screen sizes including tablets
 - Fast, off-line searches, running on device
 - Better accuracy
-- Updated corpus
+- Updated corpus with the latest available transcriptions to ABC of the classic sources.
+- Interactive music scores with playback, repeat sections and slowdown
 - Support for full range of instruments, sessions and recordings
 - Import new sources
 - Europeana sounds integration - connection to the Comhaltas archive, ITMA and others
+- Backup Tunebooks in the cloud and share across devices
+- Share Tunes and sets with other users
+- Integration with thesession.org
+- Platform for future research and development
 - Free and open-source forever
