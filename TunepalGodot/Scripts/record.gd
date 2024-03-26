@@ -29,7 +29,9 @@ var current_time
 var temp_notes
 
 #EDIT DISTANCE STUFF
-var edit_distance = EditDistance.new()
+# var edit_distance = EditDistance.new()
+
+var tunepal = Tunepal.new()
 
 
 func _ready():
@@ -280,7 +282,7 @@ func search(start, end, thread):
 	for id in range(start, end):
 		var search_key = query_result[id]["search_key"]
 		if !search_key.length() < 50:
-			var confidence = edit_distance.edSubstring(note_string, search_key, thread)
+			var confidence = tunepal.edSubstring(note_string, search_key, thread)
 			info.append({"confidence" : confidence, "id" : query_result[id]["id"], "title" : query_result[id]["title"], "notation" : query_result[id]["notation"], "midi_sequence" : query_result[id]["midi_sequence"], "shortName" : query_result[id]["shortName"], "tune_type" : query_result[id]["tune_type"], "key_sig" : query_result[id]["key_sig"]})
 	return info
 			

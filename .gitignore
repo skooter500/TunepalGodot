@@ -2,6 +2,7 @@
 # https://github.com/github/gitignore/blob/main/Godot.gitignore
 .godot/
 
+
 # Godot-specific ignores
 .import/
 export.cfg
