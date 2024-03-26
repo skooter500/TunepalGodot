@@ -30,14 +30,14 @@ void Tunepal::_process(double delta) {
 
 int Tunepal::edSubstring(const godot::String pattern, const godot::String text, const int thread_id)
 {
-	return 666;
+	//return 666;
 	int matrix[400][400];
 	int pLength = pattern.length();
 	int tLength = text.length();
 	int difference = 0;
 
 	char sc;
-	UtilityFunctions::print("edsubstring"); // , pattern, text, thread_id);
+	//UtilityFunctions::print("edsubstring: ", pattern, text, thread_id);
 	if (pLength == 0)
 	{
 		return 0;
@@ -78,20 +78,20 @@ int Tunepal::edSubstring(const godot::String pattern, const godot::String text, 
 			matrix[i][j] = UtilityFunctions::min(UtilityFunctions::min(matrix[i - 1][j] + 1, matrix[i][j - 1] + 1), v + difference);
 		}
 	}
-	UtilityFunctions::print("Matrix:");
-	for (int i = 0 ; i <= pLength ; i ++)
-	{
-		godot::String line = "";
-		for (int j = 0 ; j <= tLength; j ++)
-		{
-			line += UtilityFunctions::str(matrix[i][j]) + "\t";
-		}
-		UtilityFunctions::print(line);
-	}
-	int min = matrix[pLength - 1][0];
+	//UtilityFunctions::print("Matrix:");
+	// for (int i = 0 ; i <= pLength ; i ++)
+	// {
+	// 	godot::String line = "";
+	// 	for (int j = 0 ; j <= tLength; j ++)
+	// 	{
+	// 		line += UtilityFunctions::str(matrix[i][j]) + "\t";
+	// 	}
+	// 	UtilityFunctions::print(line);
+	// }
+	int min = matrix[pLength][0];
 	for (int i = 0; i < tLength + 1; i++)
 	{
-		int c = matrix[pLength - 1][i];
+		int c = matrix[pLength][i];
 		// System.out.println(c);
 		if (c < min)
 		{

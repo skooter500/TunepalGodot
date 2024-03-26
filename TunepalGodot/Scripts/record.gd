@@ -35,14 +35,12 @@ var tunepal = Tunepal.new()
  
 
 func tunepal_test():
-	var pattern = "BRDXX"
+	var pattern = "BREXDDDDD"
 	var text = "THERE IS NO BREAD"
 	tunepal.say_hello()
 	print(tunepal.edSubstring(pattern, text, 0))
 	pass
 	
-	
-
 func _ready():
 	tunepal_test()
 	record_bus_index = AudioServer.get_bus_index("Record")
