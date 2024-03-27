@@ -56,7 +56,8 @@ func _ready():
 	db.path = db_name
 	db.open_db()
 	db.read_only = true
-	db.query("select tuneindex.id as id, midi_sequence, tune_type, time_sig, notation, source.id as sourceid, shortName, url, source.source as sourcename, title, alt_title, tunepalid, x, midi_file_name, key_sig, search_key from tuneindex, tunekeys, source where tunekeys.tuneid = tuneindex.id and tuneindex.source = source.id and source.id = 0;")
+	# source = 2 norbeck
+	db.query("select tuneindex.id as id, midi_sequence, tune_type, time_sig, notation, source.id as sourceid, shortName, url, source.source as sourcename, title, alt_title, tunepalid, x, midi_file_name, key_sig, search_key from tuneindex, tunekeys, source where tunekeys.tuneid = tuneindex.id and tuneindex.source = source.id and source.id = 2;")
 	await get_tree().create_timer(.5).timeout
 	query_result = db.query_result
 	db.close_db()
@@ -161,24 +162,24 @@ func start_recording():
 	stop = false
 	active = true
 	record_button.text = "Recording in 3"
-	await get_tree().create_timer(0.1).timeout
-	#if stop:
-		#stop = false
-		#return
-	#record_button.text = "Recording in 2"
-	#await get_tree().create_timer(1).timeout
-	#if stop:
-		#stop = false
-		#return
-	#record_button.text = "Recording in 1"
-	#await get_tree().create_timer(1).timeout
-	#if stop:
-		#stop = false
-		#return
+	await get_tree().create_timer(1).timeout
+	if stop:
+		stop = false
+		return
+	record_button.text = "Recording in 2"
+	await get_tree().create_timer(1).timeout
+	if stop:
+		stop = false
+		return
+	record_button.text = "Recording in 1"
+	await get_tree().create_timer(1).timeout
+	if stop:
+		stop = false
+		return
 	current_notes = []
 	temp_notes = []
 	record_button.text = "Recording..."
-	timer.start(0.1)
+	timer.start(10)
 	note_string = ""
 	
 	
@@ -217,7 +218,7 @@ func stop_recording():
 	var time = Time.get_ticks_msec()
 	#note_string = "AFADGGGAGFDDEFDCAFADGGGAGGGBCDBGAGFFDGGGAGFDEFDCAFFDGGGAGGGDGGGAGFEDDD"
 	#note_string = "DDEBBABBEBBBABDBAGFDADBDADFDADDAF"
-	note_string = "ADBGGABGDBCADDGABGABCBABDABEDBGGABGABCADGGDBGACBACBGGGBGDGEGDG"
+	# note_string = "ADBGGABGDBCADDGABGABCBABDABEDBGGABGABCADGGDBGACBACBGGGBGDGEGDG"
 	print(note_string.length())
 	var length = float(query_result.size()) / float(thread_count)
 	var threads = []
@@ -296,7 +297,8 @@ func search(start, end, thread):
 	for id in range(start, end):
 		var search_key = query_result[id]["search_key"]
 		if !search_key.length() < 50:
-			var confidence = tunepal.edSubstring(note_string, search_key, thread)
+			var ed = tunepal.edSubstring(note_string, search_key, thread)
+			var confidence = 1.0 - (ed / float(note_string.length()))
 			info.append({"confidence" : confidence, "id" : query_result[id]["id"], "title" : query_result[id]["title"], "notation" : query_result[id]["notation"], "midi_sequence" : query_result[id]["midi_sequence"], "shortName" : query_result[id]["shortName"], "tune_type" : query_result[id]["tune_type"], "key_sig" : query_result[id]["key_sig"]})
 	return info
 			
