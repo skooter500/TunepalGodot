@@ -15,7 +15,7 @@ const spellings = ["B", "C", "C", "D", "D", "E", "F", "F", "G", "G", "A", "A", "
 
 #DB STUFF
 @onready var db = SQLite.new()
-@onready var db_name = "res://Database/tunepal.db"
+@onready var db_name = "res://data/tunepal"
 @onready var query_result
 
 #THREAD STUFF
@@ -32,6 +32,27 @@ var temp_notes
 # var edit_distance = EditDistance.new()
 
 var tunepal = Tunepal.new()
+
+# From: https://github.com/2shady4u/godot-sqlite/blob/master/demo/database.gd
+func copy_data_to_user() -> void:
+	var data_path := "res://"
+	var copy_path := "user://data"
+
+	DirAccess.make_dir_absolute(copy_path)
+	var dir = DirAccess.open(data_path)
+	if dir:
+		dir.list_dir_begin();
+		var file_name = dir.get_next()
+		while (file_name != ""):
+			if dir.current_is_dir():
+				pass
+			else:
+				print("Copying " + file_name + " to /user-folder")
+				dir.copy(data_path + "/" + file_name, copy_path + "/" + file_name)
+			file_name = dir.get_next()
+	else:
+		print("An error occurred when trying to access the path.")
+
  
 
 func tunepal_test():
@@ -43,6 +64,13 @@ func tunepal_test():
 	
 func _ready():
 	tunepal_test()
+	
+	if OS.get_name() in ["Android", "iOS", "Web"]:
+		copy_data_to_user()
+		db_name = "user://data/tunepal"
+	
+	
+	
 	record_bus_index = AudioServer.get_bus_index("Record")
 	AudioServer.get_bus_effect(record_bus_index, 0).set_buffer_length(.1)
 	AudioServer.get_bus_effect(record_bus_index, 0).tap_back_pos = .05
