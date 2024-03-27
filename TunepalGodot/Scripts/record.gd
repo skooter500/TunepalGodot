@@ -15,7 +15,7 @@ const spellings = ["B", "C", "C", "D", "D", "E", "F", "F", "G", "G", "A", "A", "
 
 #DB STUFF
 @onready var db = SQLite.new()
-@onready var db_name = "res://Database/tunepal.db"
+@onready var db_name = "res://data/tunepal.db"
 @onready var query_result
 
 #THREAD STUFF
@@ -32,7 +32,30 @@ var temp_notes
 # var edit_distance = EditDistance.new()
 
 var tunepal = Tunepal.new()
- 
+
+func copy_data_to_user() -> void:
+	var data_path = "res://data"
+	var copy_path = "user://data"
+
+	DirAccess.make_dir_absolute(copy_path)
+	if FileAccess.file_exists("res://data/nothing.txt"):
+		print("File exists")
+	else:
+		print("File doesnt exist")
+	var dir = DirAccess.open(data_path)
+	if dir:
+		dir.list_dir_begin();
+		var file_name = dir.get_next()
+		while (file_name != ""):
+			if dir.current_is_dir():
+				pass
+			else:
+				print("Copying " + file_name + " to /user-folder")
+				dir.copy(data_path + "/" + file_name, copy_path + "/" + file_name)
+			file_name = dir.get_next()
+	else:
+		print(DirAccess.get_open_error())
+		print("An error occurred when trying to access the path.")
 
 func tunepal_test():
 	var pattern = "BREXDDDDD"
@@ -41,20 +64,34 @@ func tunepal_test():
 	print(tunepal.edSubstring(pattern, text, 0))
 	pass
 	
+
 func _ready():
 	tunepal_test()
+	
+	
+
+	# https://github.com/2shady4u/godot-sqlite/blob/master/demo/database.gd	
+	if OS.get_name() in ["Android", "iOS", "Web"]:
+		copy_data_to_user()
+		db_name = "user://data/tunepal.db"
+	
+	
+	
 	record_bus_index = AudioServer.get_bus_index("Record")
 	AudioServer.get_bus_effect(record_bus_index, 0).set_buffer_length(.1)
 	AudioServer.get_bus_effect(record_bus_index, 0).tap_back_pos = .05
 	spectrum = AudioServer.get_bus_effect_instance(record_bus_index, 0)
 	
 	
+	# Copy database to user directory
+	# required for android
 	
 	
 	
 	#print(spellings.size(), " ", fund_frequencies.size())
 	db.path = db_name
 	db.open_db()
+		
 	db.read_only = true
 	# source = 2 norbeck
 	db.query("select tuneindex.id as id, midi_sequence, tune_type, time_sig, notation, source.id as sourceid, shortName, url, source.source as sourcename, title, alt_title, tunepalid, x, midi_file_name, key_sig, search_key from tuneindex, tunekeys, source where tunekeys.tuneid = tuneindex.id and tuneindex.source = source.id and source.id = 2;")
