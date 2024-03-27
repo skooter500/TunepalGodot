@@ -8,12 +8,17 @@ extends Control
 @onready var active = false
 @onready var stop = false
 
+var volume_samples: Array = []
+var MAX_SAMPLES = 10
+
+var lerped_amplitude = 0.0
+
 #FREQUENCY CONSTANTS
 const fund_frequencies = [123.471, 130.813, 138.59, 146.832, 155.56, 164.814, 174.614, 185, 195.998, 207.65, 220, 233.08, 246.942, 261.626, 277.18, 293.665, 311.13, 329.63, 349.23, 369.99, 392.00, 415.30, 440.00, 466.16, 493.88, 523.25, 554.37, 587.33
 			, 622.25, 659.25, 698.46, 739.99, 783.99, 830.61, 880.00, 932.33, 987.77, 1046.50, 1108.73, 1174.66, 1244.51, 1318.51, 1396.91, 1479.98, 1567.98, 1661.22, 1760.00, 1864.66, 1975.53, 2093.00, 2217.46, 2349.32, 2489.02, 2637.02, 2793.83, 2959.96, 3135.96, 3322.44, 3520, 3729.31, 3951.07, 4186.01, 4434.92, 4698.63, 4978.03, 5274.04, 5587.65, 5919.91, 6271.93, 6644.88, 7040, 7458.62, 7902.13]
 const spellings = ["B", "C", "C", "D", "D", "E", "F", "F", "G", "G", "A", "A", "B", "C", "C", "D", "D", "E", "F", "F", "G", "G", "A", "A", "B", "C", "C", "D", "D", "E", "F", "F", "G", "G", "A", "A", "B", "C", "C", "D", "D", "E", "F", "F", "G", "G", "A", "A", "B", "C", "C", "D", "D", "E", "F", "F", "G", "G", "A", "A", "B", "C", "C", "D", "D", "E", "F", "F", "G", "G", "A", "A", "B"]
 
-#DB STUFF
+#DB STUFFrecord
 @onready var db = SQLite.new()
 @onready var db_name = "res://data/tunepal"
 @onready var query_result
@@ -28,14 +33,19 @@ const spellings = ["B", "C", "C", "D", "D", "E", "F", "F", "G", "G", "A", "A", "
 var current_time
 var temp_notes
 
-#EDIT DISTANCE STUFF
-# var edit_distance = EditDistance.new()
-
 var tunepal = Tunepal.new()
+
+func average_array(arr: Array) -> float:
+	var avg = 0.0
+	for i in range(arr.size()):
+		avg += arr[i]
+	avg /= arr.size()
+	return avg
+	
 
 # From: https://github.com/2shady4u/godot-sqlite/blob/master/demo/database.gd
 func copy_data_to_user() -> void:
-	var data_path := "res://"
+	var data_path := "res://data"
 	var copy_path := "user://data"
 
 	DirAccess.make_dir_absolute(copy_path)
@@ -44,6 +54,7 @@ func copy_data_to_user() -> void:
 		dir.list_dir_begin();
 		var file_name = dir.get_next()
 		while (file_name != ""):
+			print(file_name)
 			if dir.current_is_dir():
 				pass
 			else:
@@ -72,10 +83,11 @@ func _ready():
 	
 	
 	record_bus_index = AudioServer.get_bus_index("Record")
+	# record_effect = AudioServer.get_bus_effect(record_bus_index, 1)
+	
 	AudioServer.get_bus_effect(record_bus_index, 0).set_buffer_length(.1)
 	AudioServer.get_bus_effect(record_bus_index, 0).tap_back_pos = .05
 	spectrum = AudioServer.get_bus_effect_instance(record_bus_index, 0)
-	
 	
 	
 	
@@ -89,7 +101,12 @@ func _ready():
 	await get_tree().create_timer(.5).timeout
 	query_result = db.query_result
 	db.close_db()
-
+	
+func _process(delta):
+	#update_amplitude()
+	pass
+	
+	
 func _physics_process(_delta):
 	if timer.get_time_left() > 0:
 		if current_time == null:
@@ -101,9 +118,12 @@ func _physics_process(_delta):
 		var minDiff = 1.79769e308
 		var spec_range = 2
 		var percent = 0.001
-
+		
+		var s = ""
 		for i in range(100,8000,spec_range):
-			if spectrum.get_magnitude_for_frequency_range(i,i+spec_range)[0] > biggest_mag:
+			var f = spectrum.get_magnitude_for_frequency_range(i,i+spec_range)[0]
+			s += str(f) + ", "
+			if f > biggest_mag:
 				biggest_mag = spectrum.get_magnitude_for_frequency_range(i,i+spec_range)[0]
 				minIndex = -1
 				minDiff = 1.79769e308
@@ -131,9 +151,10 @@ func _physics_process(_delta):
 				big_freqs.append({"note" : spellings[minIndex], "frequency" : i+(spec_range/2), "magnitude" : spectrum.get_magnitude_for_frequency_range(i,i+spec_range)[0]})
 		#BIG FREQS WAS USED TO SEE THE TOP FREQUENCIES BEING DETECTED, NOT JUST THE LOUDEST FREQUENCY. HOWEVER,
 		#TESTING DIDN'T LEAD ANYWHERE. :(	
+		print(s)
 		#for freq in big_freqs:
 			#print(freq)
-		#print()
+		##print()
 		var frequency = 0
 		var magnitude = 0
 		for freq in big_freqs:
@@ -213,6 +234,8 @@ func start_recording():
 	
 func stop_recording():
 	active = false
+	# record_effect.set_recording_active(false)
+	
 	confidences = []
 	var sorted_notes = []
 	for i in range(current_notes.size()):

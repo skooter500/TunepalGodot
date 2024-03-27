@@ -3850,6 +3850,7 @@ text = "<- Record"
 flat = true
 
 [node name="ABCMenu" type="Node2D" parent="Control/Menus"]
+position = Vector2(0, -1)
 
 [node name="Control" type="Control" parent="Control/Menus/ABCMenu"]
 layout_mode = 3
