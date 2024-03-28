@@ -119,10 +119,10 @@ func _physics_process(_delta):
 		var spec_range = 2
 		var percent = 0.001
 		
-		var s = ""
+		# var s = ""
 		for i in range(100,8000,spec_range):
 			var f = spectrum.get_magnitude_for_frequency_range(i,i+spec_range)[0]
-			s += str(f) + ", "
+			# s += str(f) + ", "
 			if f > biggest_mag:
 				biggest_mag = spectrum.get_magnitude_for_frequency_range(i,i+spec_range)[0]
 				minIndex = -1
@@ -151,7 +151,7 @@ func _physics_process(_delta):
 				big_freqs.append({"note" : spellings[minIndex], "frequency" : i+(spec_range/2), "magnitude" : spectrum.get_magnitude_for_frequency_range(i,i+spec_range)[0]})
 		#BIG FREQS WAS USED TO SEE THE TOP FREQUENCIES BEING DETECTED, NOT JUST THE LOUDEST FREQUENCY. HOWEVER,
 		#TESTING DIDN'T LEAD ANYWHERE. :(	
-		print(s)
+		# print(s)
 		#for freq in big_freqs:
 			#print(freq)
 		##print()
@@ -211,6 +211,7 @@ func start_recording():
 	stop = false
 	active = true
 	record_button.text = "Recording in 3"
+	$AudioStreamRecord.play()
 	await get_tree().create_timer(1).timeout
 	if stop:
 		stop = false
@@ -235,7 +236,7 @@ func start_recording():
 func stop_recording():
 	active = false
 	# record_effect.set_recording_active(false)
-	
+	$AudioStreamRecord.stop()
 	confidences = []
 	var sorted_notes = []
 	for i in range(current_notes.size()):
