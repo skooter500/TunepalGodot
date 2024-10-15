@@ -1,6 +1,6 @@
 [gd_resource type="Theme" load_steps=7 format=3 uid="uid://b1kmk3bditaib"]
 
-[ext_resource type="FontFile" uid="uid://0jk2p2kfmllu" path="res://fonts/Hyperspace Bold.otf" id="1_0oi7c"]
+[ext_resource type="FontFile" uid="uid://c0wrlbqw5fbjo" path="res://fonts/Hyperspace Bold.otf" id="1_0oi7c"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_h4d3n"]
 content_margin_left = 4.0
