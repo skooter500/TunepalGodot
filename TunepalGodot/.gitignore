@@ -1,8 +1,0 @@
-.dropbox.attr
-Thumbs.db
-.import/*
-.godot/*
-data/*
-dev/*
-ui/*
-*.import
