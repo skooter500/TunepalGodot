@@ -171,6 +171,11 @@ scons platform=android target=template_debug arch=arm64 -j4
 
 See [CONTRIBUTING.md](CONTRIBUTING.md) for detailed setup instructions.
 
+### Additional Documentation
+
+- **[IOS_DEVELOPMENT.md](IOS_DEVELOPMENT.md)** - Building and testing on iOS Simulator and devices
+- **[SOUNDFONTS.md](SOUNDFONTS.md)** - Setting up audio playback with SoundFont instruments
+
 ## License
 
 This project is licensed under the MIT License - see [LICENSE](LICENSE) for details.
