@@ -113,6 +113,50 @@ This fork adds infrastructure to support iOS development as the MVP target:
 - **Documentation**: Enhanced README, added CONTRIBUTING.md, LICENSE file
 - **SessionStart Hook**: Auto-installs Godot 4.3 for Claude Code development sessions
 
+### Test Coverage
+
+The project includes automated tests that run in CI on every push and pull request.
+
+#### What's Tested
+
+| Component | Coverage | Test File |
+|-----------|----------|-----------|
+| Edit distance algorithm | ✅ Tested | `Scripts/test_tunepal.gd` |
+| Exact substring match | ✅ Tested | 13 test cases |
+| Insertion/deletion/substitution | ✅ Tested | Edge cases covered |
+| Empty string handling | ✅ Tested | Both pattern and text |
+| ABC notation patterns | ✅ Tested | Real tune-style patterns |
+
+#### Not Yet Tested (Integration Tests Needed)
+
+| Component | Priority | Notes |
+|-----------|----------|-------|
+| Audio recording | High | Requires device/mock |
+| Frequency analysis | High | Signal processing logic |
+| Note recognition | High | `record.gd:110-204` |
+| Note grouping | Medium | `record.gd:304-333` |
+| ABC string generation | Medium | `record.gd:335-344` |
+| Multi-threaded search | Medium | `record.gd:346-355` |
+| SQLite queries | Low | Database operations |
+| Menu navigation | Low | UI logic |
+
+#### Running Tests
+
+**In Godot Editor:**
+```bash
+# Open test scene and press F6
+TunepalGodot/Scenes/test_tunepal.tscn
+```
+
+**Command Line (headless):**
+```bash
+cd TunepalGodot
+godot --headless --script Scripts/test_tunepal.gd --quit
+```
+
+**CI Pipeline:**
+Tests run automatically via GitHub Actions on Linux after building the extension.
+
 ### Building
 
 ```bash
