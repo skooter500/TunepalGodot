@@ -1,5 +1,9 @@
 # Tunepal
 
+THIS PROJECT IS NO LONGER UNDER DEVELOPMENT. 
+
+This is the [current project](https://github.com/TechnoLukas/TunepalGodot2)
+
 Tunepal is an app for finding the names of Tunes and organizing Tunes for learning purposes. It was developed by Bryan Duggan and others. 
 
 This goal of this project is to create a new, modern Tunepal that solves a number of problems with the original, while providing a platform for future development and research.
@@ -35,4 +39,5 @@ These are the broad tasks!
 - Searching by playing performance improvements. Needs to take a few seconds max
 - Score visualization. Probably this will use ABCJS. We will need a way to render a local html page in Godot via a "WebView" type of node.
 - Playback. This can use abc2midi and [Godot MIDI Player](https://godotengine.org/asset-library/asset/1667)
+
 - Local tune management
